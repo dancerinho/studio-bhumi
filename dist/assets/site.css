@@ -122,51 +122,118 @@ html{scroll-padding-top:calc(var(--header-height) + 20px)}
 @media(max-width:1050px){.topbar .brand__descriptor{display:none}.topbar .sidebar__top{gap:18px}.topbar__primary{gap:18px}}
 @media(max-width:760px){:root{--header-height:74px;--content:calc(100vw - 32px)}.topbar{padding:10px 16px}.topbar .brand__logo{width:51px;height:50px}.topbar__primary{display:none}.topbar .sidebar__top{gap:10px}.topbar__cta{font-size:13px;padding:10px 12px}.topbar__dropdown{left:16px;right:16px;width:auto}.home-hero{padding-top:36px}.page-hero{padding-top:42px}}
 
-/* Mobile-first guardrails: keep every section inside the viewport on narrow devices. */
-*,*::before,*::after{box-sizing:border-box}
-html,body{max-width:100%;overflow-x:hidden}
-img,svg{max-width:100%}
-.topbar__cta{flex-shrink:1}
-@media (max-width:760px){
-  .topbar{height:var(--header-height);padding-inline:12px}
-  .topbar .sidebar__top{min-width:0;gap:8px}
-  .topbar .brand{min-width:0;gap:8px}
-  .topbar .brand__logo{width:45px;height:45px}
-  .topbar__cta{min-width:0;max-width:calc(100vw - 125px);padding:9px 10px;font-size:11px;line-height:1.1;text-align:center}
-  .topbar__cta svg{display:none}
-  .topbar .sidebar__toggle{min-width:40px;padding:4px}
-  .topbar__dropdown{top:calc(100% + 6px);left:12px;right:12px;padding:18px;max-height:calc(100dvh - var(--header-height) - 18px)}
-  .site-main{padding-top:var(--header-height)}
-  .home-hero,.page-hero{width:100%;padding-inline:16px}
-  .home-hero h1,.page-hero h1{max-width:100%;font-size:clamp(40px,12vw,64px);overflow-wrap:anywhere}
-  .home-hero__lead,.page-hero__intro,.home-section__head p,.page-intro__text{font-size:16px}
-  .home-hero__actions{align-items:stretch;flex-direction:column;gap:18px}
-  .home-hero__actions .btn,.home-hero__actions .inline-arrow{width:fit-content}
-  .home-hero__visual{width:100%;min-height:min(88vw,360px)}
-  .hero-index{top:20px;left:20px;width:62px;height:62px}
-  .home-section{width:100%;padding-inline:16px}
-  .home-section__head h2,.home-method__copy h2,.home-team h2,.home-contact h2{font-size:clamp(38px,11vw,58px);overflow-wrap:anywhere}
-  .discipline-preview__card,.discipline-preview__card--tall{min-height:230px}
-  .home-method__visual{width:100%;min-height:min(88vw,340px)}
-  .teacher-teaser{grid-template-columns:78px minmax(0,1fr)}
-  .teacher-teaser__copy{min-width:0;padding-left:14px}
-  .teacher-teaser__copy h3{font-size:clamp(22px,7vw,30px);overflow-wrap:anywhere}
-  .teacher-teaser__copy p{font-size:14px}
-  .home-contact{width:100%;padding-inline:16px}
-  .page-content{max-width:100%;padding-inline:0}
-  .page-hero__photo{width:100%;min-height:min(65vw,260px)}
-  .content-card,.contact-card,.teacher-profile{min-width:0;padding:20px}
-  .content-card h3,.contact-card h2,.contact-card h3{font-size:clamp(30px,9vw,42px);overflow-wrap:anywhere}
-  .teacher-profile__photo{width:100%;height:min(72vw,250px)}
-  .price-table{grid-template-columns:minmax(130px,1.5fr) repeat(3,minmax(42px,.6fr));gap:5px;overflow-x:auto;font-size:12px}
-  .price-table>*{min-width:0;overflow-wrap:anywhere}
-  .schedule-row{grid-template-columns:minmax(0,1fr) auto;gap:12px}
-  .map-panel{width:100%;min-height:300px}
-  .site-footer__inner,.site-footer__bottom{max-width:100%;padding-inline:16px}
+/* Shared responsive layout: intrinsic tracks prevent clipped content. */
+:root { --gutter: clamp(16px, 3vw, 36px); --content: min(1180px, calc(100% - 2 * var(--gutter))); }
+html, body { max-width: 100%; }
+.site-main { overflow: visible; }
+img { max-width: 100%; height: auto; }
+svg { flex-shrink: 0; }
+:is(.home-hero,.page-hero,.home-section,.home-contact) { padding-inline: max(var(--gutter), calc((100% - 1180px) / 2)); }
+:is(.home-hero,.page-hero,.page-intro,.content-grid,.contact-grid,.teacher-page-grid,.discipline-preview,.home-method,.home-team,.site-footer__inner) > * { min-width: 0; }
+h1,h2,h3,p,a,span,strong { overflow-wrap: anywhere; }
+h1,h2,h3 { text-wrap: balance; }
+.home-hero { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.page-hero { grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: clamp(24px,4vw,60px); }
+.page-intro { grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: clamp(28px,5vw,80px); }
+.content-grid,.contact-grid,.teacher-page-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.content-card { display: block; }
+.content-card,.contact-card,.teacher-profile { margin-top: 0; }
+.discipline-preview { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.home-method { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: clamp(28px,5vw,80px); }
+.home-team { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); }
+.home-contact > div { min-width: 0; }
+.home-contact > .btn { flex-shrink: 0; }
+.btn,.inline-arrow,.contact-link { max-width: 100%; min-height: 44px; line-height: 1.5; }
+.btn > svg,.btn > span { flex-shrink: 0; }
+.btn .inline-arrow { min-height: 0; padding: 0; border: 0; }
+.page-hero__meta { flex-wrap: wrap; row-gap: 10px; }
+.topbar__primary a { display: flex; align-items: center; min-height: 44px; }
+.topbar__cta { font-size: .875rem; line-height: 1.4; white-space: normal; }
+.topbar .sidebar__toggle { flex: 0 0 44px; min-height: 44px; }
+.side-nav__link { min-height: 44px; gap: 12px; line-height: 1.4; }
+.topbar__dropdown { overscroll-behavior: contain; }
+.footer-links { font-size: .875rem; }
+.footer-links a { padding-block: 6px; }
+.site-footer__inner { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.site-footer__bottom { line-height: 1.6; flex-wrap: wrap; }
+.schedule-row { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+.schedule-row strong { text-align: right; }
+.price-table { grid-template-columns: minmax(0,1.8fr) repeat(3,minmax(0,.7fr)); gap: 12px; font-size: 1rem; overflow: visible; }
+.price-table--head { font-size: .875rem; }
+.price-table small { font-size: .875rem; }
+.verification { font-size: .75rem; line-height: 1.5; }
+.verification::before { flex-shrink: 0; }
+.teacher-profile { grid-template-columns: minmax(100px,.7fr) minmax(0,1fr); gap: 20px; }
+.teacher-profile__photo { background-size: contain; background-repeat: no-repeat; background-position: center top; }
+@media (max-width: 1100px) {
+  .teacher-page-grid { grid-template-columns: minmax(0,1fr); }
+  .teacher-profile { grid-template-columns: minmax(120px,.35fr) minmax(0,1fr); }
+  .discipline-preview { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .discipline-preview__card:first-child { grid-column: 1 / -1; }
+  .home-team { grid-template-columns: minmax(0,1fr); gap: 36px; }
+  .home-team__intro p { max-width: 600px; }
 }
-@media (max-width:360px){
-  .topbar__cta{font-size:10px;padding-inline:7px}
-  .topbar .sidebar__toggle{min-width:36px}
-  .home-hero h1,.page-hero h1{font-size:38px}
-  .price-table{grid-template-columns:120px repeat(3,42px);font-size:11px}
+@media (max-width: 900px) {
+  .home-hero,.page-hero,.page-intro,.home-method,.events-empty { display: grid; grid-template-columns: minmax(0,1fr); gap: 32px; }
+  .home-hero__copy { max-width: 720px; }
+  .home-hero__visual { min-height: 0; aspect-ratio: 16 / 9; }
+  .home-method__visual { min-height: 0; aspect-ratio: 4 / 3; max-height: 480px; margin: 0; }
+  .page-hero__intro { max-width: 580px; }
+  .page-hero__photo { min-height: 0; aspect-ratio: 16 / 7; }
+  .home-section__head { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .home-section__head p { max-width: 580px; margin: 0; }
+  .home-contact { align-items: flex-start; flex-direction: column; gap: 28px; }
+  .home-contact .btn { margin: 0; }
+  .site-footer__inner { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .site-footer__inner > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  :root { --header-height: 74px; }
+  .topbar { padding-inline: var(--gutter); }
+  .topbar .sidebar__top { gap: 8px; }
+  .topbar .brand { min-width: 0; flex-shrink: 1; }
+  .topbar .brand__logo { width: 45px; height: 45px; flex-shrink: 0; }
+  .topbar__cta { max-width: calc(100% - 105px); padding: 8px 10px; }
+  .topbar__cta svg { display: none; }
+  .topbar__dropdown { left: var(--gutter); right: var(--gutter); padding: 18px; }
+  .home-hero h1,.page-hero h1 { font-size: clamp(2.375rem,8.5vw,4rem); }
+  .home-section__head h2,.home-method__copy h2,.home-team h2,.home-contact h2,.page-intro h2,.events-empty h2 { font-size: clamp(2rem,6.5vw,3.5rem); }
+  .home-hero__lead,.page-hero__intro,.page-intro__text { font-size: 1rem; }
+  .content-grid,.contact-grid { grid-template-columns: minmax(0,1fr); }
+  .content-card,.contact-card { padding: clamp(20px,4vw,28px); }
+  .content-card h3,.contact-card h2,.contact-card h3 { font-size: clamp(1.875rem,7vw,2.625rem); }
+  .page-content { padding-block: 48px 72px; }
+  .page-intro { margin-bottom: 40px; }
+  .page-intro h2,.events-empty h2 { margin: 0; }
+  .home-hero__actions { gap: 16px; }
+  .site-footer__inner,.site-footer__bottom { padding-inline: 0; }
+}
+@media (max-width: 600px) {
+  .discipline-preview,.home-team { display: grid; grid-template-columns: minmax(0,1fr); }
+  .discipline-preview__card:first-child { grid-column: auto; }
+  .home-hero__visual { aspect-ratio: 1 / 1; }
+  .home-hero__caption { left: 24px; right: 24px; line-height: 1.5; gap: 12px; }
+  .hero-index { top: 26px; left: 26px; }
+  .home-team__intro { margin: 0; }
+  .teacher-profile { display: grid; grid-template-columns: minmax(0,1fr); padding: 20px; }
+  .teacher-profile__photo { height: 260px; min-height: 0; }
+  .teacher-teaser { grid-template-columns: 78px minmax(0,1fr); }
+  .teacher-teaser__copy { min-width: 0; padding-left: 14px; }
+  .teacher-teaser__copy h3 { font-size: 1.625rem; }
+  .site-footer__inner { display: grid; grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .footer-links { margin: 0; }
+  .price-table { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+  .price-table--head { display: none; }
+  .price-table > :first-child { grid-column: 1 / -1; font-weight: 600; }
+  .price-table strong::before { content: attr(data-label); display: block; margin-bottom: 4px; font-size: .875rem; font-weight: 400; }
+  .price-table strong:empty { display: none; }
+  .image-band__content { padding: 24px; }
+  .image-band h3 { font-size: clamp(2rem,8vw,3rem); }
+  .legal-copy h2 { font-size: 2rem; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  :root { --header-height: 64px; }
+  .topbar { padding-block: 6px; }
+  .topbar .brand__logo { height: 44px; width: 46px; }
+  .topbar__dropdown { top: 100%; max-height: calc(100dvh - var(--header-height) - 8px); }
 }
