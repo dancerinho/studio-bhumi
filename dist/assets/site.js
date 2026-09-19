@@ -31,28 +31,23 @@ function renderSidebar() {
       <span>${label}</span><span class="side-nav__index">${String(navItems.findIndex((item) => item[2] === key) + 1).padStart(2, '0')}</span>
     </a>`).join('');
   mount.innerHTML = `
-    <aside class="sidebar" aria-label="Navigazione del sito">
+    <header class="topbar" aria-label="Navigazione del sito">
       <div class="sidebar__top">
         <a class="brand" href="index.html" aria-label="Studio Bhumi, Home">
           <img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/>
           <span class="brand__descriptor">studio del movimento</span>
         </a>
+        <nav class="topbar__primary" aria-label="Pagine principali">${navItems.slice(1,4).map(([href,label,key]) => `<a href="${href}" ${currentPage === key ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
+        <a class="topbar__cta" href="mailto:studiobhumi@gmail.com?subject=Richiesta%20lezione%20di%20prova">Prenota una prova ${icon('arrow')}</a>
         <button class="sidebar__toggle" type="button" aria-expanded="false" aria-controls="side-menu">
           <span class="sr-only">Apri navigazione</span>${icon('menu')}
         </button>
       </div>
-      <div class="sidebar__content" id="side-menu">
+      <div class="topbar__dropdown" id="side-menu" hidden>
         <div class="sidebar__location">Milano / Isola <span class="location-dot"></span></div>
-        <nav class="side-nav">${links}</nav>
+        <nav class="side-nav" aria-label="Tutte le pagine">${links}<a class="side-nav__link" href="privacy.html">Privacy</a><a class="side-nav__link" href="cookie.html">Cookie</a></nav>
       </div>
-      <div class="sidebar__bottom">
-        <a class="sidebar__cta" href="mailto:studiobhumi@gmail.com?subject=Richiesta%20lezione%20di%20prova">
-          <span>Prenota una<br/>lezione di prova</span>${icon('arrow')}
-        </a>
-        <a class="sidebar__contact" href="tel:+393487517656">${icon('phone')} <span>348 751 7656</span></a>
-      </div>
-    </aside>
-    <div class="mobile-cta"><a href="mailto:studiobhumi@gmail.com?subject=Richiesta%20lezione%20di%20prova">Prenota una lezione di prova ${icon('arrow')}</a></div>`;
+    </header>`;
 }
 
 function renderFooter() {
@@ -71,17 +66,21 @@ function renderFooter() {
 
 function setupMobileMenu() {
   const toggle = document.querySelector('.sidebar__toggle');
-  const sidebar = document.querySelector('.sidebar');
+  const sidebar = document.querySelector('.topbar');
+  const dropdown = document.querySelector('#side-menu');
   if (!toggle || !sidebar) return;
-  toggle.addEventListener('click', () => {
-    const open = sidebar.classList.toggle('is-open');
+  function setOpen(open) {
+    sidebar.classList.toggle('is-open', open);
+    dropdown.hidden = !open;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.innerHTML = `<span class="sr-only">${open ? 'Chiudi' : 'Apri'} navigazione</span>${icon(open ? 'close' : 'menu')}`;
-  });
+  }
+  toggle.addEventListener('click', event => { event.stopPropagation(); setOpen(toggle.getAttribute('aria-expanded') !== 'true'); });
   sidebar.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    sidebar.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
+    setOpen(false);
   }));
+  document.addEventListener('click', event => { if (!sidebar.contains(event.target)) setOpen(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !dropdown.hidden) { setOpen(false); toggle.focus(); } });
 }
 
 function setupReveal() {

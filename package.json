@@ -1,0 +1,12 @@
+{
+  "name": "studio-bhumi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sito multipagina di Studio Bhumi, Milano Isola",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs",
+    "check": "node --check dist/assets/site.js"
+  },
+  "engines": { "node": ">=20" }
+}
