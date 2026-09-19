@@ -121,3 +121,52 @@ html{scroll-padding-top:calc(var(--header-height) + 20px)}
 .home-hero{padding-top:54px}.page-hero{padding-top:72px}
 @media(max-width:1050px){.topbar .brand__descriptor{display:none}.topbar .sidebar__top{gap:18px}.topbar__primary{gap:18px}}
 @media(max-width:760px){:root{--header-height:74px;--content:calc(100vw - 32px)}.topbar{padding:10px 16px}.topbar .brand__logo{width:51px;height:50px}.topbar__primary{display:none}.topbar .sidebar__top{gap:10px}.topbar__cta{font-size:13px;padding:10px 12px}.topbar__dropdown{left:16px;right:16px;width:auto}.home-hero{padding-top:36px}.page-hero{padding-top:42px}}
+
+/* Mobile-first guardrails: keep every section inside the viewport on narrow devices. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%}
+.topbar__cta{flex-shrink:1}
+@media (max-width:760px){
+  .topbar{height:var(--header-height);padding-inline:12px}
+  .topbar .sidebar__top{min-width:0;gap:8px}
+  .topbar .brand{min-width:0;gap:8px}
+  .topbar .brand__logo{width:45px;height:45px}
+  .topbar__cta{min-width:0;max-width:calc(100vw - 125px);padding:9px 10px;font-size:11px;line-height:1.1;text-align:center}
+  .topbar__cta svg{display:none}
+  .topbar .sidebar__toggle{min-width:40px;padding:4px}
+  .topbar__dropdown{top:calc(100% + 6px);left:12px;right:12px;padding:18px;max-height:calc(100dvh - var(--header-height) - 18px)}
+  .site-main{padding-top:var(--header-height)}
+  .home-hero,.page-hero{width:100%;padding-inline:16px}
+  .home-hero h1,.page-hero h1{max-width:100%;font-size:clamp(40px,12vw,64px);overflow-wrap:anywhere}
+  .home-hero__lead,.page-hero__intro,.home-section__head p,.page-intro__text{font-size:16px}
+  .home-hero__actions{align-items:stretch;flex-direction:column;gap:18px}
+  .home-hero__actions .btn,.home-hero__actions .inline-arrow{width:fit-content}
+  .home-hero__visual{width:100%;min-height:min(88vw,360px)}
+  .hero-index{top:20px;left:20px;width:62px;height:62px}
+  .home-section{width:100%;padding-inline:16px}
+  .home-section__head h2,.home-method__copy h2,.home-team h2,.home-contact h2{font-size:clamp(38px,11vw,58px);overflow-wrap:anywhere}
+  .discipline-preview__card,.discipline-preview__card--tall{min-height:230px}
+  .home-method__visual{width:100%;min-height:min(88vw,340px)}
+  .teacher-teaser{grid-template-columns:78px minmax(0,1fr)}
+  .teacher-teaser__copy{min-width:0;padding-left:14px}
+  .teacher-teaser__copy h3{font-size:clamp(22px,7vw,30px);overflow-wrap:anywhere}
+  .teacher-teaser__copy p{font-size:14px}
+  .home-contact{width:100%;padding-inline:16px}
+  .page-content{max-width:100%;padding-inline:0}
+  .page-hero__photo{width:100%;min-height:min(65vw,260px)}
+  .content-card,.contact-card,.teacher-profile{min-width:0;padding:20px}
+  .content-card h3,.contact-card h2,.contact-card h3{font-size:clamp(30px,9vw,42px);overflow-wrap:anywhere}
+  .teacher-profile__photo{width:100%;height:min(72vw,250px)}
+  .price-table{grid-template-columns:minmax(130px,1.5fr) repeat(3,minmax(42px,.6fr));gap:5px;overflow-x:auto;font-size:12px}
+  .price-table>*{min-width:0;overflow-wrap:anywhere}
+  .schedule-row{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+  .map-panel{width:100%;min-height:300px}
+  .site-footer__inner,.site-footer__bottom{max-width:100%;padding-inline:16px}
+}
+@media (max-width:360px){
+  .topbar__cta{font-size:10px;padding-inline:7px}
+  .topbar .sidebar__toggle{min-width:36px}
+  .home-hero h1,.page-hero h1{font-size:38px}
+  .price-table{grid-template-columns:120px repeat(3,42px);font-size:11px}
+}
