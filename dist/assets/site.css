@@ -237,3 +237,10 @@ h1,h2,h3 { text-wrap: balance; }
   .topbar .brand__logo { height: 44px; width: 46px; }
   .topbar__dropdown { top: 100%; max-height: calc(100dvh - var(--header-height) - 8px); }
 }
+
+/* Embedded map stays interactive and fits both portrait and landscape screens. */
+.map-panel { min-height: 0; margin-top: 0; }
+.map-panel::before { content: none; }
+.map-panel iframe { display: block; width: 100%; height: clamp(340px, 55vw, 520px); border: 0; }
+.map-note[hidden] { display: none; }
+[data-route-button]:disabled { opacity: .65; cursor: wait; }

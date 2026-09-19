@@ -105,32 +105,43 @@ function setupReveal() {
 function setupRouteButton() {
   const button = document.querySelector('[data-route-button]');
   const status = document.querySelector('[data-route-status]');
-  if (!button) return;
-  button.insertAdjacentHTML('afterend', '<p class="map-note">Con il tuo consenso, la posizione viene condivisa con Google Maps per calcolare il percorso. Non viene salvata dal sito.</p>');
+  const map = document.querySelector('[data-google-map]');
+  const externalLink = document.querySelector('[data-map-link]');
+  if (!button || !map) return;
   const destination = 'Via Lario 17, 20159 Milano';
-  const fallback = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destination)}`;
+  function setStatus(message) {
+    if (status) { status.textContent = message; status.hidden = !message; }
+  }
+  function finish() {
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+  }
   button.addEventListener('click', () => {
-    if (!navigator.geolocation) {
-      window.location.assign(fallback);
+    if (!navigator.geolocation || !window.isSecureContext) {
+      setStatus('Posizione non disponibile in questo browser. Puoi aprire la mappa e inserire il punto di partenza.');
       return;
     }
+    button.disabled = true;
     button.setAttribute('aria-busy', 'true');
-    if (status) status.textContent = 'Richiesta posizione in corso…';
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-      const route = `https://www.google.com/maps/dir/?api=1&origin=${latitude},${longitude}&destination=${encodeURIComponent(destination)}`;
-      if (status) status.textContent = 'Posizione ricevuta. Apertura del percorso…';
-      window.location.assign(route);
-      button.removeAttribute('aria-busy');
-    }, () => {
-      if (status) status.textContent = 'Posizione non disponibile: puoi aprire comunque la mappa della sede.';
-      button.removeAttribute('aria-busy');
-      window.location.assign(fallback);
-    }, { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 });
+    setStatus('Ricerca della posizione…');
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      const origin = `${coords.latitude},${coords.longitude}`;
+      const params = new URLSearchParams({ saddr: origin, daddr: destination, output: 'embed', hl: 'it' });
+      map.src = `https://www.google.com/maps?${params}`;
+      map.title = 'Percorso dalla tua posizione a Studio Bhumi';
+      if (externalLink) externalLink.href = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
+      setStatus('');
+      finish();
+      map.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+    }, error => {
+      setStatus(error.code === 1
+        ? 'Accesso alla posizione non autorizzato. Puoi riprovare o aprire la mappa e inserire il punto di partenza.'
+        : 'Non è stato possibile trovare la posizione. Riprova oppure apri la mappa.');
+      finish();
+    }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
   });
 }
 
-document.querySelectorAll('.map-panel').forEach(panel => { panel.innerHTML = '<a class="map-access" href="https://www.google.com/maps/search/?api=1&query=Via+Lario+17,+20159+Milano" target="_blank" rel="noopener">' + icon('map') + '<strong>Studio Bhumi</strong><span>Via Lario 17 · Milano Isola</span><span>Apri la mappa ↗</span></a>'; });
 renderSidebar();
 renderFooter();
 setupMobileMenu();
