@@ -45,7 +45,7 @@ function renderSidebar() {
       </div>
       <div class="topbar__dropdown" id="side-menu" hidden>
         <div class="sidebar__location">Milano / Isola <span class="location-dot"></span></div>
-        <nav class="side-nav" aria-label="Tutte le pagine">${links}<a class="side-nav__link" href="privacy.html">Privacy</a><a class="side-nav__link" href="cookie.html">Cookie</a></nav>
+        <nav class="side-nav" aria-label="Tutte le pagine">${links}<a class="side-nav__link ${currentPage === 'privacy' ? 'is-active' : ''}" href="privacy.html" ${currentPage === 'privacy' ? 'aria-current="page"' : ''}>Privacy e cookie</a></nav>
       </div>
     </header>`;
 }
@@ -56,11 +56,11 @@ function renderFooter() {
   mount.innerHTML = `
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <div><a class="brand brand--footer" href="index.html"><img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/><span class="brand__descriptor">studio del movimento</span></a><p>Movimento consapevole a Milano Isola.</p></div>
+        <div><a class="brand brand--footer" href="index.html"><img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/><span class="brand__descriptor">studio del movimento</span></a><p>Movimento consapevole a Milano Isola.</p><nav class="social-links" aria-label="Studio Bhumi sui social"><a href="https://www.instagram.com/studiobhumi/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a><a href="https://www.facebook.com/StudioBhumi?locale=it_IT" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a></nav></div>
         <div class="footer-links"><a href="mailto:studiobhumi@gmail.com">studiobhumi@gmail.com</a><a href="tel:+393487517656">348 751 7656</a><a href="dove-siamo.html">Via Lario 17, Milano</a></div>
-        <div class="footer-links"><a href="privacy.html">Privacy policy</a><a href="cookie.html">Cookie policy</a><a href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener">Area riservata</a></div>
+        <div class="footer-links"><a href="privacy.html">Privacy e cookie</a><a href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener">Area riservata</a></div>
       </div>
-      <div class="site-footer__bottom"><span>© Studio Bhumi</span><span>Pilates · Gyrotonic® · Yoga · Dainami® · BMC®</span></div>
+      <div class="site-footer__bottom"><span>© Studio Bhumi</span><a class="back-to-top" href="#contenuto">Torna su <span aria-hidden="true">↑</span></a><span>Pilates · Gyrotonic® · Yoga · Dainami® · BMC®</span></div>
     </footer>`;
 }
 
@@ -68,7 +68,7 @@ function setupMobileMenu() {
   const toggle = document.querySelector('.sidebar__toggle');
   const sidebar = document.querySelector('.topbar');
   const dropdown = document.querySelector('#side-menu');
-  if (!toggle || !sidebar) return;
+  if (!toggle || !sidebar || !dropdown) return;
   function setOpen(open) {
     sidebar.classList.toggle('is-open', open);
     dropdown.hidden = !open;
@@ -80,6 +80,14 @@ function setupMobileMenu() {
     setOpen(false);
   }));
   document.addEventListener('click', event => { if (!sidebar.contains(event.target)) setOpen(false); });
+  document.addEventListener('focusin', event => {
+    if (!sidebar.contains(event.target)) setOpen(false);
+  });
+  toggle.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault(); setOpen(true); dropdown.querySelector('a')?.focus();
+    }
+  });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !dropdown.hidden) { setOpen(false); toggle.focus(); } });
 }
 
@@ -97,7 +105,7 @@ function setupReveal() {
         currentObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -28px' });
+  }, { threshold: 0, rootMargin: '0px 0px -16px' });
   document.documentElement.classList.add('motion-ready');
   items.forEach((item) => observer.observe(item));
 }
@@ -148,4 +156,32 @@ setupMobileMenu();
 setupReveal();
 setupRouteButton();
 
-document.addEventListener('keydown', event => { if(event.key === 'Escape') {document.querySelector('.sidebar')?.classList.remove('is-open');document.querySelector('.sidebar__toggle')?.setAttribute('aria-expanded','false');} });
+// Keep the fixed header aligned with content when fonts or orientation change.
+const header = document.querySelector('.topbar');
+if (header && 'ResizeObserver' in window) {
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+  }).observe(header);
+}
+
+// Native fragment navigation stays usable with keyboard and reduced motion.
+document.querySelector('.back-to-top')?.addEventListener('click', () => {
+  const main = document.querySelector('#contenuto');
+  main.setAttribute('tabindex', '-1');
+  main.focus({ preventScroll: true });
+});
+
+// Mark the visible legal section without changing the URL or scroll position.
+const legalLinks = document.querySelectorAll('.legal-index a');
+if (legalLinks.length && 'IntersectionObserver' in window) {
+  const legalObserver = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting);
+    if (!visible.length) return;
+    const id = visible[0].target.id;
+    legalLinks.forEach(link => {
+      if (link.hash === `#${id}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }, { rootMargin: '-15% 0px -40% 0px', threshold: 0 });
+  document.querySelectorAll('.legal-section').forEach(section => legalObserver.observe(section));
+}

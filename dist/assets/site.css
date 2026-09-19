@@ -244,3 +244,60 @@ h1,h2,h3 { text-wrap: balance; }
 .map-panel iframe { display: block; width: 100%; height: clamp(340px, 55vw, 520px); border: 0; }
 .map-note[hidden] { display: none; }
 [data-route-button]:disabled { opacity: .65; cursor: wait; }
+
+/* Quiet, tactile interactions across the site. */
+::selection { color: var(--paper); background: var(--terracotta); }
+.topbar { height: auto; min-height: 88px; box-shadow: 0 4px 24px #10152a18; }
+.topbar .sidebar__top { min-height: 63px; }
+.topbar__primary a { position: relative; }
+.topbar__primary a::after { content: ""; position: absolute; bottom: 4px; left: 0; right: 0; height: 1px; background: var(--terracotta-soft); transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease); }
+.topbar__primary a[aria-current]::after,.topbar__primary a:focus-visible::after { transform: scaleX(1); }
+.topbar__dropdown { transform-origin: top right; animation: menu-enter .2s var(--ease); }
+@keyframes menu-enter { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.btn,.topbar__cta,.sidebar__toggle { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.btn:active,.topbar__cta:active { transform: translateY(1px); }
+a.content-card { transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s ease; }
+.content-card__number { margin-bottom: clamp(28px,4vw,52px); }
+.inline-arrow { transition: color .2s ease, gap .25s var(--ease); }
+.back-to-top { display: inline-flex; gap: 12px; align-items: center; min-height: 44px; color: var(--ivory); font-size: .75rem; }
+.back-to-top span { transition: transform .25s var(--ease); }
+.legal-layout { display: grid; grid-template-columns: minmax(190px,.4fr) minmax(0,1fr); align-items: start; gap: clamp(32px,6vw,90px); }
+.legal-index { position: sticky; top: calc(var(--header-height) + 28px); display: grid; gap: 8px; }
+.legal-index .section-label { margin-bottom: 16px; }
+.legal-index a { display: flex; align-items: baseline; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .875rem; color: var(--terracotta); }
+.legal-index a span { color: var(--ink); }
+.legal-index a[aria-current] { border-color: var(--terracotta); }
+.legal-index a[aria-current] span { color: var(--terracotta); }
+.legal-section { padding-block: 40px; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+.legal-section h2 { margin: 18px 0; font-size: clamp(2rem,3.5vw,3rem); }
+.legal-section .inline-arrow { margin-top: 22px; color: var(--terracotta); }
+.legal-alert { line-height: 1.7; }
+@media (hover: hover) and (pointer: fine) {
+  .topbar__primary a:hover::after { transform: scaleX(1); }
+  a.content-card:hover { transform: translateY(-4px); border-color: var(--terracotta); box-shadow: 0 16px 32px #171c3510; }
+  .back-to-top:hover span { transform: translateY(-4px); }
+}
+@media (max-width: 760px) {
+  .topbar { min-height: 74px; }
+  .topbar .sidebar__top { min-height: 53px; }
+  .legal-layout { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .legal-index { position: static; }
+  .legal-section { padding-block: 32px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .topbar { min-height: 64px; }
+  .topbar .sidebar__top { min-height: 51px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .topbar__dropdown { animation: none; }
+  a.content-card:hover,.btn:hover,.btn:active,.back-to-top:hover span { transform: none; }
+}
+
+.social-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 20px; }
+.social-links a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; border-bottom: 1px solid currentColor; font-size: .875rem; }
+.social-links a span[aria-hidden] { transition: transform .2s var(--ease); }
+.social-links a:hover span[aria-hidden],.social-links a:focus-visible span[aria-hidden] { transform: translate(2px,-2px); }
+.contact-social { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; margin-top: 48px; padding-block: 32px; border-block: 1px solid var(--line); }
+.contact-social h2 { margin-top: 16px; font-size: clamp(2rem,4vw,3rem); }
+.contact-social .social-links { margin: 0; color: var(--terracotta); }
+@media (prefers-reduced-motion: reduce) { .social-links a span[aria-hidden] { transform: none !important; } }
