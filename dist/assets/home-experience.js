@@ -19,6 +19,7 @@
   const thresholds = [0.2, 0.42, 0.64, 0.84];
   const panels = [...film.querySelectorAll('[data-story-panel]')];
   const labels = ['YOGA · PRESENZA', 'HATHA YOGA', 'ASCOLTO · PRESENZA', 'LE PRATICHE BHUMI', 'STUDIO BHUMI · MILANO ISOLA'];
+  const videoStart = 3.6;
   let progress = 0;
   let targetProgress = 0;
   let chapter = -1;
@@ -58,7 +59,7 @@
 
   function videoTime(amount) {
     if (!Number.isFinite(video.duration) || video.duration <= 0.2) return 0;
-    const start = 0;
+    const start = videoStart;
     const end = Math.min(0.18, video.duration * 0.025);
     return start + clamp(amount) * Math.max(0.01, video.duration - start - end);
   }
