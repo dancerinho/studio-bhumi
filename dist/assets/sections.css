@@ -1,0 +1,502 @@
+:root{--serif:"Bodoni Moda", "Bodoni MT", Didot, Georgia, serif;--sans:"Manrope", "Avenir Next", Arial, sans-serif}
+html{scroll-padding-top:96px}
+body{font-family:var(--sans)}
+.topbar{height:82px;position:sticky;top:0;padding-inline:clamp(18px,5.5vw,84px)}
+.toplinks{gap:30px;align-items:center}
+.toplinks a{position:relative;padding:12px 0;font-size:12px;letter-spacing:.025em}
+.toplinks a[aria-current=page]:after,.toplinks a:hover:after{position:absolute;right:0;bottom:4px;left:0;height:1px;background:var(--red);content:""}
+.top-cta{padding:11px 14px;letter-spacing:.025em}
+.menu-toggle{position:relative;z-index:2;display:grid;width:42px;height:42px;place-content:center;gap:6px;border:1px solid rgba(34,40,33,.45);cursor:pointer;transition:background .2s,color .2s}
+.menu-toggle span{width:16px;height:1px;background:currentColor;transition:transform .25s}
+.menu-open .menu-toggle span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .menu-toggle span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.site-menu{position:absolute;z-index:1;top:calc(100% - 1px);right:clamp(18px,5.5vw,84px);display:grid;width:min(390px,calc(100vw - 36px));padding:26px 28px 22px;background:#f3f0e7;border:1px solid rgba(34,40,33,.15);box-shadow:0 24px 48px rgba(34,40,33,.14);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .22s,transform .22s,visibility .22s}
+.menu-open .site-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.site-menu .eyebrow{margin:0 0 12px;font-size:9px}
+.site-menu>a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid rgba(34,40,33,.13);font:500 23px/1.2 var(--serif)}
+.site-menu>a b{color:var(--red);font:500 12px var(--sans)}
+.section-page{min-height:calc(100svh - 82px)}
+.section-heading h1,.section-heading h2{font:500 clamp(54px,7vw,94px)/.98 var(--serif);letter-spacing:-.065em;margin:0}
+.section-heading h1 i,.section-heading h2 i{color:var(--red);font-weight:500}
+.section-heading{padding:98px var(--pad) 16px}
+.section-heading>p{max-width:375px}
+.people .section-heading{padding:0;margin-bottom:60px}
+.intro-title h1,.home-welcome h2,.home-contact h2,.page-banner h1{font-family:var(--serif);font-weight:500}
+.intro-title h1{font-size:clamp(62px,9vw,126px);letter-spacing:-.075em}
+.intro-title h1 i,.home-welcome h2 i,.home-contact h2 i,.page-banner h1 i{color:var(--clay);font-weight:400}
+.home-hero{height:calc(100svh - 82px);min-height:560px;max-height:930px}
+.home-hero .intro-frame{object-position:center 55%}
+.home-hero .intro-title{bottom:17%}
+.home-hero .intro-title p{color:#fff;font-family:var(--sans);text-shadow:0 1px 15px rgba(20,28,24,.4)}
+.home-hero .intro-title h1{color:#fff;text-shadow:0 2px 30px rgba(20,28,24,.2)}
+.home-location{position:absolute;z-index:3;right:var(--pad);bottom:6%;color:rgba(255,255,255,.9);font-size:9px;letter-spacing:.18em}
+.home-welcome{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;padding:106px var(--pad) 116px;background:#f3f0e7}
+.home-welcome__copy{position:sticky;top:125px;align-self:start}
+.home-welcome h2{margin:0;font-size:clamp(54px,6vw,79px);line-height:.98;letter-spacing:-.07em}
+.home-welcome h2 i{color:var(--red)}
+.home-welcome__copy>p:last-child{max-width:400px;margin-top:26px;color:#666e63;font-size:14px;line-height:1.85}
+.home-links{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.home-link{position:relative;display:flex;min-height:225px;flex-direction:column;justify-content:flex-end;overflow:hidden;padding:23px;color:#fff;background:#42584a}
+.home-link:before{position:absolute;inset:0;content:"";background-position:center;background-size:cover;opacity:.5;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .3s}
+.home-link:hover:before{transform:scale(1.07);opacity:.66}
+.home-link:after{position:absolute;inset:0;content:"";background:linear-gradient(0deg,rgba(20,28,24,.79),rgba(20,28,24,0) 75%)}
+.home-link--courses:before{background-image:url("home_box_pilates.jpg")}
+.home-link--people:before{background-image:url("homepage2.jpg")}
+.home-link--studio:before{background-image:url("homepage3.jpg")}
+.home-link--prices:before{background-image:url("Gyrotonic.jpg")}
+.home-link>*{position:relative;z-index:1}
+.home-link>span{font-size:8px;letter-spacing:.17em}
+.home-link>strong{display:flex;justify-content:space-between;align-items:center;margin-top:15px;font:500 clamp(24px,2.7vw,35px)/1 var(--serif);letter-spacing:-.035em}
+.home-link>strong em{color:#e9ad96;font:400 18px var(--sans);transition:transform .2s}
+.home-link:hover>strong em{transform:translate(4px,-4px)}
+.home-link>small{margin-top:8px;color:rgba(255,255,255,.8);font-size:10px;line-height:1.5}
+.home-contact{display:flex;min-height:340px;flex-direction:column;align-items:center;justify-content:center;padding:65px 24px;text-align:center;background:#1f2925;color:#f3f0e7}
+.home-contact>p{color:#d9a48e;font-size:9px;letter-spacing:.18em}
+.home-contact h2{margin:12px 0 24px;font-size:clamp(46px,6vw,74px);line-height:.98;letter-spacing:-.065em}
+.section-page>.home-contact{width:min(1100px,calc(100% - 48px));min-height:0;margin:0 auto 32px;padding:34px 24px 38px;gap:0;border-radius:2px}
+.section-page>.home-contact h2{margin:10px 0 20px;font-size:clamp(40px,5vw,60px);line-height:.98}
+.section-page>.home-contact>p{margin:0}
+.page-banner{position:relative;display:grid;min-height:390px;grid-template-columns:1fr .74fr;align-items:center;gap:6vw;overflow:hidden;padding:72px var(--pad);background:#1f2925;color:#f3f0e7}
+.page-banner>div:first-child{position:relative;z-index:2;max-width:660px}
+.page-banner .eyebrow{color:#d9a48e}
+.page-banner h1{margin:0;font-size:clamp(55px,7.5vw,96px);line-height:.96;letter-spacing:-.075em}
+.page-banner h1 i{color:#d9a48e}
+.page-banner>div:first-child>p:not(.eyebrow){max-width:455px;color:rgba(243,240,231,.72);font-size:14px;line-height:1.75}
+.page-banner__art{position:absolute;inset:0 0 0 54%;background-position:center;background-size:cover;opacity:.5;mask-image:linear-gradient(90deg,transparent,#000 27%)}
+.page-banner--studio .page-banner__art{background-image:radial-gradient(ellipse at 76% 38%,rgba(217,164,142,.68),transparent 8%),radial-gradient(ellipse at 75% 38%,transparent 0 21%,rgba(243,240,231,.4) 21.2% 21.5%,transparent 21.7%),radial-gradient(ellipse at 75% 38%,transparent 0 37%,rgba(243,240,231,.22) 37.2% 37.5%,transparent 37.7%),linear-gradient(120deg,#42584a,#26362e);opacity:1;mask-image:linear-gradient(90deg,transparent,#000 17%)}
+.page-banner--prices .page-banner__art{background-image:url("homepage3.jpg");background-position:center 43%}
+.page-banner--contact .page-banner__art{background-image:radial-gradient(ellipse at 60% 48%,transparent 0 18%,rgba(243,240,231,.38) 18.2% 18.5%,transparent 18.8%),radial-gradient(ellipse at 60% 48%,transparent 0 32%,rgba(217,164,142,.52) 32.2% 32.5%,transparent 32.8%),linear-gradient(135deg,#42584a,#1f2925);opacity:.95;mask-image:linear-gradient(90deg,transparent,#000 15%)}
+.page-banner--contact .button{margin-top:12px}
+.section-page>.studio-info{padding-top:100px;padding-bottom:100px;scroll-margin-top:82px}
+.section-page>.archive{scroll-margin-top:82px}
+.section-page>.prices{display:block;min-height:calc(100svh - 82px);padding-top:76px;padding-bottom:88px;scroll-margin-top:82px}
+.section-page>.prices .prices-intro h2{font-size:clamp(55px,6.4vw,85px)}
+.pricing-reminder{margin:0;padding:0 var(--pad) 35px;color:#666e63;background:#f7f5ed;font-size:11px}
+.section-page>.facts{padding-block:75px}
+.section-page>.sources{padding-block:48px}
+.section-page>.practices{padding-top:50px}
+.section-page>.people{padding-top:90px}
+.section-page>.people>.section-heading{padding:0}
+.footer{grid-template-columns:1fr 1fr auto}
+.footer>div a{font-size:10px}
+@media(max-width:950px){.home-welcome{grid-template-columns:1fr;gap:38px;padding-block:80px}.home-welcome__copy{position:static}.home-welcome__copy>p:last-child{max-width:620px}.page-banner{min-height:350px;grid-template-columns:1fr .4fr}.page-banner__art{left:44%}.section-page>.prices{grid-template-columns:1fr;gap:34px}.section-page>.prices .prices-detail{grid-template-columns:1fr 1fr}.section-page>.prices .price-footer{grid-column:1/-1}}
+@media(max-width:650px){.topbar{height:70px;padding-inline:16px}.wordmark{font-size:9px;gap:9px}.wordmark img{width:42px;height:39px}.toplinks{display:none}.top-cta{display:inline-flex;align-items:center;padding:9px 10px;font-size:10px}.top-cta b{margin-left:7px}.menu-toggle{width:38px;height:38px;margin-left:8px}.topbar.menu-open .site-menu{position:fixed;top:70px;right:0;left:0;width:100%;padding:25px 22px;background:#f3f0e7}.site-menu>a{font-size:22px}.section-page{min-height:calc(100svh - 70px)}.home-hero{height:calc(87svh - 70px);min-height:530px}.home-hero .intro-title{top:auto;right:20px;bottom:18%;left:20px}.home-hero .intro-title h1{font-size:clamp(48px,12vw,76px)}.home-hero .intro-title p{font-size:8px}.home-location{right:20px;bottom:6%;font-size:8px}.home-welcome{gap:28px;padding:68px 20px 76px}.home-welcome h2{font-size:clamp(51px,13vw,67px)}.home-links{gap:9px}.home-link{min-height:180px;padding:15px}.home-link>strong{font-size:clamp(20px,6vw,28px)}.home-link>small{font-size:9px}.home-contact{min-height:300px}.home-contact h2{font-size:clamp(43px,12vw,60px)}.page-banner{min-height:440px;grid-template-columns:1fr;padding:62px 22px}.page-banner__art{inset:0;opacity:.27;mask-image:linear-gradient(90deg,rgba(0,0,0,.45),#000)}.page-banner h1{font-size:clamp(52px,13vw,75px)}.section-page>.section-heading{display:block;padding:62px 20px 10px}.section-page>.section-heading h1{font-size:clamp(50px,13vw,68px)}.section-page>.section-heading>p{margin-top:20px}.section-page>.practices,.section-page>.people{padding:62px 20px}.section-page>.people>.section-heading{padding:0}.section-page>.studio-info{padding:72px 20px}.section-page>.archive .archive-image{height:300px}.section-page>.prices{padding:63px 20px 70px}.section-page>.prices .prices-detail{grid-template-columns:1fr}.section-page>.prices .price-footer{grid-column:auto}.pricing-reminder{padding:0 20px 30px}.section-page>.facts{padding:40px 20px}.section-page>.sources{padding:38px 20px}.footer{display:flex;align-items:flex-start;flex-direction:column;padding:31px 20px}.footer p{order:2}.footer>div{order:3}.footer>small{order:4;width:100%}}
+@media(max-width:650px){.topbar.menu-open .toplinks{display:none}}
+@media(max-width:650px){.topbar{height:70px;padding-inline:16px}.wordmark{font-size:9px;gap:9px}.wordmark img{width:42px;height:39px}.toplinks{display:none}.top-cta{display:inline-flex;align-items:center;padding:9px 10px;font-size:10px}.top-cta b{margin-left:7px}.menu-toggle{width:38px;height:38px;margin-left:8px}.topbar.menu-open .site-menu{position:fixed;top:70px;right:0;left:0;width:100%;padding:25px 22px;background:#f3f0e7}.site-menu>a{font-size:22px}.section-page{min-height:calc(100svh - 70px)}.home-hero{height:calc(100svh - 70px);min-height:530px}.home-hero .intro-title{top:auto;right:20px;bottom:18%;left:20px}.home-hero .intro-title h1{font-size:clamp(48px,12vw,76px)}.home-hero .intro-title p{font-size:8px}.home-location{right:20px;bottom:6%;font-size:8px}.home-welcome{gap:28px;padding:68px 20px 76px}.home-welcome h2{font-size:clamp(51px,13vw,67px)}.home-links{gap:9px}.home-link{min-height:180px;padding:15px}.home-link>strong{font-size:clamp(20px,6vw,28px)}.home-link>small{font-size:9px}.home-contact{min-height:300px}.home-contact h2{font-size:clamp(43px,12vw,60px)}.page-banner{min-height:440px;grid-template-columns:1fr;padding:62px 22px}.page-banner__art{inset:0;opacity:.27;mask-image:linear-gradient(90deg,rgba(0,0,0,.45),#000)}.page-banner h1{font-size:clamp(52px,13vw,75px)}.section-page>.section-heading{display:block;padding:62px 20px 10px}.section-page>.section-heading h1{font-size:clamp(50px,13vw,68px)}.section-page>.section-heading>p{margin-top:20px}.section-page>.practices,.section-page>.people{padding:62px 20px}.section-page>.people>.section-heading{padding:0}.section-page>.studio-info{padding:72px 20px}.section-page>.archive .archive-image{height:300px}.section-page>.prices{padding:63px 20px 70px}.section-page>.prices .prices-detail{grid-template-columns:1fr}.section-page>.prices .price-footer{grid-column:auto}.pricing-reminder{padding:0 20px 30px}.section-page>.facts{padding:40px 20px}.section-page>.sources{padding:38px 20px}.footer{display:flex;align-items:flex-start;flex-direction:column;padding:31px 20px}.footer p{order:2}.footer>div{order:3}.footer>small{order:4;width:100%}}
+
+/* Corsi: apertura compatta e una pratica alla volta, in formato editoriale. */
+.section-page>.practices{padding:clamp(34px,5vw,64px) var(--pad) 100px}
+.section-page>.practices>.section-heading{max-width:1100px;margin:0 auto 34px;padding:0 0 27px;display:grid;grid-template-columns:1fr .8fr;align-items:end;gap:clamp(28px,6vw,84px);border-bottom:1px solid rgba(34,40,33,.16)}
+.section-page>.practices>.section-heading .eyebrow{margin:0 0 16px}
+.section-page>.practices>.section-heading h2{font-size:clamp(48px,6vw,78px);line-height:.98}
+.section-page>.practices>.section-heading>p{max-width:470px;margin:0 0 6px;color:#656d63;font-size:clamp(14px,1.5vw,17px);line-height:1.7}
+.section-page>.practices .course-intro{max-width:1100px;margin:0 auto 26px;padding:0 0 24px;display:grid;grid-template-columns:1fr .8fr;align-items:end;gap:10px clamp(28px,6vw,84px);border-bottom:1px solid rgba(34,40,33,.12)}
+.section-page>.practices .course-intro .eyebrow{grid-column:1/-1;margin:0;color:var(--red)}
+.section-page>.practices .course-intro h3{grid-column:1;margin:0;font:500 clamp(32px,4vw,49px)/1.04 var(--serif);letter-spacing:-.05em}
+.section-page>.practices .course-intro h3 i{color:var(--red);font-weight:400}
+.section-page>.practices .course-intro>p:last-child{grid-column:2;grid-row:2;margin:0;max-width:510px;color:#656d63;font-size:13px;line-height:1.75}
+.practice-grid{display:block;max-width:1100px;margin:0 auto}
+.practice-grid [hidden]{display:none!important}
+.practice,.practice:nth-child(n+4),.practice:nth-child(3){display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"meta" "copy" "photo";gap:0;min-height:0;margin:0;overflow:visible;background:transparent;color:var(--ink)}
+.practice.is-active{animation:practice-in .42s cubic-bezier(.2,.7,.25,1) both}
+@keyframes practice-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.practice:after{display:none}
+.practice-top{position:static;grid-area:meta;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#777d72;font-size:9px;letter-spacing:.14em}
+.practice-top span:first-child{display:grid;width:36px;height:36px;place-items:center;border:1px solid rgba(34,40,33,.24);border-radius:50%;color:var(--red);font-size:10px}
+.practice-copy{position:static;grid-area:copy;display:grid;grid-template-columns:.85fr 1.15fr;grid-template-rows:auto auto;align-items:start;gap:0 5vw;padding:12px 0 24px;color:var(--ink)}
+.practice-copy h3{grid-column:1;grid-row:1 / span 2;margin:0;font:500 clamp(38px,5vw,65px)/1 var(--serif);letter-spacing:-.05em;color:var(--ink)}
+.practice-copy h3 sup{font:400 13px var(--sans);vertical-align:super}
+.practice-copy p{grid-column:2;grid-row:1;margin:2px 0 12px;max-width:580px;color:#656d63;font-size:14px;line-height:1.75}
+.practice-copy a{grid-column:2;grid-row:2;justify-self:start;display:inline-flex;align-items:center;gap:10px;margin:0;padding:0 0 4px;border-bottom:1px solid rgba(34,40,33,.34);color:var(--red);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.practice-photo{position:relative;grid-area:photo;inset:auto;width:100%;height:clamp(245px,36vw,430px);overflow:hidden;background-position:center;background-size:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.practice:hover .practice-photo{transform:scale(1.008)}
+.practice-controls{max-width:1100px;margin:17px auto 42px;display:flex;align-items:center;gap:17px}
+.practice-controls button{flex:0 0 42px;width:42px;height:42px;border:1px solid rgba(34,40,33,.28);border-radius:50%;background:transparent;color:var(--ink);font:20px/1 var(--sans);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.practice-controls button:hover{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:translateY(-1px)}
+.practice-count{min-width:49px;color:var(--ink);font:500 12px var(--sans);letter-spacing:.08em}
+.practice-count i{padding:0 2px;color:#a2a397;font-style:normal}
+.practice-progress{height:1px;flex:1;background:rgba(34,40,33,.18)}
+.practice-progress span{display:block;width:20%;height:2px;background:var(--red);transition:width .35s ease}
+.practice-note{max-width:1100px;margin:0 auto 52px;padding-top:18px;border-top:1px solid rgba(34,40,33,.14)}
+@media(max-width:650px){.section-page>.practices{padding:32px 20px 76px}.section-page>.practices>.section-heading{display:block;margin-bottom:27px;padding-bottom:22px}.section-page>.practices>.section-heading h2{font-size:clamp(49px,12vw,68px)}.section-page>.practices>.section-heading>p{margin-top:17px;font-size:14px}.section-page>.practices .course-intro{grid-template-columns:1fr;margin-bottom:20px;padding-bottom:18px;gap:9px}.section-page>.practices .course-intro h3{grid-column:1;font-size:clamp(33px,9vw,43px)}.section-page>.practices .course-intro>p:last-child{grid-column:1;grid-row:auto;margin-top:3px;font-size:12px}.practice,.practice:nth-child(n+4),.practice:nth-child(3){display:grid;min-height:0;margin:0}.practice-copy{display:block;padding:11px 0 19px}.practice-copy h3{margin:0 0 10px;font-size:clamp(38px,10vw,52px)}.practice-copy p{margin:0 0 12px;font-size:13px}.practice-photo{height:clamp(230px,62vw,340px)}.practice-top{font-size:8px}.practice-controls{margin:14px auto 34px;gap:12px}.practice-controls button{flex-basis:38px;width:38px;height:38px}.practice-count{min-width:44px;font-size:11px}.practice-note{margin-bottom:38px;font-size:10px}.section-page>.practices .bmc-feature{border-radius:24px 5px 24px 5px}}
+@media(prefers-reduced-motion:reduce){.practice.is-active{animation:none}.practice-progress span,.practice-controls button{transition:none}}
+
+/* Prezzi senza riquadri: gerarchia tipografica e linee leggere al posto delle card. */
+.section-page>.prices{background:#f3f0e7}
+.section-page>.prices .prices-detail{grid-template-columns:1.12fr .88fr;gap:clamp(34px,6vw,84px);align-items:start}
+.section-page>.prices .price-card,.section-page>.prices .price-card--private{min-height:0;padding:22px 0 28px;border:0;border-top:1px solid rgba(34,40,33,.25);border-radius:0;background:transparent;color:var(--ink);box-shadow:none;transition:none}
+.section-page>.prices .price-card:hover{transform:none;box-shadow:none}
+.section-page>.prices .price-card:after{display:none}
+.section-page>.prices .price-card-top{color:#74796e}
+.section-page>.prices .price-card h3{margin:34px 0 10px;color:var(--ink);font-size:clamp(31px,3.3vw,46px);line-height:1.02}
+.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{min-height:0;margin-bottom:26px;color:#656d63;font-size:12px}
+.section-page>.prices .price-options,.section-page>.prices .price-options--two{gap:14px;margin:0 0 25px}
+.section-page>.prices .price-options>div,.section-page>.prices .price-card--private .price-options>div{padding:13px 6px 9px 0;border:0;border-top:1px solid rgba(34,40,33,.22);border-radius:0;background:transparent;transform:none}
+.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{color:#6a7268;font-size:9px}
+.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{color:var(--ink);font-size:clamp(25px,3vw,38px)}
+.section-page>.prices .price-options .price-option-featured{border-top-color:var(--red)}
+.section-page>.prices .price-options .price-option-featured span{color:#777d72}
+.section-page>.prices .price-options .price-option-featured strong{color:var(--red)}
+.section-page>.prices .price-card>a,.section-page>.prices .price-card--private>a{color:var(--ink);border-color:rgba(34,40,33,.35)}
+.section-page>.prices .price-footer{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 0 0;border-top:1px solid rgba(34,40,33,.18);background:transparent}
+.section-page>.prices .price-footer span{color:#737a70}
+.section-page>.prices .price-footer strong{color:var(--red)}
+.section-page>.prices .price-footer p{max-width:370px;color:#656d63}
+@media(max-width:950px){.section-page>.prices .prices-detail{grid-template-columns:1fr 1fr;gap:28px}.section-page>.prices .price-card{padding-top:18px}}
+@media(max-width:650px){.section-page>.prices .prices-detail{grid-template-columns:1fr;gap:28px}.section-page>.prices .price-card{padding-bottom:20px}.section-page>.prices .price-card h3{margin-top:25px}.section-page>.prices .price-options,.section-page>.prices .price-options--two{gap:12px}.section-page>.prices .price-footer{grid-column:auto;flex-direction:row;align-items:center;gap:16px}.section-page>.prices .price-footer p{max-width:54%;font-size:9px}}
+@media(max-width:390px){.topbar{padding-inline:11px}.wordmark{font-size:8px}.wordmark img{width:37px;height:35px}.top-cta{padding:8px;font-size:9px}.menu-toggle{margin-left:5px}.home-links{grid-template-columns:1fr}.home-link{min-height:160px}}
+@media(prefers-reduced-motion:reduce){.site-menu,.home-link:before{transition:none}}
+
+/* Corsi: pratiche presentate in sequenza editoriale, con le immagini dopo i testi. */
+.section-page>.practices .course-intro{background:transparent;padding:12px 0 34px;margin:0 0 58px;border:0;box-shadow:none}
+.practice-grid{display:grid;grid-template-columns:1fr;gap:clamp(58px,8vw,100px)}
+.practice,.practice:nth-child(n+4),.practice:nth-child(3){display:grid;grid-column:auto;grid-template-columns:minmax(0,1fr);grid-template-areas:"meta" "copy" "photo";gap:0;min-height:0;margin:0;overflow:visible;background:transparent;color:var(--ink)}
+.practice:after{display:none}
+.practice-top{position:static;grid-area:meta;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#777d72;font-size:9px;letter-spacing:.14em}
+.practice-top span:first-child{display:grid;width:38px;height:38px;place-items:center;border:1px solid rgba(34,40,33,.24);border-radius:50%;color:var(--red);font-size:10px}
+.practice-copy{position:static;grid-area:copy;display:grid;grid-template-columns:.8fr 1.2fr;grid-template-rows:auto auto;align-items:start;gap:0 5vw;padding:12px 0 28px;color:var(--ink)}
+.practice-copy h3{grid-column:1;grid-row:1 / span 2;margin:0;font:500 clamp(38px,5vw,65px)/1 var(--serif);letter-spacing:-.05em;color:var(--ink)}
+.practice-copy h3 sup{font:400 13px var(--sans);vertical-align:super}
+.practice-copy p{grid-column:2;grid-row:1;margin:2px 0 12px;max-width:580px;color:#656d63;font-size:14px;line-height:1.75}
+.practice-copy a{grid-column:2;grid-row:2;justify-self:start;display:inline-flex;align-items:center;gap:10px;margin:0;padding:0 0 4px;border-bottom:1px solid rgba(34,40,33,.34);color:var(--red);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.practice-photo{position:relative;grid-area:photo;inset:auto;width:100%;height:clamp(270px,45vw,570px);overflow:hidden;background-position:center;background-size:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.practice:hover .practice-photo{transform:scale(1.012)}
+.practice-note{margin-top:50px;padding-top:20px;border-top:1px solid rgba(34,40,33,.16)}
+.section-page>.practices .bmc-feature{border-radius:32px 6px 32px 6px}
+
+/* Navigazione: voci e CTA in capsule morbide, icona menu circolare. */
+.toplinks{align-items:center;gap:8px}
+.toplinks a{position:relative;display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;border:1px solid transparent;border-radius:999px;background:rgba(229,228,217,.48);border-color:rgba(34,40,33,.11);font:500 16px/1.15 var(--serif);letter-spacing:-.015em;transition:background .22s,border-color .22s,transform .22s,color .22s}
+.toplinks a[aria-current=page]{background:#e5e4d9;border-color:rgba(34,40,33,.12)}
+.toplinks a:hover{background:#e9e5d9;border-color:rgba(159,86,62,.32);transform:translateY(-1px);color:var(--ink)}
+.toplinks a[aria-current=page]:after,.toplinks a:hover:after{display:none}
+.top-cta{display:inline-flex;align-items:center;gap:12px;padding:12px 19px;border:1px solid rgba(34,40,33,.48);border-radius:999px;font:500 16px/1.1 var(--serif);letter-spacing:-.015em;transition:background .22s,border-color .22s,transform .22s}
+.top-cta:hover{transform:translateY(-1px);background:#e5e4d9;border-color:rgba(159,86,62,.42);color:var(--ink)}
+.top-cta b{margin:0;color:var(--red);font:600 12px/1 var(--sans)}
+.menu-toggle{width:44px;height:44px;margin-left:2px;border:1px solid rgba(34,40,33,.4);border-radius:50%;background:transparent;transition:background .22s,border-color .22s,transform .22s}
+.menu-toggle:hover{background:#e5e4d9;border-color:rgba(159,86,62,.42);transform:rotate(5deg)}
+.menu-toggle span{width:17px}
+@media(max-width:950px){.practice-grid{gap:68px}.practice-copy{grid-template-columns:.8fr 1.2fr;column-gap:4vw}.practice-copy h3{font-size:clamp(36px,5.5vw,58px)}}
+@media(max-width:650px){.section-page>.practices .course-intro{padding:0 0 26px;margin-bottom:40px}.practice-grid{gap:54px}.practice,.practice:nth-child(n+4),.practice:nth-child(3){display:grid;min-height:0;margin:0}.practice-copy{display:block;padding:13px 0 21px}.practice-copy h3{margin:0 0 13px;font-size:clamp(38px,10vw,52px)}.practice-copy p{margin:0 0 13px;font-size:13px}.practice-photo{height:clamp(235px,68vw,360px)}.practice-top{font-size:8px}.section-page>.practices .bmc-feature{border-radius:24px 5px 24px 5px}.top-cta{padding:10px 15px;font-size:14px}.menu-toggle{width:40px;height:40px;margin-left:2px}}
+
+/* Corsi in sequenza: foto a tutta scena, titolo e descrizione sopra l’immagine. */
+.section-page>.practices .practice-grid{display:block;max-width:1100px;margin:0 auto}
+.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){position:relative;display:block;grid-column:1/-1;grid-area:auto;min-height:clamp(430px,53vw,600px);margin:0;overflow:hidden;background:#27352f;color:#fff}
+.section-page>.practices .practice[hidden]{display:none!important}
+.section-page>.practices .practice.is-active{animation:practice-reveal .48s cubic-bezier(.2,.7,.25,1) both}
+.section-page>.practices .practice-photo{position:absolute;z-index:0;inset:0;width:100%;height:100%;grid-area:auto;background-position:center;background-size:cover;transform:scale(1);transition:none}
+.section-page>.practices .practice.is-active .practice-photo{animation:practice-photo-reveal .85s cubic-bezier(.2,.7,.25,1) both}
+.section-page>.practices .practice:after{position:absolute;z-index:1;inset:0;display:block;content:"";background:linear-gradient(90deg,rgba(18,27,23,.74),rgba(18,27,23,.23) 72%),linear-gradient(0deg,rgba(18,27,23,.62),transparent 66%)}
+.section-page>.practices .practice-top{position:absolute;z-index:2;top:28px;left:32px;right:32px;display:flex;align-items:center;color:#fff;font-size:9px;letter-spacing:.16em;text-shadow:0 1px 14px rgba(0,0,0,.3)}
+.section-page>.practices .practice-top span:first-child{width:40px;height:40px;border-color:rgba(255,255,255,.72);color:#fff}
+.section-page>.practices .practice-copy{position:absolute;z-index:2;right:clamp(28px,5vw,72px);bottom:clamp(30px,5vw,64px);left:clamp(28px,5vw,72px);display:grid;grid-template-columns:minmax(240px,.8fr) minmax(250px,1.2fr);grid-template-rows:auto auto;align-items:end;gap:10px clamp(28px,6vw,84px);padding:0;color:#fff}
+.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:#fff;font:500 clamp(48px,7vw,88px)/.94 var(--serif);letter-spacing:-.065em;text-shadow:0 2px 24px rgba(0,0,0,.24)}
+.section-page>.practices .practice-copy h3 sup{font-size:15px}
+.section-page>.practices .practice-copy p{grid-column:2;grid-row:1;align-self:end;max-width:500px;margin:0;color:rgba(255,255,255,.91);font-size:clamp(13px,1.45vw,16px);line-height:1.75;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.section-page>.practices .practice-copy a{grid-column:2;grid-row:2;justify-self:start;margin:8px 0 0;padding-bottom:5px;border-color:rgba(255,255,255,.62);color:#fff;font-size:10px}
+.section-page>.practices .practice:hover .practice-photo{transform:scale(1)}
+@keyframes practice-reveal{from{opacity:0;transform:translateX(2.5%)}to{opacity:1;transform:translateX(0)}}
+@keyframes practice-photo-reveal{from{transform:scale(1.045)}to{transform:scale(1)}}
+@media(max-width:650px){.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:clamp(420px,125vw,520px)}.section-page>.practices .practice-top{top:22px;left:20px;right:20px}.section-page>.practices .practice-copy{right:22px;bottom:26px;left:22px;display:flex;flex-direction:column;align-items:flex-start;gap:0}.section-page>.practices .practice-copy h3{margin:0 0 12px;font-size:clamp(43px,12vw,63px)}.section-page>.practices .practice-copy p{max-width:460px;margin:0 0 9px;font-size:13px;line-height:1.6}.section-page>.practices .practice-copy a{margin-top:4px}.section-page>.practices .practice:after{background:linear-gradient(90deg,rgba(18,27,23,.57),rgba(18,27,23,.1) 100%),linear-gradient(0deg,rgba(18,27,23,.79),transparent 76%)}}
+@media(prefers-reduced-motion:reduce){.section-page>.practices .practice.is-active,.section-page>.practices .practice.is-active .practice-photo{animation:none}}
+.section-page>.practices .practice-grid{max-width:none;margin-left:calc(0px - var(--pad));margin-right:calc(0px - var(--pad))}
+.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:clamp(430px,54vw,660px)}
+@media(max-width:650px){.section-page>.practices .practice-grid{margin-left:-20px;margin-right:-20px}.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:clamp(430px,116vw,560px)}}
+.section-page>.practices .practice-grid{width:auto;max-width:1100px;margin:0 auto}
+.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:clamp(360px,40vw,530px)}
+@media(max-width:650px){.section-page>.practices .practice-grid{margin:0 -20px}.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:clamp(420px,110vw,540px)}}
+
+/* Prezzi: formule presentate come listini leggibili, con righe e importi allineati. */
+.section-page>.prices .prices-detail{grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,78px);align-items:stretch}
+.section-page>.prices .price-card,.section-page>.prices .price-card--private{display:flex;flex-direction:column;min-height:0;padding:22px 0 26px;border-top:1px solid rgba(34,40,33,.28)}
+.section-page>.prices .price-card-top{display:flex;justify-content:space-between;gap:18px;align-items:center;font-size:9px;letter-spacing:.12em}
+.section-page>.prices .price-card h3{margin:28px 0 9px;font-size:clamp(31px,3.2vw,43px);line-height:1.05}
+.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{min-height:0;margin:0 0 24px;color:#656d63;font-size:12px;line-height:1.65}
+.section-page>.prices .price-options,.section-page>.prices .price-options--two{display:flex;flex-direction:column;gap:0;margin:0 0 25px}
+.section-page>.prices .price-options>div,.section-page>.prices .price-card--private .price-options>div{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:62px;padding:10px 4px;border:0;border-top:1px solid rgba(34,40,33,.17);border-radius:0;background:transparent;transform:none}
+.section-page>.prices .price-options>div:last-child{border-bottom:1px solid rgba(34,40,33,.17)}
+.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{color:#687267;font-size:11px;letter-spacing:.035em}
+.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{color:var(--ink);font-size:clamp(26px,2.6vw,35px);line-height:1;white-space:nowrap}
+.section-page>.prices .price-options>div strong small,.section-page>.prices .price-card--private .price-options>div strong small{font-size:.52em}
+.section-page>.prices .price-options .price-option-featured{border-top-color:rgba(159,86,62,.55)}
+.section-page>.prices .price-options .price-option-featured span{color:#687267}
+.section-page>.prices .price-options .price-option-featured strong{color:var(--ink)}
+.section-page>.prices .price-card>a,.section-page>.prices .price-card--private>a{align-self:flex-start;margin-top:auto;color:var(--ink);border-color:rgba(34,40,33,.35)}
+.section-page>.prices .price-footer{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:24px;padding:20px 0 0;border-top:1px solid rgba(34,40,33,.2);background:transparent}
+.section-page>.prices .price-footer>div{display:flex;flex-direction:column;gap:4px}
+.section-page>.prices .price-footer span{color:#737a70;font-size:9px;letter-spacing:.12em}
+.section-page>.prices .price-footer strong{color:var(--red);font:500 clamp(28px,3vw,38px)/1 var(--serif)}
+.section-page>.prices .price-footer p{max-width:420px;margin:0;color:#656d63;font-size:12px;line-height:1.6}
+@media(max-width:950px){.section-page>.prices .prices-detail{grid-template-columns:1fr 1fr;gap:30px}.section-page>.prices .price-card h3{font-size:clamp(30px,4vw,40px)}}
+@media(max-width:650px){.section-page>.prices .prices-detail{grid-template-columns:1fr;gap:34px}.section-page>.prices .price-card{padding-top:18px}.section-page>.prices .price-card h3{margin-top:23px;font-size:38px}.section-page>.prices .price-options,.section-page>.prices .price-options--two{gap:0}.section-page>.prices .price-options>div,.section-page>.prices .price-card--private .price-options>div{min-height:58px}.section-page>.prices .price-footer{grid-template-columns:1fr auto;gap:12px}.section-page>.prices .price-footer p{max-width:190px;font-size:10px}}
+/* Corsi: layout organico, immagini morbide e titoli in primo piano. */
+.section-page>.practices>.section-heading{margin-bottom:clamp(42px,6vw,76px)}
+.section-page>.practices .course-intro{max-width:1100px;margin:0 auto 36px;padding:0 0 22px;grid-template-columns:1fr .85fr;gap:10px clamp(28px,6vw,84px);background:transparent;border:0}
+.section-page>.practices .course-intro h3{font-size:clamp(38px,5vw,62px);line-height:1.02}
+.section-page>.practices .practice-grid{width:auto;max-width:1100px;margin:0 auto}
+.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){display:flex;position:relative;min-height:0;flex-direction:column;grid-area:auto;overflow:visible;margin:0;background:transparent;color:var(--ink)}
+.section-page>.practices .practice:after{display:none}
+.section-page>.practices .practice-top{position:static;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 2.5%;color:#737a70;font-size:9px;letter-spacing:.16em;text-shadow:none}
+.section-page>.practices .practice-top span:first-child{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(34,40,33,.25);border-radius:50%;color:var(--red);font-size:10px}
+.section-page>.practices .practice-copy{position:static;display:grid;grid-template-columns:minmax(0,.85fr) minmax(260px,1.15fr);grid-template-rows:auto auto;align-items:end;gap:8px clamp(26px,6vw,76px);padding:18px 2.5% 25px;color:var(--ink)}
+.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:var(--ink);font:500 clamp(58px,8vw,100px)/.91 var(--serif);letter-spacing:-.07em;text-shadow:none}
+.section-page>.practices .practice-copy h3 sup{font-size:15px}
+.section-page>.practices .practice-copy p{grid-column:2;grid-row:1;align-self:end;max-width:480px;margin:0;color:#656d63;font-size:clamp(13px,1.45vw,16px);line-height:1.8;text-shadow:none}
+.section-page>.practices .practice-copy a{grid-column:2;grid-row:2;justify-self:start;display:inline-flex;gap:10px;margin:10px 0 0;padding:0 0 5px;border-bottom:1px solid rgba(34,40,33,.3);color:var(--red);font-size:10px}
+.section-page>.practices .practice-photo{position:relative;inset:auto;width:96%;height:clamp(300px,41vw,470px);margin:0 auto;overflow:hidden;grid-area:auto;background-position:center;background-size:cover;border-radius:28% 5% 28% 5% / 18% 8% 18% 8%;transform:scale(.985);transition:transform .9s cubic-bezier(.2,.7,.25,1);}
+.section-page>.practices .practice.is-active .practice-photo{animation:course-image-flow .95s cubic-bezier(.2,.7,.25,1) both}
+.section-page>.practices .practice.is-active .practice-copy h3{animation:course-title-flow .55s .08s cubic-bezier(.2,.7,.25,1) both}
+.section-page>.practices .practice:hover .practice-photo{transform:scale(1)}
+@keyframes course-image-flow{from{opacity:.65;transform:scale(1.035) rotate(-.6deg);border-radius:43% 4% 36% 5% / 22% 7% 17% 8%}to{opacity:1;transform:scale(1) rotate(0);border-radius:28% 5% 28% 5% / 18% 8% 18% 8%}}
+@keyframes course-title-flow{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:950px){.section-page>.practices .practice-copy{grid-template-columns:.8fr 1.2fr;column-gap:4vw}.section-page>.practices .practice-copy h3{font-size:clamp(52px,8vw,82px)}}
+@media(max-width:650px){.section-page>.practices>.section-heading{margin-bottom:42px}.section-page>.practices .course-intro{grid-template-columns:1fr;gap:9px;margin-bottom:30px;padding-bottom:22px}.section-page>.practices .course-intro h3{font-size:clamp(34px,9vw,45px)}.section-page>.practices .practice-grid{margin:0 -8px}.section-page>.practices .practice,.section-page>.practices .practice:nth-child(n+4),.section-page>.practices .practice:nth-child(3){min-height:0}.section-page>.practices .practice-top{padding:0 5%}.section-page>.practices .practice-top span:first-child{width:36px;height:36px}.section-page>.practices .practice-copy{display:flex;flex-direction:column;align-items:flex-start;gap:0;padding:17px 5% 22px}.section-page>.practices .practice-copy h3{margin:0 0 10px;font-size:clamp(48px,13vw,66px)}.section-page>.practices .practice-copy p{max-width:460px;margin:0 0 10px;font-size:13px;line-height:1.65}.section-page>.practices .practice-copy a{margin-top:3px}.section-page>.practices .practice-photo{width:94%;height:clamp(245px,70vw,360px);border-radius:31% 6% 29% 6% / 17% 8% 17% 8%}.section-page>.practices .practice.is-active .practice-photo{animation-name:course-image-flow-mobile}.section-page>.practices .practice-controls{margin:18px auto 40px}}
+@keyframes course-image-flow-mobile{from{opacity:.65;transform:scale(1.035) rotate(-.7deg);border-radius:45% 5% 38% 5% / 20% 8% 16% 8%}to{opacity:1;transform:scale(1) rotate(0);border-radius:31% 6% 29% 6% / 17% 8% 17% 8%}}
+@media(prefers-reduced-motion:reduce){.section-page>.practices .practice.is-active .practice-photo,.section-page>.practices .practice.is-active .practice-copy h3{animation:none}.section-page>.practices .practice-photo{transition:none}}
+
+/* Prezzi: formule raccolte in medaglioni morbidi invece che in righe. */
+.section-page>.prices .prices-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.section-page>.prices .price-card,.section-page>.prices .price-card--private{position:relative;min-width:0;padding:8px 0 18px;border:0;border-radius:0;background:transparent;box-shadow:none}
+.section-page>.prices .price-card--private{padding-left:clamp(16px,3vw,38px);border-left:1px solid rgba(34,40,33,.16)}
+.section-page>.prices .price-card-top{display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid rgba(34,40,33,.18);color:#74796e;font-size:8px;letter-spacing:.14em}
+.section-page>.prices .price-card h3{margin:24px 0 7px;color:var(--ink);font-size:clamp(28px,3.3vw,42px);line-height:1.04}
+.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{min-height:42px;margin:0 0 23px;color:#656d63;font-size:11px;line-height:1.65}
+.section-page>.prices .price-options,.section-page>.prices .price-options--two{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:clamp(5px,1.15vw,14px);margin:4px 0 28px}
+.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,126px));justify-content:start;gap:clamp(10px,2vw,22px)}
+.section-page>.prices .price-options>div,.section-page>.prices .price-card--private .price-options>div{position:relative;display:flex;min-width:0;aspect-ratio:1;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:9px 5px;border:1px solid rgba(34,40,33,.13);border-radius:48% 52% 56% 44% / 49% 44% 56% 51%;background:#e7e9e0;text-align:center;transform:none;transition:transform .35s cubic-bezier(.2,.7,.25,1),background .25s}
+.section-page>.prices .price-options>div:nth-child(2){border-radius:54% 46% 44% 56% / 45% 55% 43% 57%;background:#f0eee6;transform:translateY(-9px)}
+.section-page>.prices .price-options>div:nth-child(3){border-radius:43% 57% 52% 48% / 54% 44% 56% 46%;background:#eee3d8}
+.section-page>.prices .price-options>div:hover{transform:translateY(-5px) scale(1.035);background:#e3e7dc}
+.section-page>.prices .price-options>div:nth-child(2):hover{transform:translateY(-14px) scale(1.035)}
+.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{display:block;color:#73796e;font-size:clamp(7px,.8vw,9px);line-height:1.25;letter-spacing:.04em}
+.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{display:block;margin:0;color:var(--ink);font-size:clamp(20px,2.5vw,31px);line-height:1;white-space:nowrap}
+.section-page>.prices .price-options>div strong small,.section-page>.prices .price-card--private .price-options>div strong small{font-size:.48em}
+.section-page>.prices .price-card>a,.section-page>.prices .price-card--private>a{align-self:flex-start;margin-top:auto;color:var(--ink);border-color:rgba(34,40,33,.35)}
+.section-page>.prices .price-card>a b,.section-page>.prices .price-card--private>a b{color:var(--red)}
+.section-page>.prices .price-footer{grid-column:1/-1;display:flex;justify-content:flex-start;align-items:center;gap:24px;padding:12px 0 0;border:0;background:transparent}
+.section-page>.prices .price-footer>div{display:flex;width:102px;height:102px;flex:0 0 102px;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid rgba(34,40,33,.14);border-radius:50%;background:#e9e7dc;text-align:center}
+.section-page>.prices .price-footer span{max-width:74px;color:#737a70;font-size:7px;line-height:1.3;letter-spacing:.1em}
+.section-page>.prices .price-footer strong{color:var(--red);font:500 28px/1 var(--serif)}
+.section-page>.prices .price-footer p{max-width:390px;margin:0;color:#656d63;font-size:11px;line-height:1.6}
+@media(max-width:950px){.section-page>.prices .prices-detail{gap:26px}.section-page>.prices .price-card--private{padding-left:20px}.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,104px))}}
+@media(max-width:650px){.section-page>.prices .prices-detail{grid-template-columns:1fr;gap:25px}.section-page>.prices .price-card{padding:8px 0 22px}.section-page>.prices .price-card--private{padding:24px 0 20px;border-top:1px solid rgba(34,40,33,.16);border-left:0}.section-page>.prices .price-card h3{margin-top:20px;font-size:36px}.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{min-height:0;margin-bottom:19px}.section-page>.prices .price-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:23px}.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,112px));gap:14px}.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{font-size:clamp(22px,7vw,30px)}.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{font-size:8px}.section-page>.prices .price-footer{align-items:center;gap:16px;padding-top:8px}.section-page>.prices .price-footer>div{width:88px;height:88px;flex-basis:88px}.section-page>.prices .price-footer p{max-width:250px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.section-page>.prices .price-options>div{transition:none}}
+
+/* Ultimo override: le pratiche sono capitoli verticali, non una lista a due colonne. */
+.section-page>.course-page>.section-heading{display:block;max-width:1120px;margin:0 auto clamp(74px,10vw,124px);padding:0;text-align:center}
+.section-page>.course-page>.section-heading>div{width:100%}
+.section-page>.course-page>.section-heading .eyebrow{justify-content:center}
+.section-page>.course-page>.section-heading h2{font-size:clamp(64px,9vw,116px);line-height:.9}
+.section-page>.course-page>.section-heading>p{display:none}
+.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin-bottom:26px;padding:0 clamp(8px,3vw,42px)}
+.section-page>.course-page .course-entry__top{display:flex;align-items:center;justify-content:flex-start;width:100%;color:#777d73;font-size:9px;letter-spacing:.14em}
+.section-page>.course-page .course-entry__top span:first-child{display:none}
+.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{order:1;margin:0;font-size:clamp(64px,8.6vw,112px);line-height:.91}
+.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{order:2;max-width:760px;padding:0}
+.section-page>.course-page .course-entry__description p{font-size:clamp(15px,1.5vw,18px);line-height:1.75}
+.section-page>.course-page .course-entry__description a{margin-top:15px}
+.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{width:100%;height:clamp(360px,50vw,640px);margin:0 auto;background-size:cover;background-position:center;border-radius:clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px) 18px}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{border-radius:18px clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px)}
+@media(max-width:950px){.section-page>.course-page>.section-heading{margin-bottom:78px}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(330px,58vw,510px)}}
+@media(max-width:650px){.section-page>.course-page>.section-heading{margin-bottom:58px;text-align:left}.section-page>.course-page>.section-heading .eyebrow{justify-content:flex-start}.section-page>.course-page>.section-heading h2{font-size:clamp(54px,13vw,76px)}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{align-items:flex-start;gap:12px;margin-bottom:21px;padding:0 4px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{font-size:clamp(52px,14vw,70px)}.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{max-width:none}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(250px,72vw,380px);border-radius:90px 14px 90px 14px}}
+
+/* Corsi: un titolo d'apertura, poi ogni pratica si legge dall'alto verso l'immagine. */
+.section-page>.course-page>.section-heading{display:block;max-width:1120px;margin:0 auto clamp(74px,10vw,124px);padding:0;text-align:center}
+.section-page>.course-page>.section-heading>div{width:100%}
+.section-page>.course-page>.section-heading .eyebrow{justify-content:center}
+.section-page>.course-page>.section-heading h2{font-size:clamp(64px,9vw,116px);line-height:.9}
+.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin-bottom:26px;padding:0 clamp(8px,3vw,42px)}
+.section-page>.course-page .course-entry__top{display:flex;align-items:center;justify-content:flex-start;gap:18px;width:100%;color:#777d73;font-size:9px;letter-spacing:.14em}
+.section-page>.course-page .course-entry__top span:first-child{display:none}
+.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{order:1;margin:0;font-size:clamp(64px,8.6vw,112px);line-height:.91}
+.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{order:2;max-width:760px;padding:0}
+.section-page>.course-page .course-entry__description p{font-size:clamp(15px,1.5vw,18px);line-height:1.75}
+.section-page>.course-page .course-entry__description a{margin-top:15px}
+.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{width:100%;height:clamp(360px,50vw,640px);margin:0 auto;background-size:cover;background-position:center;border-radius:clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px) 18px}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{border-radius:18px clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px)}
+@media(max-width:950px){.section-page>.course-page>.section-heading{margin-bottom:78px}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(330px,58vw,510px)}}
+@media(max-width:650px){.section-page>.course-page>.section-heading{margin-bottom:58px;text-align:left}.section-page>.course-page>.section-heading .eyebrow{justify-content:flex-start}.section-page>.course-page>.section-heading h2{font-size:clamp(54px,13vw,76px)}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{align-items:flex-start;gap:12px;margin-bottom:21px;padding:0 4px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{font-size:clamp(52px,14vw,70px)}.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{max-width:none}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(250px,72vw,380px);border-radius:90px 14px 90px 14px}}
+
+/* Home: il contatto resta raccolto, con il fondo carta del sito. */
+.section-page>.home-contact{background:#f3f0e7;color:#222821}
+.section-page>.home-contact>p{color:#9f563e}
+.section-page>.home-contact h2{color:#222821}
+.section-page>.home-contact h2 i{color:#9f563e}
+
+/* Footer: fondo carta con logo, testo e collegamenti in contrasto scuro. */
+.section-page+.footer,body[data-page="home"]>.footer{background:#f3f0e7;color:#222821}
+.footer .wordmark{color:#222821}
+.footer .wordmark small{color:#737a70}
+.footer p,.footer>small{color:#656d63}
+.footer>small{border-top-color:rgba(34,40,33,.16)}
+
+/* Body-Mind Centering: tonalità chiara coordinata alla palette dello studio */
+.section-page>.practices .bmc-feature{background:#e6e8df;color:#222a25}
+.section-page>.practices .bmc-feature:after{border-color:rgba(34,42,37,.12);box-shadow:0 0 0 36px rgba(34,42,37,.035),0 0 0 74px rgba(34,42,37,.025)}
+.section-page>.practices .bmc-feature__index,
+.section-page>.practices .bmc-feature__copy .eyebrow,
+.section-page>.practices .bmc-feature__copy h3 i,
+.section-page>.practices .bmc-feature__copy>a b,
+.section-page>.practices .bmc-feature__aside b{color:#a85c43}
+.section-page>.practices .bmc-feature__copy>p:not(.eyebrow){color:#59645d}
+.section-page>.practices .bmc-feature__copy>a{color:#222a25;border-bottom-color:rgba(34,42,37,.38)}
+.section-page>.practices .bmc-feature__aside{color:#39443d;border-left-color:rgba(34,42,37,.2)}
+.section-page>.practices .bmc-feature__aside small{color:#667168}
+@media(max-width:950px){.section-page>.practices .bmc-feature__aside{border-top-color:rgba(34,42,37,.2)}}
+
+/* Corsi: cinque capitoli fotografici, con testo e titolo prima dell’immagine. */
+.section-page>.course-page{padding-top:clamp(88px,10vw,142px)}
+.section-page>.course-page>.section-heading{max-width:1120px;margin:0 auto clamp(46px,7vw,88px);align-items:end}
+.section-page>.course-page>.section-heading h2{font-size:clamp(54px,7vw,92px);line-height:.96}
+.section-page>.course-page>.section-heading>p{max-width:450px}
+.section-page>.course-page .course-list{max-width:1120px;margin:0 auto}
+.section-page>.course-page .course-entry{padding:0 0 clamp(62px,9vw,112px);margin:0 0 clamp(58px,8vw,100px);border-bottom:1px solid rgba(34,40,33,.12)}
+.section-page>.course-page .course-entry:last-child{margin-bottom:0;border-bottom:0}
+.section-page>.course-page .course-entry__heading{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto auto;align-items:end;column-gap:clamp(28px,7vw,96px);row-gap:18px;margin-bottom:28px;padding:0 clamp(8px,3vw,42px)}
+.section-page>.course-page .course-entry__top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;color:#747a70;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+.section-page>.course-page .course-entry__top span:first-child{display:grid;width:38px;height:38px;place-items:center;border:1px solid rgba(34,40,33,.16);border-radius:50%;color:#a85c43;font-size:10px;letter-spacing:.06em}
+.section-page>.course-page .course-entry h3{grid-column:1;grid-row:2;margin:0;color:#222821;font:500 clamp(58px,8vw,102px)/.92 var(--serif);letter-spacing:-.07em}
+.section-page>.course-page .course-entry h3 sup{font:500 .24em/0 var(--sans);vertical-align:super;letter-spacing:0}
+.section-page>.course-page .course-entry__description{grid-column:2;grid-row:2;max-width:490px;padding-bottom:5px}
+.section-page>.course-page .course-entry__description p{margin:0;color:#606a61;font-size:clamp(14px,1.4vw,16px);line-height:1.8}
+.section-page>.course-page .course-entry__description a{display:inline-flex;gap:12px;margin-top:17px;padding-bottom:5px;border-bottom:1px solid rgba(34,40,33,.22);color:#a85c43;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.section-page>.course-page .course-entry__description a b{font-weight:500}
+.section-page>.course-page .course-entry__image{width:96%;height:clamp(300px,43vw,500px);margin:0 auto;background-repeat:no-repeat;background-size:cover;background-position:center;border-radius:clamp(88px,15vw,190px) 18px clamp(88px,15vw,190px) 18px;transition:border-radius .6s ease,transform .8s cubic-bezier(.2,.7,.25,1)}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{border-radius:18px clamp(88px,15vw,190px) 18px clamp(88px,15vw,190px)}
+.section-page>.course-page .course-entry__image:hover{transform:scale(.992);border-radius:80px 22px}
+.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-unsplash.jpg");background-position:center 50%}
+.section-page>.course-page .course-entry--gyro .course-entry__image{background-image:url("Gyrotonic.jpg");background-position:center 49%}
+.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("Hatha.jpg");background-position:center 52%}
+.section-page>.course-page .course-entry--dainami .course-entry__image{background-image:url("course-dainami-unsplash.jpg");background-position:center 50%}
+.section-page>.course-page .course-entry--bmc .course-entry__image{background-image:url("course-bmc-unsplash.jpg");background-position:center 54%}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{grid-column:2}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{grid-column:1;grid-row:2}
+.section-page>.course-page .practice-note{max-width:1120px;margin:20px auto 0;color:#7a8076;font-size:11px}
+@media(max-width:950px){.section-page>.course-page>.section-heading{gap:30px}.section-page>.course-page .course-entry__heading{column-gap:32px}.section-page>.course-page .course-entry h3{font-size:clamp(54px,8vw,78px)}.section-page>.course-page .course-entry__image{height:clamp(280px,46vw,420px)}}
+@media(max-width:650px){.section-page>.course-page{padding:70px 20px 76px}.section-page>.course-page>.section-heading{display:block;margin-bottom:50px;padding:0}.section-page>.course-page>.section-heading h2{font-size:clamp(50px,13vw,72px)}.section-page>.course-page>.section-heading>p{margin-top:18px;font-size:14px}.section-page>.course-page .course-entry{padding-bottom:54px;margin-bottom:50px}.section-page>.course-page .course-entry__heading{display:flex;flex-direction:column;align-items:stretch;gap:14px;margin-bottom:21px;padding:0 4px}.section-page>.course-page .course-entry__top{font-size:8px}.section-page>.course-page .course-entry__top span:first-child{width:34px;height:34px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{order:1;font-size:clamp(52px,14vw,70px)}.section-page>.course-page .course-entry__top{order:0}.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{order:2;max-width:none;padding:0}.section-page>.course-page .course-entry__description p{font-size:13px;line-height:1.7}.section-page>.course-page .course-entry__description a{margin-top:12px}.section-page>.course-page .course-entry__image{width:100%;height:clamp(240px,69vw,350px);border-radius:100px 14px 100px 14px}.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{border-radius:14px 100px 14px 100px}.section-page>.course-page .practice-note{font-size:10px;line-height:1.6}}
+@media(prefers-reduced-motion:reduce){.section-page>.course-page .course-entry__image{transition:none}}
+
+/* Prezzi: formule in due campi morbidi; i cerchi ordinano i pacchetti come tappe. */
+.section-page>.prices .prices-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,42px);align-items:stretch}
+.section-page>.prices .price-card,.section-page>.prices .price-card--private{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden;padding:clamp(26px,4vw,48px);border:0;border-radius:56px 18px 56px 18px;background:#e5e8de;color:#222821;box-shadow:none}
+.section-page>.prices .price-card--private{padding-left:clamp(26px,4vw,48px);border:0;border-radius:18px 56px 18px 56px;background:#eee5dc}
+.section-page>.prices .price-card:before{position:absolute;right:-55px;top:-105px;width:250px;height:250px;border:1px solid rgba(34,40,33,.08);border-radius:50%;box-shadow:0 0 0 25px rgba(34,40,33,.025),0 0 0 52px rgba(34,40,33,.02);content:"";pointer-events:none}
+.section-page>.prices .price-card-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#72796f;font-size:8px;letter-spacing:.13em}
+.section-page>.prices .price-card-top span:first-child{padding:9px 13px;border-radius:99px;background:rgba(255,255,255,.56);color:#8f4d3b}
+.section-page>.prices .price-card h3{position:relative;z-index:1;margin:25px 0 8px;color:#222821;font-size:clamp(29px,3.2vw,42px);line-height:1.03}
+.section-page>.prices .price-card h3 i{color:#a85c43}
+.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{position:relative;z-index:1;min-height:40px;margin:0 0 22px;color:#606a61;font-size:11px;line-height:1.65}
+.section-page>.prices .price-options,.section-page>.prices .price-options--two{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:clamp(6px,1.3vw,16px);margin:0 0 25px}
+.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,118px));gap:clamp(12px,2.3vw,28px)}
+.section-page>.prices .price-options>div,.section-page>.prices .price-card--private .price-options>div{display:flex;aspect-ratio:1;min-width:0;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:8px;border:0;border-radius:50%;background:rgba(255,255,255,.66);text-align:center;transform:none;transition:transform .35s cubic-bezier(.2,.7,.25,1),background .25s}
+.section-page>.prices .price-options>div:nth-child(2){transform:translateY(-8px)}
+.section-page>.prices .price-options>div:nth-child(3){background:#a85c43}
+.section-page>.prices .price-options>div:nth-child(3) span,.section-page>.prices .price-options>div:nth-child(3) strong{color:#fff}
+.section-page>.prices .price-options>div:hover{transform:translateY(-5px);background:#f5f2e9}
+.section-page>.prices .price-options>div:nth-child(3):hover{background:#964e38}
+.section-page>.prices .price-options>div:nth-child(2):hover{transform:translateY(-13px)}
+.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{color:#73796e;font-size:clamp(7px,.8vw,9px);line-height:1.25;letter-spacing:.035em}
+.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{margin:0;color:#222821;font-size:clamp(19px,2.25vw,29px);line-height:1;white-space:nowrap}
+.section-page>.prices .price-options>div strong small,.section-page>.prices .price-card--private .price-options>div strong small{font-size:.48em}
+.section-page>.prices .price-card>a,.section-page>.prices .price-card--private>a{position:relative;z-index:1;align-self:flex-start;margin-top:auto;padding:12px 18px;border:0;border-radius:99px;background:#222821;color:#f3f0e7;font-size:9px;letter-spacing:.09em}
+.section-page>.prices .price-card>a b,.section-page>.prices .price-card--private>a b{margin-left:10px;color:#d5967d}
+.section-page>.prices .price-footer{grid-column:1/-1;display:flex;align-items:center;gap:20px;padding:7px 4px 0;border:0;background:transparent}
+.section-page>.prices .price-footer>div{display:flex;width:94px;height:94px;flex:0 0 94px;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:0;border-radius:50%;background:#e5e8de;text-align:center}
+.section-page>.prices .price-footer span{max-width:72px;color:#6d766c;font-size:7px;line-height:1.3;letter-spacing:.09em}
+.section-page>.prices .price-footer strong{color:#a85c43;font:500 27px/1 var(--serif)}
+.section-page>.prices .price-footer p{max-width:430px;margin:0;color:#606a61;font-size:11px;line-height:1.6}
+@media(max-width:950px){.section-page>.prices .prices-detail{gap:16px}.section-page>.prices .price-card,.section-page>.prices .price-card--private{padding:26px 20px;border-radius:40px 14px 40px 14px}.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,105px));gap:12px}.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{font-size:clamp(18px,2.4vw,25px)}}
+@media(max-width:650px){.section-page>.prices .prices-detail{grid-template-columns:1fr;gap:20px}.section-page>.prices .price-card,.section-page>.prices .price-card--private{padding:27px 24px 29px;border-radius:42px 14px 42px 14px}.section-page>.prices .price-card h3{margin-top:21px;font-size:37px}.section-page>.prices .price-card>p,.section-page>.prices .price-card--private>p{min-height:0;margin-bottom:19px;font-size:12px}.section-page>.prices .price-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-bottom:23px}.section-page>.prices .price-options--two{grid-template-columns:repeat(2,minmax(0,112px));gap:13px}.section-page>.prices .price-options>div strong,.section-page>.prices .price-card--private .price-options>div strong{font-size:clamp(21px,7vw,29px)}.section-page>.prices .price-options>div span,.section-page>.prices .price-card--private .price-options>div span{font-size:8px}.section-page>.prices .price-card>a{padding:11px 15px}.section-page>.prices .price-footer{gap:14px}.section-page>.prices .price-footer>div{width:82px;height:82px;flex-basis:82px}.section-page>.prices .price-footer p{max-width:245px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.section-page>.prices .price-options>div{transition:none}}
+
+/* Correzione finale corsi: titoli e testi sopra le immagini, in colonna. */
+.section-page>.course-page>.section-heading{display:block;max-width:1120px;margin:0 auto clamp(74px,10vw,124px);padding:0;text-align:center}
+.section-page>.course-page>.section-heading>div{width:100%}
+.section-page>.course-page>.section-heading .eyebrow{justify-content:center}
+.section-page>.course-page>.section-heading h2{font-size:clamp(64px,9vw,116px);line-height:.9}
+.section-page>.course-page>.section-heading>p{display:none}
+.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin-bottom:26px;padding:0 clamp(8px,3vw,42px)}
+.section-page>.course-page .course-entry__top{display:flex;align-items:center;justify-content:flex-start;width:100%;color:#777d73;font-size:9px;letter-spacing:.14em}
+.section-page>.course-page .course-entry__top span:first-child{display:none}
+.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{order:1;margin:0;font-size:clamp(64px,8.6vw,112px);line-height:.91}
+.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{order:2;max-width:760px;padding:0}
+.section-page>.course-page .course-entry__description p{font-size:clamp(15px,1.5vw,18px);line-height:1.75}
+.section-page>.course-page .course-entry__description a{margin-top:15px}
+.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{width:100%;height:clamp(360px,50vw,640px);margin:0 auto;background-size:cover;background-position:center;border-radius:clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px) 18px}
+.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{border-radius:18px clamp(100px,17vw,220px) 18px clamp(100px,17vw,220px)}
+@media(max-width:950px){.section-page>.course-page>.section-heading{margin-bottom:78px}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(330px,58vw,510px)}}
+@media(max-width:650px){.section-page>.course-page>.section-heading{margin-bottom:58px;text-align:left}.section-page>.course-page>.section-heading .eyebrow{justify-content:flex-start}.section-page>.course-page>.section-heading h2{font-size:clamp(54px,13vw,76px)}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{align-items:flex-start;gap:12px;margin-bottom:21px;padding:0 4px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{font-size:clamp(52px,14vw,70px)}.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{max-width:none}.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(250px,72vw,380px);border-radius:90px 14px 90px 14px}}
+
+/* Capitoli fotografici a tutta larghezza, come la scena della Home: senza riquadri arrotondati. */
+.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{display:block;width:100vw;max-width:none;height:clamp(420px,62vw,820px);margin-left:calc(50% - 50vw);border-radius:0;background-repeat:no-repeat;background-size:cover;background-position:center;}
+.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--gyro .course-entry__image{background-image:url("course-gyrotonic-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("Hatha.jpg");background-position:center 52%}
+.section-page>.course-page .course-entry--dainami .course-entry__image{background-image:url("course-dainami-clean.png");background-position:center 50%}
+.section-page>.course-page .course-entry--bmc .course-entry__image{background-image:url("course-bmc-massage.png");background-position:center 48%}
+@media(max-width:950px){.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(360px,72vw,620px)}}
+@media(max-width:650px){.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{width:100vw;height:clamp(280px,88vw,430px);margin-left:calc(50% - 50vw);border-radius:0}}
+body[data-page="courses"]{overflow-x:hidden}
+@supports (animation-timeline:view()){
+  .section-page>.course-page .course-entry__image{animation:course-photo-drift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  @keyframes course-photo-drift{from{background-position:center 42%}to{background-position:center 58%}}
+}
+@media(prefers-reduced-motion:reduce){.section-page>.course-page .course-entry__image{animation:none}}
+
+/* I capitoli fotografici scorrono senza fasce vuote tra una pratica e l'altra. */
+.section-page>.course-page .course-entry,.section-page>.course-page .course-entry:nth-child(even){margin-bottom:0}
+.section-page>.course-page .course-entry.reveal{opacity:1;transform:none;transition:none}
+
+/* Ogni pratica diventa una scena fotografica intera, con il testo direttamente sulla foto. */
+.section-page>.course-page>.section-heading{max-width:1120px;margin:0 auto clamp(42px,7vw,84px);text-align:left}
+.section-page>.course-page>.section-heading .eyebrow{justify-content:flex-start}
+.section-page>.course-page>.section-heading h2{font-size:clamp(58px,8.3vw,104px);line-height:.9}
+.section-page>.course-page .course-list{max-width:none;margin:0;padding:0}
+.section-page>.course-page .course-entry,.section-page>.course-page .course-entry:nth-child(even){position:relative;display:block;width:100vw;max-width:none;min-height:clamp(620px,calc(100svh - 82px),920px);margin:0 0 0 calc(50% - 50vw);padding:0;overflow:hidden;border:0;background:#343b34;isolation:isolate}
+.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{position:absolute;z-index:-2;inset:0;display:block;width:100%;height:100%;margin:0;border-radius:0;background-repeat:no-repeat;background-size:cover;background-position:center;animation:none}
+.section-page>.course-page .course-entry::after{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,rgba(20,29,25,.68) 0%,rgba(20,29,25,.35) 48%,rgba(20,29,25,.04) 100%),linear-gradient(0deg,rgba(20,29,25,.42),transparent 68%);pointer-events:none}
+.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{position:absolute;z-index:1;inset:auto auto clamp(48px,8vw,106px) clamp(28px,8vw,118px);display:flex;width:min(760px,calc(100% - 2 * clamp(28px,8vw,118px)));flex-direction:column;align-items:flex-start;gap:16px;margin:0;padding:0;color:#f3f0e7}
+.section-page>.course-page .course-entry__top{color:rgba(243,240,231,.83);font-size:10px;letter-spacing:.16em}
+.section-page>.course-page .course-entry__top span:first-child{display:none}
+.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{order:1;margin:0;color:#f3f0e7;font-size:clamp(64px,10vw,132px);line-height:.86;text-shadow:0 2px 26px rgba(20,29,25,.2)}
+.section-page>.course-page .course-entry h3 sup{font:500 .22em/1 var(--sans);vertical-align:super}
+.section-page>.course-page .course-entry__description,.section-page>.course-page .course-entry:nth-child(even) .course-entry__description{order:2;max-width:590px;padding:0;color:#f3f0e7}
+.section-page>.course-page .course-entry__description p{margin:0;color:rgba(255,255,255,.94);font-size:clamp(15px,1.5vw,18px);line-height:1.72;text-shadow:0 1px 12px rgba(20,29,25,.45)}
+.section-page>.course-page .course-entry__description a{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:12px 18px;border:1px solid rgba(243,240,231,.7);border-radius:99px;color:#f3f0e7;font-size:10px;letter-spacing:.1em}
+.section-page>.course-page .course-entry__description a b{color:#e2a287}
+.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--gyro .course-entry__image{background-image:url("course-gyrotonic-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("Hatha.jpg");background-position:center 52%}
+.section-page>.course-page .course-entry--dainami .course-entry__image{background-image:url("course-dainami-clean-v2.png");background-position:center 50%}
+.section-page>.course-page .course-entry--bmc .course-entry__image{background-image:url("course-bmc-massage.png");background-position:center 48%}
+.section-page>.course-page .practice-note{max-width:1120px;margin:0 auto;padding:0 0 24px}
+@supports (animation-timeline:view()){
+  .section-page>.course-page .course-entry__image{animation:course-photo-drift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+  @keyframes course-photo-drift{from{background-position:center 42%}to{background-position:center 58%}}
+}
+@media(max-width:950px){.section-page>.course-page .course-entry,.section-page>.course-page .course-entry:nth-child(even){min-height:clamp(600px,calc(100svh - 80px),800px)}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{inset: auto auto 56px 7vw;width:min(680px,86vw)}}
+@media(max-width:650px){.section-page>.course-page>.section-heading{padding:0 24px;margin-bottom:42px}.section-page>.course-page>.section-heading h2{font-size:clamp(52px,13vw,76px)}.section-page>.course-page .course-entry,.section-page>.course-page .course-entry:nth-child(even){min-height:clamp(610px,calc(100svh - 70px),760px);margin-bottom:0}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{inset:auto 24px 38px;width:auto;gap:12px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{font-size:clamp(56px,15vw,82px)}.section-page>.course-page .course-entry__description p{font-size:14px;line-height:1.65}.section-page>.course-page .course-entry__description a{margin-top:15px}.section-page>.course-page .practice-note{padding:0 24px 24px}}
+@media(prefers-reduced-motion:reduce){.section-page>.course-page .course-entry__image{animation:none}}
+
+.section-page+.footer,body[data-page=home]>.footer{background:transparent}
+
+
+/* In chiusura corsi, il BMC continua dietro un footer compatto come nella Home. */
+.section-page>.course-page{padding-bottom:0}
+body[data-page="courses"]>.footer{position:relative;z-index:4;display:flex;min-height:220px;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;margin-top:-220px;padding:12px 22px 18px;background:transparent;color:#fffaf0;text-align:center;text-shadow:0 1px 5px rgba(17,24,20,.86),0 2px 12px rgba(17,24,20,.56)}
+body[data-page="courses"]>.footer .wordmark{align-self:center;color:#fffaf0}
+body[data-page="courses"]>.footer .wordmark small,body[data-page="courses"]>.footer p,body[data-page="courses"]>.footer>div a,body[data-page="courses"]>.footer>small{color:#fffaf0}
+body[data-page="courses"]>.footer p{width:auto;margin:0;white-space:nowrap;font-size:10px}
+body[data-page="courses"]>.footer>div{justify-content:center;flex-wrap:wrap}
+body[data-page="courses"]>.footer>small{width:min(100%,900px);border-top-color:rgba(255,250,240,.7);text-align:center}
+@media(max-width:650px){body[data-page="courses"]>.footer{min-height:220px;margin-top:-220px;padding:12px 16px 18px}}
+
+/* Footer corsi: riga ordinata sopra la foto, senza sovrapporsi alla descrizione BMC. */
+.section-page>.course-page .course-entry--bmc .course-entry__heading{bottom:clamp(170px,20vw,220px)}
+body[data-page="courses"]>.footer{display:grid;min-height:118px;grid-template-columns:minmax(190px,auto) minmax(180px,1fr) auto;grid-template-areas:"brand address links" "copyright copyright copyright";align-items:center;justify-content:initial;gap:8px clamp(16px,3vw,34px);margin-top:-118px;padding:12px var(--pad) 10px}
+body[data-page="courses"]>.footer .wordmark{grid-area:brand;justify-self:start}
+body[data-page="courses"]>.footer>p{grid-area:address;grid-column:auto;grid-row:auto;justify-self:center;align-self:center}
+body[data-page="courses"]>.footer>div{grid-area:links;justify-self:end;align-self:center}
+body[data-page="courses"]>.footer>small{grid-area:copyright;grid-column:1/-1;width:100%;padding-top:6px;text-align:center}
+@media(max-width:650px){body[data-page="courses"]>.footer{grid-template-columns:1fr auto;grid-template-areas:"brand links" "address address" "copyright copyright";min-height:140px;margin-top:-140px;gap:7px 14px;padding:10px 20px 8px}.section-page>.course-page .course-entry--bmc .course-entry__heading{bottom:190px}}
+@media(max-width:520px){body[data-page="courses"]>.footer{grid-template-columns:1fr;grid-template-areas:"brand" "address" "links" "copyright";min-height:176px;margin-top:-176px;justify-items:center;gap:6px;padding:9px 16px 8px}body[data-page="courses"]>.footer .wordmark,body[data-page="courses"]>.footer>div{justify-self:center}body[data-page="courses"]>.footer>p{font-size:9px}}

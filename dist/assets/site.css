@@ -10,8 +10,8 @@
   --sand: #d8c9ae;
   --line: rgba(32, 39, 34, .15);
   --line-light: rgba(244, 239, 231, .22);
-  --serif: "Playfair Display", Georgia, serif;
-  --sans: "DM Sans", Arial, sans-serif;
+  --serif: "Bodoni Moda", "Bodoni MT", Didot, Georgia, serif;
+  --sans: "Manrope", "Avenir Next", Arial, sans-serif;
   --display: "Manrope", Arial, sans-serif;
   --sidebar: 244px;
   --content: min(1180px, calc(100vw - var(--sidebar) - 72px));

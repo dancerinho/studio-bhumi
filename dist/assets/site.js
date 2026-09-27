@@ -57,8 +57,8 @@ function renderFooter() {
     <footer class="site-footer">
       <div class="site-footer__inner">
         <div><a class="brand brand--footer" href="index.html"><img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/><span class="brand__descriptor">studio del movimento</span></a><p>Movimento consapevole a Milano Isola.</p><nav class="social-links" aria-label="Studio Bhumi sui social"><a href="https://www.instagram.com/studiobhumi/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a><a href="https://www.facebook.com/StudioBhumi?locale=it_IT" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a></nav></div>
-        <div class="footer-links"><a href="mailto:studiobhumi@gmail.com">studiobhumi@gmail.com</a><a href="tel:+393487517656">348 751 7656</a><a href="dove-siamo.html">Via Lario 17, Milano</a></div>
-        <div class="footer-links"><a href="privacy.html">Privacy e cookie</a><a href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener">Area riservata</a></div>
+        <div class="footer-links"><a href="mailto:studiobhumi@gmail.com">studiobhumi@gmail.com</a><a href="tel:+393487517656">348 751 7656</a><a href="https://www.google.com/maps/search/?api=1&query=Studio+Bhumi%2C+Via+Lario+17%2C+20159+Milano" target="_blank" rel="noopener noreferrer">Studio Bhumi · Via Lario 17, 20159 Milano</a></div>
+        <div class="footer-links"><a href="privacy.html">Privacy e cookie</a><a href="mailto:studiobhumi@gmail.com?subject=Prenotazione%20lezione%20Studio%20Bhumi" target="_blank" rel="noopener">Area riservata</a></div>
       </div>
       <div class="site-footer__bottom"><span>© Studio Bhumi</span><a class="back-to-top" href="#contenuto">Torna su <span aria-hidden="true">↑</span></a><span>Pilates · Gyrotonic® · Yoga · Dainami® · BMC®</span></div>
     </footer>`;
