@@ -19,7 +19,7 @@
   const thresholds = [0.2, 0.42, 0.64, 0.84];
   const panels = [...film.querySelectorAll('[data-story-panel]')];
   const labels = ['YOGA · PRESENZA', 'HATHA YOGA', 'ASCOLTO · PRESENZA', 'LE PRATICHE BHUMI', 'STUDIO BHUMI · MILANO ISOLA'];
-  const videoStart = 3.6;
+  const videoStart = 0;
   let progress = 0;
   let targetProgress = 0;
   let chapter = -1;
@@ -137,6 +137,8 @@
         : 39 + smooth((progress - 0.45) / 0.55) * 43;
       video.style.setProperty('--video-focus', focusY.toFixed(1) + '%');
     }
+    const focusX = smooth(progress / 0.24) * 50;
+    video.style.setProperty('--video-focus-x', focusX.toFixed(1) + '%');
 
     if (progress > 0.01) ensureLoaded();
     if (!posterOnly) {
