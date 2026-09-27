@@ -8,9 +8,7 @@
   if (!film || !stage || !video || !copy) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-  const reducedData = Boolean(connection?.saveData || /^(slow-)?2g$/.test(connection?.effectiveType || ''));
-  let posterOnly = reducedMotion.matches || reducedData;
+  let posterOnly = reducedMotion.matches;
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   const smooth = (value) => {
     const t = clamp(value);
@@ -54,7 +52,10 @@
     if (posterOnly || requested || mediaFailed) return;
     requested = true;
     video.preload = 'auto';
-    if (video.readyState < 1) video.load();
+    // `preload="metadata"` may have completed before the scroll starts. In
+    // that case changing preload alone does not make browsers fetch frames;
+    // restart the request once unless a media download is already in flight.
+    if (video.readyState < 2 && video.networkState !== 2) video.load();
   }
 
   function videoTime(amount) {
@@ -224,7 +225,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   reducedMotion.addEventListener?.('change', (event) => {
-    posterOnly = event.matches || reducedData;
+    posterOnly = event.matches;
     if (posterOnly) {
       video.pause();
       stage.classList.add('is-poster');
