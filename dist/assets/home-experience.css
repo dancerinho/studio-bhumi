@@ -4,9 +4,10 @@ body[data-page="home"]{overflow-x:hidden;background:#1f2925;color:#f3f0e7}
 body[data-page="home"]>.grain{display:none}
 body[data-page="home"] .section-page.home-experience-page{width:100%;max-width:none;min-height:0;margin:0;padding:0;background:#1f2925}
 
-.home-navigation{position:absolute;top:0;right:0;left:0;z-index:30;height:88px;background:linear-gradient(180deg,rgba(19,31,26,.58),rgba(19,31,26,0));border:0;backdrop-filter:none;color:#fffaf0;transition:opacity .38s ease,transform .38s ease,visibility .38s ease}
+.home-navigation{position:fixed;top:0;right:0;left:0;z-index:30;height:88px;background:linear-gradient(180deg,rgba(19,31,26,.7),rgba(19,31,26,.14));border:0;backdrop-filter:none;color:#fffaf0;transition:background .38s ease,backdrop-filter .38s ease}
 .home-navigation .wordmark{color:#fffaf0}
 .home-navigation .wordmark small{color:rgba(255,250,240,.78)}
+.home-navigation .wordmark img{background:transparent;filter:grayscale(1) invert(1) contrast(1.3);mix-blend-mode:screen}
 .home-navigation .toplinks{color:rgba(255,250,240,.92)}
 .home-navigation .toplinks a,.home-navigation .top-cta{color:inherit}
 .home-navigation .toplinks a{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#fffaf0}
@@ -16,7 +17,7 @@ body[data-page="home"] .section-page.home-experience-page{width:100%;max-width:n
 .home-navigation .menu-toggle{border-color:rgba(255,250,240,.65);color:#fffaf0}
 .home-navigation .menu-toggle span{background:currentColor}
 .home-navigation .site-menu{border:1px solid rgba(255,250,240,.2);background:rgba(25,39,33,.97);color:#fffaf0;backdrop-filter:blur(14px)}
-body[data-page="home"].journey-scrolling .home-navigation{opacity:0;visibility:hidden;transform:translateY(-12px);pointer-events:none}
+body[data-page="home"].journey-scrolling .home-navigation{background:rgba(19,31,26,.78);backdrop-filter:blur(14px)}
 
 .home-film{position:relative;height:540svh;margin:0;background:#1f2925;isolation:isolate}
 .home-film__stage{position:sticky;top:0;width:100%;height:100svh;min-height:480px;overflow:hidden;background:linear-gradient(155deg,rgba(85,101,80,.16),rgba(31,41,37,.24)),url("home-experience-poster-20260927.jpg") center 58%/cover no-repeat,#1f2925;color:#fffaf0;isolation:isolate}
@@ -30,7 +31,7 @@ body[data-page="home"].journey-scrolling .home-navigation{opacity:0;visibility:h
 .home-film__copy[hidden],.home-film__footer[hidden]{display:none}
 .home-film__copy .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 17px;color:#e5a288;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 12px rgba(9,21,17,.54)}
 .home-film__copy .eyebrow:before{width:27px;height:1px;background:currentColor;content:""}
-.home-film__copy h1,.home-film__copy h2{max-width:900px;margin:0;color:#fffaf0;font:500 clamp(54px,7.5vw,104px)/.94 var(--serif);letter-spacing:-.07em;text-wrap:balance;text-shadow:0 2px 24px rgba(9,20,16,.38)}
+.home-film__copy h1,.home-film__copy h2{max-width:900px;margin:0;color:#fffaf0;font:500 clamp(54px,7.5vw,104px)/.94 var(--serif);letter-spacing:-.04em;text-wrap:balance;text-shadow:0 2px 24px rgba(9,20,16,.38)}
 .home-film__copy h1 i,.home-film__copy h2 i{color:#e5a288;font-weight:400}
 .home-film__copy>article>p:not(.eyebrow){max-width:520px;margin:19px 0 0;color:rgba(255,250,240,.96);font-size:clamp(14px,1.25vw,17px);line-height:1.65;text-shadow:0 1px 12px rgba(9,20,16,.58)}
 .home-film__scroll-note{display:flex;align-items:center;gap:11px;margin-top:24px;color:rgba(255,250,240,.9);font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;text-shadow:0 1px 9px rgba(9,20,16,.58)}
@@ -120,3 +121,10 @@ body[data-page="home"].journey-scrolling .home-navigation{opacity:0;visibility:h
   .home-film__video{transition:none}
   .home-film__copy .home-film__panel>*{opacity:1;transform:none;transition:none}
 }
+
+/* BHUMI_HOME_LOGO_PREVIEW_START */
+.home-navigation .wordmark img {
+  background: transparent; filter: grayscale(1) invert(1) contrast(1.3);
+  mix-blend-mode: screen;
+}
+/* BHUMI_HOME_LOGO_PREVIEW_END */

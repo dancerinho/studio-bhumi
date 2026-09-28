@@ -1,11 +1,37 @@
-const revealObserver = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    if (!entry.isIntersecting) continue;
-    entry.target.classList.add('visible');
-    revealObserver.unobserve(entry.target);
-  }
-}, { threshold: 0.14 });
-document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const existingReveals = [...document.querySelectorAll('.reveal')];
+const motionTargets = [...document.querySelectorAll([
+  '.page-banner > div:first-child',
+  '.course-entry__heading',
+  '.prices-detail .price-card',
+  '.prices-detail .price-footer',
+  '.facts .fact',
+  '.person-info',
+  '.studio-copy',
+  '.archive > div:last-child'
+].join(', '))].filter((element) => !element.classList.contains('reveal'));
+
+if (!reducedMotion && 'IntersectionObserver' in window) {
+  existingReveals.forEach((element, index) => {
+    if (!element.classList.contains('course-entry')) {
+      element.dataset.motionSide = index % 2 ? 'right' : 'left';
+    }
+  });
+  motionTargets.forEach((element, index) => {
+    element.classList.add('motion-enter');
+    element.dataset.motionSide = index % 2 ? 'right' : 'left';
+  });
+  const revealObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('visible', 'is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+  [...existingReveals, ...motionTargets].forEach((element) => revealObserver.observe(element));
+} else {
+  existingReveals.forEach((element) => element.classList.add('visible', 'is-visible'));
+}
 
 const menu = document.querySelector('.menu-toggle');
 const topbar = document.querySelector('.topbar');

@@ -1,4 +1,4 @@
-:root{--serif:"Bodoni Moda", "Bodoni MT", Didot, Georgia, serif;--sans:"Manrope", "Avenir Next", Arial, sans-serif}
+:root{--serif:"Bricolage Grotesque", "Avenir Next", Arial, sans-serif;--sans:"Manrope", "Avenir Next", Arial, sans-serif}
 html{scroll-padding-top:96px}
 body{font-family:var(--sans)}
 .topbar{height:82px;position:sticky;top:0;padding-inline:clamp(18px,5.5vw,84px)}
@@ -16,7 +16,7 @@ body{font-family:var(--sans)}
 .site-menu>a{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid rgba(34,40,33,.13);font:500 23px/1.2 var(--serif)}
 .site-menu>a b{color:var(--red);font:500 12px var(--sans)}
 .section-page{min-height:calc(100svh - 82px)}
-.section-heading h1,.section-heading h2{font:500 clamp(54px,7vw,94px)/.98 var(--serif);letter-spacing:-.065em;margin:0}
+.section-heading h1,.section-heading h2{font:500 clamp(54px,7vw,94px)/.98 var(--serif);letter-spacing:-.04em;margin:0}
 .section-heading h1 i,.section-heading h2 i{color:var(--red);font-weight:500}
 .section-heading{padding:98px var(--pad) 16px}
 .section-heading>p{max-width:375px}
@@ -32,7 +32,7 @@ body{font-family:var(--sans)}
 .home-location{position:absolute;z-index:3;right:var(--pad);bottom:6%;color:rgba(255,255,255,.9);font-size:9px;letter-spacing:.18em}
 .home-welcome{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;padding:106px var(--pad) 116px;background:#f3f0e7}
 .home-welcome__copy{position:sticky;top:125px;align-self:start}
-.home-welcome h2{margin:0;font-size:clamp(54px,6vw,79px);line-height:.98;letter-spacing:-.07em}
+.home-welcome h2{margin:0;font-size:clamp(54px,6vw,79px);line-height:.98;letter-spacing:-.04em}
 .home-welcome h2 i{color:var(--red)}
 .home-welcome__copy>p:last-child{max-width:400px;margin-top:26px;color:#666e63;font-size:14px;line-height:1.85}
 .home-links{display:grid;grid-template-columns:1fr 1fr;gap:13px}
@@ -52,7 +52,7 @@ body{font-family:var(--sans)}
 .home-link>small{margin-top:8px;color:rgba(255,255,255,.8);font-size:10px;line-height:1.5}
 .home-contact{display:flex;min-height:340px;flex-direction:column;align-items:center;justify-content:center;padding:65px 24px;text-align:center;background:#1f2925;color:#f3f0e7}
 .home-contact>p{color:#d9a48e;font-size:9px;letter-spacing:.18em}
-.home-contact h2{margin:12px 0 24px;font-size:clamp(46px,6vw,74px);line-height:.98;letter-spacing:-.065em}
+.home-contact h2{margin:12px 0 24px;font-size:clamp(46px,6vw,74px);line-height:.98;letter-spacing:-.04em}
 .section-page>.home-contact{width:min(1100px,calc(100% - 48px));min-height:0;margin:0 auto 32px;padding:34px 24px 38px;gap:0;border-radius:2px}
 .section-page>.home-contact h2{margin:10px 0 20px;font-size:clamp(40px,5vw,60px);line-height:.98}
 .section-page>.home-contact>p{margin:0}
@@ -190,7 +190,7 @@ body{font-family:var(--sans)}
 .section-page>.practices .practice-top{position:absolute;z-index:2;top:28px;left:32px;right:32px;display:flex;align-items:center;color:#fff;font-size:9px;letter-spacing:.16em;text-shadow:0 1px 14px rgba(0,0,0,.3)}
 .section-page>.practices .practice-top span:first-child{width:40px;height:40px;border-color:rgba(255,255,255,.72);color:#fff}
 .section-page>.practices .practice-copy{position:absolute;z-index:2;right:clamp(28px,5vw,72px);bottom:clamp(30px,5vw,64px);left:clamp(28px,5vw,72px);display:grid;grid-template-columns:minmax(240px,.8fr) minmax(250px,1.2fr);grid-template-rows:auto auto;align-items:end;gap:10px clamp(28px,6vw,84px);padding:0;color:#fff}
-.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:#fff;font:500 clamp(48px,7vw,88px)/.94 var(--serif);letter-spacing:-.065em;text-shadow:0 2px 24px rgba(0,0,0,.24)}
+.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:#fff;font:500 clamp(48px,7vw,88px)/.94 var(--serif);letter-spacing:-.04em;text-shadow:0 2px 24px rgba(0,0,0,.24)}
 .section-page>.practices .practice-copy h3 sup{font-size:15px}
 .section-page>.practices .practice-copy p{grid-column:2;grid-row:1;align-self:end;max-width:500px;margin:0;color:rgba(255,255,255,.91);font-size:clamp(13px,1.45vw,16px);line-height:1.75;text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .section-page>.practices .practice-copy a{grid-column:2;grid-row:2;justify-self:start;margin:8px 0 0;padding-bottom:5px;border-color:rgba(255,255,255,.62);color:#fff;font-size:10px}
@@ -239,7 +239,7 @@ body{font-family:var(--sans)}
 .section-page>.practices .practice-top{position:static;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 2.5%;color:#737a70;font-size:9px;letter-spacing:.16em;text-shadow:none}
 .section-page>.practices .practice-top span:first-child{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(34,40,33,.25);border-radius:50%;color:var(--red);font-size:10px}
 .section-page>.practices .practice-copy{position:static;display:grid;grid-template-columns:minmax(0,.85fr) minmax(260px,1.15fr);grid-template-rows:auto auto;align-items:end;gap:8px clamp(26px,6vw,76px);padding:18px 2.5% 25px;color:var(--ink)}
-.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:var(--ink);font:500 clamp(58px,8vw,100px)/.91 var(--serif);letter-spacing:-.07em;text-shadow:none}
+.section-page>.practices .practice-copy h3{grid-column:1;grid-row:1/span 2;align-self:end;margin:0;color:var(--ink);font:500 clamp(58px,8vw,100px)/.91 var(--serif);letter-spacing:-.04em;text-shadow:none}
 .section-page>.practices .practice-copy h3 sup{font-size:15px}
 .section-page>.practices .practice-copy p{grid-column:2;grid-row:1;align-self:end;max-width:480px;margin:0;color:#656d63;font-size:clamp(13px,1.45vw,16px);line-height:1.8;text-shadow:none}
 .section-page>.practices .practice-copy a{grid-column:2;grid-row:2;justify-self:start;display:inline-flex;gap:10px;margin:10px 0 0;padding:0 0 5px;border-bottom:1px solid rgba(34,40,33,.3);color:var(--red);font-size:10px}
@@ -355,7 +355,7 @@ body{font-family:var(--sans)}
 .section-page>.course-page .course-entry__heading{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-rows:auto auto;align-items:end;column-gap:clamp(28px,7vw,96px);row-gap:18px;margin-bottom:28px;padding:0 clamp(8px,3vw,42px)}
 .section-page>.course-page .course-entry__top{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;color:#747a70;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
 .section-page>.course-page .course-entry__top span:first-child{display:grid;width:38px;height:38px;place-items:center;border:1px solid rgba(34,40,33,.16);border-radius:50%;color:#a85c43;font-size:10px;letter-spacing:.06em}
-.section-page>.course-page .course-entry h3{grid-column:1;grid-row:2;margin:0;color:#222821;font:500 clamp(58px,8vw,102px)/.92 var(--serif);letter-spacing:-.07em}
+.section-page>.course-page .course-entry h3{grid-column:1;grid-row:2;margin:0;color:#222821;font:500 clamp(58px,8vw,102px)/.92 var(--serif);letter-spacing:-.04em}
 .section-page>.course-page .course-entry h3 sup{font:500 .24em/0 var(--sans);vertical-align:super;letter-spacing:0}
 .section-page>.course-page .course-entry__description{grid-column:2;grid-row:2;max-width:490px;padding-bottom:5px}
 .section-page>.course-page .course-entry__description p{margin:0;color:#606a61;font-size:clamp(14px,1.4vw,16px);line-height:1.8}
@@ -478,25 +478,85 @@ body[data-page="courses"]{overflow-x:hidden}
 @media(max-width:650px){.section-page>.course-page>.section-heading{padding:0 24px;margin-bottom:42px}.section-page>.course-page>.section-heading h2{font-size:clamp(52px,13vw,76px)}.section-page>.course-page .course-entry,.section-page>.course-page .course-entry:nth-child(even){min-height:clamp(610px,calc(100svh - 70px),760px);margin-bottom:0}.section-page>.course-page .course-entry__heading,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading{inset:auto 24px 38px;width:auto;gap:12px}.section-page>.course-page .course-entry h3,.section-page>.course-page .course-entry:nth-child(even) .course-entry__heading h3{font-size:clamp(56px,15vw,82px)}.section-page>.course-page .course-entry__description p{font-size:14px;line-height:1.65}.section-page>.course-page .course-entry__description a{margin-top:15px}.section-page>.course-page .practice-note{padding:0 24px 24px}}
 @media(prefers-reduced-motion:reduce){.section-page>.course-page .course-entry__image{animation:none}}
 
-.section-page+.footer,body[data-page=home]>.footer{background:transparent}
+/* Il logo originale si fonde con la carta, senza il rettangolo bianco del JPG. */
+.wordmark img{background:transparent;mix-blend-mode:multiply}
 
+/* Apertura dei corsi più raccolta, con una sottile traccia grafica sotto il menu. */
+.section-page>.course-page{padding-top:clamp(34px,4vw,60px);padding-bottom:0}
+.section-page>.course-page>.section-heading{margin-bottom:clamp(38px,5vw,68px)}
+.section-page>.course-page>.section-heading::before{display:block;width:100%;height:1px;margin-bottom:clamp(24px,3vw,42px);background:linear-gradient(90deg,#a85c43 0 54px,rgba(34,40,33,.17) 54px 100%);content:""}
+.section-page>.course-page>.section-heading .eyebrow{margin-bottom:16px}
+.section-page>.course-page>.section-heading h2{font-size:clamp(58px,7.5vw,96px)}
+body[data-page="courses"]>.footer{border-top:1px solid rgba(34,40,33,.16);padding-top:30px;padding-bottom:26px}
+@media(max-width:650px){
+  .section-page>.course-page{padding-top:32px;padding-bottom:0}
+  .section-page>.course-page>.section-heading{margin-bottom:36px}
+  .section-page>.course-page>.section-heading::before{margin-bottom:26px}
+  .section-page>.course-page>.section-heading h2{font-size:clamp(52px,12vw,72px)}
+  body[data-page="courses"]>.footer{padding:29px 20px}
+}
 
-/* In chiusura corsi, il BMC continua dietro un footer compatto come nella Home. */
-.section-page>.course-page{padding-bottom:0}
-body[data-page="courses"]>.footer{position:relative;z-index:4;display:flex;min-height:220px;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;margin-top:-220px;padding:12px 22px 18px;background:transparent;color:#fffaf0;text-align:center;text-shadow:0 1px 5px rgba(17,24,20,.86),0 2px 12px rgba(17,24,20,.56)}
-body[data-page="courses"]>.footer .wordmark{align-self:center;color:#fffaf0}
-body[data-page="courses"]>.footer .wordmark small,body[data-page="courses"]>.footer p,body[data-page="courses"]>.footer>div a,body[data-page="courses"]>.footer>small{color:#fffaf0}
-body[data-page="courses"]>.footer p{width:auto;margin:0;white-space:nowrap;font-size:10px}
-body[data-page="courses"]>.footer>div{justify-content:center;flex-wrap:wrap}
-body[data-page="courses"]>.footer>small{width:min(100%,900px);border-top-color:rgba(255,250,240,.7);text-align:center}
-@media(max-width:650px){body[data-page="courses"]>.footer{min-height:220px;margin-top:-220px;padding:12px 16px 18px}}
+body[data-page=home]>.footer{background:transparent}
 
-/* Footer corsi: riga ordinata sopra la foto, senza sovrapporsi alla descrizione BMC. */
-.section-page>.course-page .course-entry--bmc .course-entry__heading{bottom:clamp(170px,20vw,220px)}
-body[data-page="courses"]>.footer{display:grid;min-height:118px;grid-template-columns:minmax(190px,auto) minmax(180px,1fr) auto;grid-template-areas:"brand address links" "copyright copyright copyright";align-items:center;justify-content:initial;gap:8px clamp(16px,3vw,34px);margin-top:-118px;padding:12px var(--pad) 10px}
-body[data-page="courses"]>.footer .wordmark{grid-area:brand;justify-self:start}
-body[data-page="courses"]>.footer>p{grid-area:address;grid-column:auto;grid-row:auto;justify-self:center;align-self:center}
-body[data-page="courses"]>.footer>div{grid-area:links;justify-self:end;align-self:center}
-body[data-page="courses"]>.footer>small{grid-area:copyright;grid-column:1/-1;width:100%;padding-top:6px;text-align:center}
-@media(max-width:650px){body[data-page="courses"]>.footer{grid-template-columns:1fr auto;grid-template-areas:"brand links" "address address" "copyright copyright";min-height:140px;margin-top:-140px;gap:7px 14px;padding:10px 20px 8px}.section-page>.course-page .course-entry--bmc .course-entry__heading{bottom:190px}}
-@media(max-width:520px){body[data-page="courses"]>.footer{grid-template-columns:1fr;grid-template-areas:"brand" "address" "links" "copyright";min-height:176px;margin-top:-176px;justify-items:center;gap:6px;padding:9px 16px 8px}body[data-page="courses"]>.footer .wordmark,body[data-page="courses"]>.footer>div{justify-self:center}body[data-page="courses"]>.footer>p{font-size:9px}}
+/* Gli elementi editoriali entrano da lati alterni, poi restano fermi. */
+.reveal[data-motion-side],.motion-enter{--motion-x:-38px;opacity:0;transform:translate3d(var(--motion-x),20px,0);transition:opacity .8s ease,transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal[data-motion-side="right"],.motion-enter[data-motion-side="right"]{--motion-x:38px}
+.reveal[data-motion-side].visible,.motion-enter.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.section-page>.course-page .course-entry .course-entry__heading.motion-enter{opacity:0;transform:translate3d(var(--motion-x),20px,0)}
+.section-page>.course-page .course-entry .course-entry__heading.motion-enter.is-visible{opacity:1;transform:translate3d(0,0,0)}
+@media(prefers-reduced-motion:reduce){.reveal[data-motion-side],.motion-enter,.section-page>.course-page .course-entry .course-entry__heading.motion-enter{opacity:1;transform:none;transition:none}}
+
+/* BHUMI_LAYOUT_PREVIEW_START */
+/* Il logo originale si integra con lo sfondo color carta. */
+.wordmark img { background: transparent; mix-blend-mode: multiply; }
+
+/* Apertura dei corsi: meno vuoto e un segno grafico leggero. */
+.section-page > .course-page { padding-top: clamp(34px, 4vw, 60px); padding-bottom: 0; }
+.section-page > .course-page > .section-heading { margin-bottom: clamp(38px, 5vw, 68px); }
+.section-page > .course-page > .section-heading::before {
+  display: block; width: 100%; height: 1px; margin-bottom: clamp(24px, 3vw, 42px);
+  background: linear-gradient(90deg, #a85c43 0 54px, rgba(34,40,33,.17) 54px 100%);
+  content: "";
+}
+.section-page > .course-page > .section-heading .eyebrow { margin-bottom: 16px; }
+.section-page > .course-page > .section-heading h2 { font-size: clamp(58px, 7.5vw, 96px); }
+
+/* Il footer segue l'ultima immagine, fuori dal riquadro Body-Mind Centering. */
+body[data-page="courses"] > .footer {
+  position: relative; z-index: auto; display: grid; min-height: 0;
+  grid-template-columns: 1fr 1fr auto; grid-template-areas: none;
+  align-items: center; justify-content: normal; gap: 20px;
+  margin: 0; padding: 30px var(--pad) 26px;
+  border-top: 1px solid rgba(34,40,33,.16);
+  background: #f3f0e7; color: #222821; text-align: left; text-shadow: none;
+}
+body[data-page="courses"] > .footer .wordmark {
+  grid-area: auto; justify-self: start; align-self: center; color: #222821; text-shadow: none;
+}
+body[data-page="courses"] > .footer .wordmark small { color: #737a70; }
+body[data-page="courses"] > .footer > p {
+  grid-area: auto; grid-column: auto; grid-row: auto; justify-self: auto;
+  width: auto; margin: 0; color: #656d63; font-size: 11px; white-space: normal;
+}
+body[data-page="courses"] > .footer > div {
+  grid-area: auto; justify-self: auto; justify-content: flex-start;
+}
+body[data-page="courses"] > .footer > div a { color: #222821; }
+body[data-page="courses"] > .footer > small {
+  grid-area: auto; grid-column: 1 / -1; width: 100%; padding-top: 18px;
+  border-top: 1px solid rgba(34,40,33,.16); color: #656d63; text-align: left;
+}
+@media (max-width: 650px) {
+  .section-page > .course-page { padding-top: 32px; padding-bottom: 0; }
+  .section-page > .course-page > .section-heading { margin-bottom: 36px; }
+  .section-page > .course-page > .section-heading::before { margin-bottom: 26px; }
+  .section-page > .course-page > .section-heading h2 { font-size: clamp(52px, 12vw, 72px); }
+  body[data-page="courses"] > .footer {
+    display: flex; min-height: 0; flex-direction: column; align-items: flex-start;
+    gap: 16px; margin: 0; padding: 29px 20px; text-align: left;
+  }
+  body[data-page="courses"] > .footer .wordmark,
+  body[data-page="courses"] > .footer > div { align-self: auto; justify-self: auto; }
+  body[data-page="courses"] > .footer > small { text-align: left; }
+}
+/* BHUMI_LAYOUT_PREVIEW_END */

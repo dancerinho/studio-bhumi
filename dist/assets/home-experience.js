@@ -3,7 +3,6 @@
   const stage = film?.querySelector('[data-home-stage]');
   const video = film?.querySelector('[data-home-video]');
   const copy = film?.querySelector('[data-story-copy]');
-  const nav = document.querySelector('[data-journey-nav]');
   const footer = film?.querySelector('[data-home-footer]');
   if (!film || !stage || !video || !copy) return;
 
@@ -149,11 +148,6 @@
 
     stage.classList.toggle('is-poster', posterOnly || mediaFailed);
     document.body.classList.toggle('journey-scrolling', progress > 0.008);
-    if (nav) {
-      const navHidden = progress > 0.008;
-      nav.setAttribute('aria-hidden', navHidden ? 'true' : 'false');
-      nav.inert = navHidden;
-    }
 
     setChapter(currentChapter(progress));
     const indicator = film.querySelector('[data-story-progress]');

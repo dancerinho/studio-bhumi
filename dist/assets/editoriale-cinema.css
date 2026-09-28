@@ -4,7 +4,7 @@
 .intro-shade{position:absolute;z-index:2;inset:0;background:linear-gradient(0deg,rgba(14,26,20,.43),transparent 39%,rgba(255,250,237,.08) 100%);pointer-events:none}
 .intro-title{position:absolute;z-index:3;left:var(--pad);bottom:16%;opacity:1}
 .intro-title p{margin:0 0 19px;color:#713d30;font-size:10px;font-weight:700;letter-spacing:.17em}
-.intro-title h1{margin:0;color:#1f2925;font:500 clamp(58px,8.1vw,116px)/.94 var(--serif);letter-spacing:-.065em;text-shadow:0 1px 25px rgba(255,252,243,.2)}
+.intro-title h1{margin:0;color:#1f2925;font:500 clamp(58px,8.1vw,116px)/.94 var(--serif);letter-spacing:-.04em;text-shadow:0 1px 25px rgba(255,252,243,.2)}
 .intro-title h1 i{color:var(--red);font-weight:500}
 .intro-scroll{position:absolute;z-index:4;left:var(--pad);bottom:5%;display:flex;align-items:center;gap:12px;color:#fff;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:1}
 .intro-scroll b{font-size:18px;font-weight:400}.scroll-line{position:absolute;width:1px;height:35px;left:-16px;bottom:-10px;background:rgba(255,255,255,.8);transform-origin:top}

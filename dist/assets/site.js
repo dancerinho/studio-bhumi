@@ -106,6 +106,7 @@ function setupReveal() {
       }
     });
   }, { threshold: 0, rootMargin: '0px 0px -16px' });
+  items.forEach((item, index) => { item.dataset.motionSide = index % 2 ? 'right' : 'left'; });
   document.documentElement.classList.add('motion-ready');
   items.forEach((item) => observer.observe(item));
 }
