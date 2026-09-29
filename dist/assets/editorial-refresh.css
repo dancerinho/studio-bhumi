@@ -1366,7 +1366,12 @@ body[data-page="prices"] { background: #272a27; }
 @media (max-width: 650px) {
   body .section-page > .course-page .course-entry.course-entry--pilates:nth-child(n) .course-entry__image { background-position: 90% 48%; animation-name: course-drift-pilates; }
   body .section-page > .course-page .course-entry.course-entry--hatha:nth-child(n) .course-entry__image { background-position: 86% 48%; animation-name: course-drift-hatha; }
+  body .section-page > .course-page .course-entry.course-entry--dainami:nth-child(n) .course-entry__image { background-position: 88% 48%; animation-name: course-drift-dainami; }
+  /* La foto del massaggio, tagliata in verticale, non si legge: su telefono le mani sulla schiena. */
+  body .section-page > .course-page .course-entry.course-entry--bmc:nth-child(n) .course-entry__image { background-image: url("course-bmc-unsplash.jpg"); background-position: 24% 48%; animation-name: course-drift-bmc; }
 }
 /* Stesso movimento verticale allo scorrimento, ma con il soggetto al centro. */
 @keyframes course-drift-pilates { from { background-position: 90% 42%; } to { background-position: 90% 58%; } }
 @keyframes course-drift-hatha { from { background-position: 86% 42%; } to { background-position: 86% 58%; } }
+@keyframes course-drift-dainami { from { background-position: 88% 42%; } to { background-position: 88% 58%; } }
+@keyframes course-drift-bmc { from { background-position: 24% 42%; } to { background-position: 24% 58%; } }
