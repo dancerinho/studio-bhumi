@@ -47,6 +47,28 @@
     }, 350);
   }
 
+  // iOS Safari does not decode any frame of a video until it has played once,
+  // so seeking on scroll shows nothing. A muted play/pause primes the decoder;
+  // if autoplay is refused (Low Power Mode) the first touch retries it.
+  let primed = false;
+  let priming = false;
+  function primeVideo() {
+    if (primed || priming || posterOnly || mediaFailed) return;
+    const attempt = video.play();
+    if (!attempt) return;
+    priming = true;
+    attempt.then(() => {
+      primed = true;
+      video.pause();
+      scheduleSeek();
+    }).catch(() => {}).finally(() => { priming = false; });
+  }
+  const primeOnTouch = () => {
+    primeVideo();
+    if (primed) window.removeEventListener('touchstart', primeOnTouch);
+  };
+  window.addEventListener('touchstart', primeOnTouch, { passive: true });
+
   function ensureLoaded() {
     if (posterOnly || requested || mediaFailed) return;
     requested = true;
@@ -55,6 +77,7 @@
     // that case changing preload alone does not make browsers fetch frames;
     // restart the request once unless a media download is already in flight.
     if (video.readyState < 2 && video.networkState !== 2) video.load();
+    primeVideo();
   }
 
   function videoTime(amount) {
@@ -141,7 +164,8 @@
     video.style.setProperty('--video-focus-x', focusX.toFixed(1) + '%');
 
     if (progress > 0.01) ensureLoaded();
-    if (!posterOnly) {
+    // While the priming play is pending, pausing would abort it.
+    if (!posterOnly && !priming) {
       video.pause();
       scheduleSeek();
     }

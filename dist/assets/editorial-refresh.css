@@ -1182,3 +1182,142 @@ body[data-page="contact"] .contact-mail svg { fill: none; stroke: currentColor; 
 @media (max-width: 520px) {
   body[data-page="contact"] .contact-actions { grid-template-columns: 1fr; }
 }
+
+/* ——— Chi siamo, versione essenziale ———
+   Fasce con fondi nettamente diversi (avorio, carta, grafite, sabbia, terracotta)
+   così ogni parte si riconosce; testi ad alto contrasto; solo dissolvenze leggere. */
+.about-simple { background: #f3f0e7; color: #1f2522; }
+.about-simple .ab-wrap { width: min(1120px, 100%); margin: 0 auto; }
+.about-simple .eyebrow { margin: 0 0 18px; color: #8b4b38; font-size: 11px; }
+.about-simple h1, .about-simple h2 { margin: 0; color: inherit; line-height: 1.02; }
+.about-simple h1 { font-size: clamp(52px, 8vw, 104px); }
+.about-simple h2 { font-size: clamp(40px, 5.4vw, 70px); }
+.about-simple :is(h1, h2) i { color: #8b4b38; }
+
+.ab-hero { padding: clamp(72px, 11vw, 150px) var(--pad) clamp(48px, 7vw, 88px); max-width: calc(1120px + 2 * var(--pad)); margin: 0 auto; }
+.ab-hero > p:not(.eyebrow) { max-width: 620px; margin: 28px 0 0; color: #3f4641; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.75; }
+
+.ab-photo { margin: 0; }
+.ab-photo img { display: block; width: 100%; height: clamp(300px, 56vw, 680px); object-fit: cover; object-position: center 40%; }
+
+.ab-band { padding: clamp(72px, 9vw, 128px) var(--pad); }
+.ab-split { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 7vw, 110px); align-items: start; }
+.ab-copy p { margin: 0; color: #3f4641; font-size: 16px; line-height: 1.85; }
+.ab-copy p + p { margin-top: 18px; }
+
+.ab-studio { background: #fbf9f4; }
+
+.ab-practices { background: #202930; color: #f3f0e7; }
+.ab-practices .eyebrow { color: #d2b898; }
+.ab-practices h2 i { color: #d2b898; }
+.ab-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(243,240,231,.2); }
+.ab-list li { padding: 26px 22px 0 0; }
+.ab-list li + li { padding-left: 22px; border-left: 1px solid rgba(243,240,231,.14); }
+.ab-list h3 { margin: 0 0 12px; font-size: clamp(22px, 2vw, 28px); line-height: 1.1; color: #f6f4ed; }
+.ab-list p { margin: 0; color: rgba(243,240,231,.72); font-size: 14px; line-height: 1.7; }
+.ab-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 44px; padding-bottom: 6px; border-bottom: 1px solid currentColor; color: #f6f4ed; font: 700 11px/1 "Lato", var(--sans); letter-spacing: .22em; text-transform: uppercase; text-decoration: none; }
+.ab-link:hover { color: #d2b898; }
+
+.ab-people { background: #e7dfcf; }
+.ab-founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); margin-top: clamp(40px, 5vw, 64px); }
+.ab-founders img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 25%; margin-bottom: 22px; filter: grayscale(1); }
+.ab-founders .eyebrow { margin-bottom: 10px; }
+.ab-founders h3 { margin: 0 0 12px; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; }
+.ab-founders p:not(.eyebrow) { margin: 0; color: #3f4641; font-size: 15px; line-height: 1.8; }
+.ab-subtitle { margin: clamp(56px, 7vw, 88px) 0 24px; padding-top: 24px; border-top: 1px solid rgba(31,37,34,.18); color: #8b4b38; font: 700 11px/1 "Lato", var(--sans) !important; letter-spacing: .22em !important; text-transform: uppercase; }
+.ab-team { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.ab-team img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; margin-bottom: 14px; filter: grayscale(1); }
+.ab-team h4 { margin: 0 0 6px; font: 400 21px/1.15 var(--serif); }
+.ab-team p { margin: 0; color: #4a514c; font-size: 13px; line-height: 1.6; }
+
+.ab-close { background: #8b4b38; color: #f6f4ed; text-align: center; }
+.ab-close .ab-wrap { max-width: 760px; }
+.about-simple .ab-close h2 i { color: #f0d2c2; }
+.ab-close p { margin: 24px auto 0; max-width: 520px; color: rgba(246,244,237,.86); font-size: 16px; line-height: 1.75; }
+.ab-button { display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 17px 28px; border: 1px solid rgba(246,244,237,.8); border-radius: 999px; color: #f6f4ed; font: 700 11px/1 "Lato", var(--sans); letter-spacing: .22em; text-transform: uppercase; text-decoration: none; transition: background .25s, color .25s; }
+.ab-button:hover { background: #f6f4ed; color: #8b4b38; }
+
+/* Solo una dissolvenza verso l'alto, niente scivolamenti laterali. */
+.about-simple .reveal,
+.about-simple .reveal[data-motion-side] { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
+.about-simple .reveal:is(.visible, .is-visible) { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .about-simple .reveal, .about-simple .reveal[data-motion-side] { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 900px) {
+  .ab-split { grid-template-columns: 1fr; }
+  .ab-list { grid-template-columns: 1fr; border-top: 0; }
+  .ab-list li, .ab-list li + li { padding: 22px 0; border-left: 0; border-top: 1px solid rgba(243,240,231,.18); }
+  .ab-founders { grid-template-columns: 1fr; }
+  .ab-team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  .ab-hero { padding: 56px 22px 40px; }
+  .ab-band { padding: 64px 22px; }
+  .ab-photo img { height: 62vw; min-height: 260px; }
+}
+
+/* Prezzi su telefono: niente livello fisso (Safari iOS lo ridimensiona con la barra
+   degli indirizzi e lascia fasce vuote); la foto resta in alto e sfuma nel grafite. */
+@media (max-width: 900px) {
+  body[data-page="prices"] #contenuto.section-page::before { content: none; }
+  body[data-page="prices"] #contenuto.section-page {
+    background:
+      linear-gradient(180deg, rgba(26,29,28,.55) 0, rgba(26,29,28,.72) 420px, #272a27 760px),
+      url("homepage.jpg") center top / auto 760px no-repeat,
+      #272a27;
+  }
+  body[data-page="prices"] .price-reservation-note { margin-top: 16px; }
+}
+
+/* Mappa con percorso in tempo reale. */
+.map-card { cursor: default; }
+.map-card:hover { transform: none; }
+.map-card__viewport { cursor: pointer; }
+.map-card__actions { display: inline-flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.map-card__route {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 18px;
+  border: 1px solid #202930;
+  border-radius: 999px;
+  background: transparent;
+  color: #202930;
+  font: 700 10px/1 "Lato", var(--sans);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+.map-card__route::before { width: 7px; height: 7px; border-radius: 50%; background: #3f9b6b; content: ""; }
+.map-card__route:hover, .map-card__route[aria-pressed="true"] { background: #202930; color: #f6f4ed; }
+.map-card__route[aria-busy="true"] { opacity: .6; }
+.map-card__cta { text-decoration: none; }
+.map-card__modes { display: flex; gap: 6px; padding: 12px 8px 0; }
+.map-card__modes[hidden] { display: none; }
+.map-card__modes button {
+  flex: 1;
+  padding: 10px 8px;
+  border: 1px solid rgba(32,41,48,.2);
+  border-radius: 999px;
+  background: transparent;
+  color: #4a514c;
+  font: 700 10px/1 "Lato", var(--sans);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.map-card__modes button[aria-pressed="true"] { border-color: #8b4b38; background: #8b4b38; color: #f6f4ed; }
+.map-card__status { margin: 4px 12px 0; color: #3f4641; font-size: 13px; line-height: 1.6; }
+.map-card__note { margin: 8px 12px 6px; color: #7a817b; font-size: 11px; line-height: 1.55; }
+/* In modalità percorso la mappa diventa interattiva e mostra tutto il tragitto. */
+.map-card.is-route .map-card__viewport iframe { top: -2px; height: calc(100% + 4px); pointer-events: auto; filter: none; }
+.map-card.is-route .map-card__viewport { aspect-ratio: 4 / 3; }
+.map-card.is-route .map-card__viewport::after { display: none; }
+@media (max-width: 520px) {
+  .map-card__footer { flex-direction: column; align-items: flex-start; }
+  .map-card__actions { width: 100%; justify-content: stretch; }
+  .map-card__actions > * { flex: 1; justify-content: center; white-space: nowrap; padding-inline: 12px; letter-spacing: .1em; }
+}
