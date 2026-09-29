@@ -1337,3 +1337,63 @@ body[data-page="contact"] .contact-mail svg { fill: none; stroke: currentColor; 
 
 /* Foto con proporzioni fisse: l'altezza viene dal rapporto, non dall'attributo height. */
 .ab-founders img, .ab-team img { height: auto; }
+
+/* Prezzi: la foto resta dietro ai contenuti fino all'ultima riga, poi la pagina finisce.
+   Livello sticky dentro la pagina (non fixed): su iPhone non lascia fasce vuote quando
+   la barra degli indirizzi cambia altezza, e si ferma esattamente con i contenuti. */
+body[data-page="prices"] #contenuto.section-page { background: #272a27; }
+body[data-page="prices"] #contenuto.section-page::before {
+  position: sticky;
+  top: 0;
+  inset: auto;
+  z-index: -1;
+  display: block;
+  height: 100vh;
+  height: 100lvh;
+  margin-bottom: -100vh;
+  margin-bottom: -100lvh;
+  background:
+    linear-gradient(100deg, rgba(26,29,28,.76), rgba(26,29,28,.48) 52%, rgba(26,29,28,.34)),
+    url("homepage.jpg") center / cover no-repeat,
+    #272a27;
+  pointer-events: none;
+  content: "";
+}
+body[data-page="prices"] > .footer { display: none; }
+body[data-page="prices"] { background: #272a27; }
+
+/* Corsi su telefono: foto intera in 16:9 come su PC, testo sotto su fondo scuro. */
+@media (max-width: 650px) {
+  body .section-page > .course-page .course-entry,
+  body .section-page > .course-page .course-entry:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    margin: 0;
+    background: #202930;
+  }
+  body .section-page > .course-page .course-entry::before,
+  body .section-page > .course-page .course-entry::after { content: none; }
+  body .section-page > .course-page .course-entry__image,
+  body .section-page > .course-page .course-entry:nth-child(even) .course-entry__image {
+    position: relative;
+    inset: auto;
+    order: -1;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0;
+    border-radius: 0;
+    background-size: cover;
+    background-position: center;
+    transform: none;
+  }
+  body .section-page > .course-page .course-entry__heading,
+  body .section-page > .course-page .course-entry:nth-child(even) .course-entry__heading {
+    position: relative;
+    inset: auto;
+    width: auto;
+    padding: 30px 24px 48px;
+    background: none;
+  }
+}
