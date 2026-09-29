@@ -13,15 +13,15 @@
   <link rel="stylesheet" href="assets/sections.css?v=20260926j"/>
   <title>Home | Studio Bhumi Milano Isola</title>
   <link rel="stylesheet" href="assets/home-experience.css?v=20260927p"/>
-<link rel="stylesheet" href="assets/editorial-refresh.css?v=20260929a"/></head>
+<link rel="stylesheet" href="assets/editorial-refresh.css?v=20260928h"/></head>
 <body data-page="home">
   <nav class="topbar home-navigation" data-journey-nav aria-label="Navigazione principale">
     <a class="wordmark" href="index.html"><img src="assets/LogoBhumiDef.jpg" alt=""/><span>STUDIO BHUMI<small>MILANO · ISOLA</small></span></a>
     <div class="toplinks"><a href="index.html" aria-current="page">Home</a><a href="corsi.html">Corsi</a><a href="prezzi.html">Prezzi</a><a href="chi-siamo.html">Chi siamo</a></div>
-    <a class="top-portal" href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata <b>↗︎</b></a>
-    <a class="top-cta" href="contatti.html">Parliamone <b>↗︎</b></a>
+    <a class="top-cta" href="contatti.html">Parliamone <b>↗</b></a>
+    <a class="top-portal" href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata <b>↗</b></a>
     <button class="menu-toggle" aria-label="Apri tutte le sezioni" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
-    <div class="site-menu" id="site-menu" aria-hidden="true"><p class="eyebrow">Le sezioni dello studio</p><a href="index.html">Home <b>↗︎</b></a><a href="corsi.html">Corsi <b>↗︎</b></a><a href="prezzi.html">Prezzi <b>↗︎</b></a><a href="chi-siamo.html">Chi siamo <b>↗︎</b></a><a href="contatti.html">Parliamone <b>↗︎</b></a><a class="site-menu__portal" href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata <b>↗︎</b></a></div>
+    <div class="site-menu" id="site-menu" aria-hidden="true"><p class="eyebrow">Le sezioni dello studio</p><a href="index.html">Home <b>↗</b></a><a href="corsi.html">Corsi <b>↗</b></a><a href="prezzi.html">Prezzi <b>↗</b></a><a href="chi-siamo.html">Chi siamo <b>↗</b></a><a href="contatti.html">Parliamone <b>↗</b></a><a class="site-menu__portal" href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata <b>↗</b></a></div>
   </nav>
   <main class="section-page home-experience-page" id="contenuto">
     <section class="home-film" data-home-film aria-label="Un’unica pratica yoga che accompagna lo scroll">
@@ -35,7 +35,7 @@
             <p class="eyebrow">YOGA E MOVIMENTO · MILANO ISOLA</p>
             <h1>Più ascolto.<br/><i>Più possibilità.</i></h1>
             <p>Uno studio indipendente dedicato al movimento consapevole.</p>
-            <div class="home-film__scroll-note">SCORRI PER ENTRARE NELLA PRATICA <b aria-hidden="true">↓︎</b></div>
+            <div class="home-film__scroll-note">SCORRI PER ENTRARE NELLA PRATICA <b aria-hidden="true">↓</b></div>
           </article>
           <article class="home-film__panel" data-story-panel aria-hidden="true" hidden>
             <p class="eyebrow">HATHA YOGA</p>
@@ -51,13 +51,13 @@
             <p class="eyebrow">LE PRATICHE BHUMI</p>
             <h2>Cinque vie,<br/><i>un solo corpo.</i></h2>
             <p class="home-film__practice-list">Pilates · Gyrotonic® · Hatha Yoga<br/>Dainami® · Body-Mind Centering®</p>
-            <div class="home-film__actions"><a href="corsi.html">Scopri le pratiche <b aria-hidden="true">↗︎</b></a><a href="prezzi.html#prezzi">Vedi formule e prezzi <b aria-hidden="true">↗︎</b></a></div>
+            <div class="home-film__actions"><a href="corsi.html">Scopri le pratiche <b aria-hidden="true">↗</b></a><a href="prezzi.html#prezzi">Vedi formule e prezzi <b aria-hidden="true">↗</b></a></div>
           </article>
           <article class="home-film__panel" data-story-panel aria-hidden="true" hidden>
             <p class="eyebrow">IL PRIMO PASSO È UNA CONVERSAZIONE</p>
             <h2>Troviamo insieme<br/><i>la tua pratica.</i></h2>
             <p>Studio Bhumi · Via Lario 17 · Milano Isola</p>
-            <div class="home-film__actions"><a href="contatti.html">Parliamone <b aria-hidden="true">↗︎</b></a></div>
+            <div class="home-film__actions"><a href="contatti.html">Parliamone <b aria-hidden="true">↗</b></a></div>
           </article>
         </div>
         <footer class="home-film__footer" data-home-footer aria-hidden="true" hidden>
@@ -67,13 +67,13 @@
         <div class="home-film__progress" aria-hidden="false">
           <span class="home-film__progress-label" data-story-label>YOGA · PRESENZA</span>
           <div class="home-film__progress-track" data-story-progress role="progressbar" aria-label="Avanzamento del racconto" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
-          <span class="home-film__progress-cue" data-story-cue>CONTINUA A SCORRERE <b aria-hidden="true">↓︎</b></span>
+          <span class="home-film__progress-cue" data-story-cue>CONTINUA A SCORRERE <b aria-hidden="true">↓</b></span>
         </div>
         <p class="home-film__sr-only">Il filmato mostra una persona che pratica yoga in una sala essenziale. Scorri per seguire la stessa ripresa mentre il testo racconta lo studio e le sue pratiche. Il video si ferma sulla posizione corrispondente al tuo scroll.</p>
       </div>
     </section>
   </main>
-  <script src="assets/editoriale.js?v=20260929a"></script>
+  <script src="assets/editoriale.js?v=20260928a"></script>
   <script src="assets/home-experience.js?v=20260927p" defer></script>
 </body>
 </html>

@@ -156,7 +156,7 @@
       indicator.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
     }
     const cue = film.querySelector('[data-story-cue]');
-    if (cue) cue.innerHTML = progress > 0.975 ? 'FINE DEL RACCONTO <b aria-hidden="true">↗</b>' : 'CONTINUA A SCORRERE <b aria-hidden="true">↓</b>';
+    if (cue) cue.innerHTML = progress > 0.975 ? 'FINE DEL RACCONTO <b aria-hidden="true">↗︎</b>' : 'CONTINUA A SCORRERE <b aria-hidden="true">↓︎</b>';
     const label = film.querySelector('[data-story-label]');
     if (label) label.textContent = labels[chapter] || labels[0];
 

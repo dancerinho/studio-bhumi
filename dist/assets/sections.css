@@ -429,9 +429,9 @@ body{font-family:var(--sans)}
 
 /* Capitoli fotografici a tutta larghezza, come la scena della Home: senza riquadri arrotondati. */
 .section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{display:block;width:100vw;max-width:none;height:clamp(420px,62vw,820px);margin-left:calc(50% - 50vw);border-radius:0;background-repeat:no-repeat;background-size:cover;background-position:center;}
-.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-man.jpg");background-position:center 48%}
 .section-page>.course-page .course-entry--gyro .course-entry__image{background-image:url("course-gyrotonic-clean.png");background-position:center 48%}
-.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("Hatha.jpg");background-position:center 52%}
+.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("course-hatha-man.jpg");background-position:center 48%}
 .section-page>.course-page .course-entry--dainami .course-entry__image{background-image:url("course-dainami-clean.png");background-position:center 50%}
 .section-page>.course-page .course-entry--bmc .course-entry__image{background-image:url("course-bmc-massage.png");background-position:center 48%}
 @media(max-width:950px){.section-page>.course-page .course-entry__image,.section-page>.course-page .course-entry:nth-child(even) .course-entry__image{height:clamp(360px,72vw,620px)}}
@@ -464,9 +464,9 @@ body[data-page="courses"]{overflow-x:hidden}
 .section-page>.course-page .course-entry__description p{margin:0;color:rgba(255,255,255,.94);font-size:clamp(15px,1.5vw,18px);line-height:1.72;text-shadow:0 1px 12px rgba(20,29,25,.45)}
 .section-page>.course-page .course-entry__description a{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:12px 18px;border:1px solid rgba(243,240,231,.7);border-radius:99px;color:#f3f0e7;font-size:10px;letter-spacing:.1em}
 .section-page>.course-page .course-entry__description a b{color:#e2a287}
-.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-clean.png");background-position:center 48%}
+.section-page>.course-page .course-entry--pilates .course-entry__image{background-image:url("course-pilates-man.jpg");background-position:center 48%}
 .section-page>.course-page .course-entry--gyro .course-entry__image{background-image:url("course-gyrotonic-clean.png");background-position:center 48%}
-.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("Hatha.jpg");background-position:center 52%}
+.section-page>.course-page .course-entry--hatha .course-entry__image{background-image:url("course-hatha-man.jpg");background-position:center 48%}
 .section-page>.course-page .course-entry--dainami .course-entry__image{background-image:url("course-dainami-clean-v2.png");background-position:center 50%}
 .section-page>.course-page .course-entry--bmc .course-entry__image{background-image:url("course-bmc-massage.png");background-position:center 48%}
 .section-page>.course-page .practice-note{max-width:1120px;margin:0 auto;padding:0 0 24px}

@@ -29,7 +29,7 @@ body[data-page="prices"] #contenuto.section-page{
   margin:0;
   padding:0;
   background-color:#272a27;
-  background-image:linear-gradient(100deg,rgba(26,29,28,.76),rgba(26,29,28,.48) 52%,rgba(26,29,28,.34)),url("homepage3.jpg");
+  background-image:linear-gradient(100deg,rgba(26,29,28,.76),rgba(26,29,28,.48) 52%,rgba(26,29,28,.34)),url("homepage.jpg");
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;

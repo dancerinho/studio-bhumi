@@ -38,7 +38,7 @@ function renderSidebar() {
           <span class="brand__descriptor">studio del movimento</span>
         </a>
         <nav class="topbar__primary" aria-label="Pagine principali">${navItems.slice(1,4).map(([href,label,key]) => `<a href="${href}" ${currentPage === key ? 'aria-current="page"' : ''}>${label}</a>`).join('')}</nav>
-        <a class="topbar__cta" href="mailto:studiobhumi@gmail.com?subject=Richiesta%20lezione%20di%20prova">Prenota una prova ${icon('arrow')}</a>
+        <a class="topbar__cta" href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata ${icon('arrow')}</a>
         <button class="sidebar__toggle" type="button" aria-expanded="false" aria-controls="side-menu">
           <span class="sr-only">Apri navigazione</span>${icon('menu')}
         </button>
@@ -56,11 +56,11 @@ function renderFooter() {
   mount.innerHTML = `
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <div><a class="brand brand--footer" href="index.html"><img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/><span class="brand__descriptor">studio del movimento</span></a><p>Movimento consapevole a Milano Isola.</p><nav class="social-links" aria-label="Studio Bhumi sui social"><a href="https://www.instagram.com/studiobhumi/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a><a href="https://www.facebook.com/StudioBhumi?locale=it_IT" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span><span class="sr-only"> (si apre in una nuova scheda)</span></a></nav></div>
+        <div><a class="brand brand--footer" href="index.html"><img class="brand__logo" src="assets/LogoBhumiDef.jpg" width="135" height="120" alt="Studio Bhumi"/><span class="brand__descriptor">studio del movimento</span></a><p>Movimento consapevole a Milano Isola.</p><nav class="social-links" aria-label="Studio Bhumi sui social"><a href="https://www.instagram.com/studiobhumi/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗︎</span><span class="sr-only"> (si apre in una nuova scheda)</span></a><a href="https://www.facebook.com/StudioBhumi?locale=it_IT" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗︎</span><span class="sr-only"> (si apre in una nuova scheda)</span></a></nav></div>
         <div class="footer-links"><a href="mailto:studiobhumi@gmail.com">studiobhumi@gmail.com</a><a href="tel:+393487517656">348 751 7656</a><a href="https://www.google.com/maps/search/?api=1&query=Studio+Bhumi%2C+Via+Lario+17%2C+20159+Milano" target="_blank" rel="noopener noreferrer">Studio Bhumi · Via Lario 17, 20159 Milano</a></div>
-        <div class="footer-links"><a href="privacy.html">Privacy e cookie</a><a href="mailto:studiobhumi@gmail.com?subject=Prenotazione%20lezione%20Studio%20Bhumi" target="_blank" rel="noopener">Area riservata</a></div>
+        <div class="footer-links"><a href="privacy.html">Privacy e cookie</a><a href="https://logfit.it/registration?codeweb=studio_bhumi_mi" target="_blank" rel="noopener noreferrer">Area riservata</a></div>
       </div>
-      <div class="site-footer__bottom"><span>© Studio Bhumi</span><a class="back-to-top" href="#contenuto">Torna su <span aria-hidden="true">↑</span></a><span>Pilates · Gyrotonic® · Yoga · Dainami® · BMC®</span></div>
+      <div class="site-footer__bottom"><span>© Studio Bhumi</span><a class="back-to-top" href="#contenuto">Torna su <span aria-hidden="true">↑︎</span></a><span>Pilates · Gyrotonic® · Yoga · Dainami® · BMC®</span></div>
     </footer>`;
 }
 
