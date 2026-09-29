@@ -44,7 +44,7 @@
   function showStep(index) {
     currentStep = index;
     steps.forEach((step, stepIndex) => { step.hidden = stepIndex !== currentStep; });
-    stepLabel.textContent = `${String(currentStep + 1).padStart(2, '0')} / ${String(steps.length).padStart(2, '0')}`;
+    stepLabel.textContent = `Domanda ${currentStep + 1} di ${steps.length}`;
     progress.setAttribute('aria-valuenow', String(currentStep + 1));
     progress.querySelector('i').style.width = `${((currentStep + 1) / steps.length) * 100}%`;
     backButton.hidden = currentStep === 0;

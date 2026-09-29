@@ -1,18 +1,24 @@
 import { createServer } from 'node:http';
-import { readFile } from 'node:fs/promises';
+import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('./dist/', import.meta.url));
-const types = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.mp4':'video/mp4' };
+const types = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.woff2':'font/woff2', '.json':'application/json', '.mp4':'video/mp4' };
 const port = Number(process.env.PORT || 3000);
 createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     const file = resolve(root, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
     if (!file.startsWith(resolve(root) + sep)) { res.writeHead(403).end('Forbidden'); return; }
+    const info = await stat(file);
+    const etag = `"${info.size.toString(16)}-${Math.floor(info.mtimeMs).toString(16)}"`;
+    // Revalidate instead of re-downloading: images stay decoded across page changes.
+    if (req.headers['if-none-match'] === etag) { res.writeHead(304, { ETag: etag }).end(); return; }
     const data = await readFile(file);
-    const headers = { 'Content-Type': types[extname(file)] || 'application/octet-stream' };
+    const headers = { 'Content-Type': types[extname(file)] || 'application/octet-stream', ETag: etag, 'Last-Modified': info.mtime.toUTCString() };
+    // The video URL is versioned, so the browser can keep it while scrubbing.
+    headers['Cache-Control'] = extname(file) === '.mp4' ? 'public, max-age=3600' : 'no-cache';
     if (extname(file) === '.mp4') {
       headers['Accept-Ranges'] = 'bytes';
       const match = req.headers.range?.match(/^bytes=(\d*)-(\d*)$/);
