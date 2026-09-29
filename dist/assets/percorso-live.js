@@ -6,6 +6,7 @@
   const frame = card.querySelector('[data-map-frame]');
   const mapLink = card.querySelector('[data-map-link]');
   const button = card.querySelector('[data-route-button]');
+  const label = card.querySelector('[data-route-label]') || button;
   const external = card.querySelector('[data-route-external]');
   const status = card.querySelector('[data-route-status]');
   const modes = card.querySelector('[data-route-modes]');
@@ -65,7 +66,7 @@
     if (first) {
       card.classList.add('is-route');
       modes.hidden = false;
-      button.textContent = 'Chiudi percorso';
+      label.textContent = 'Chiudi percorso';
       button.setAttribute('aria-pressed', 'true');
       if (badge) badge.textContent = 'Live';
       if (address) address.textContent = 'percorso · via lario 17';
@@ -105,7 +106,7 @@
     lastDrawn = null;
     card.classList.remove('is-route');
     modes.hidden = true;
-    button.textContent = 'Percorso da qui';
+    label.textContent = 'Percorso da qui';
     button.setAttribute('aria-pressed', 'false');
     button.removeAttribute('aria-busy');
     if (badge) badge.textContent = 'Isola';

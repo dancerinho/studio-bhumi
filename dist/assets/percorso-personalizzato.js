@@ -62,7 +62,7 @@
     if (health === 'yes') {
       result.innerHTML = `
         <p class="eyebrow">Prima, un confronto</p>
-        <h3>Il tuo percorso<br/><i>va valutato insieme.</i></h3>
+        <h3>Il tuo percorso va valutato insieme.</h3>
         <p>Con un’ernia, una patologia, dolore, un infortunio o un intervento recente, questo questionario non può stabilire quale pratica sia adatta. Chiedi al tuo medico o fisioterapista quali attività puoi intraprendere e con quali indicazioni; poi contatta lo studio per parlarne con un’insegnante.</p>
         <a class="personal-path__result-cta" href="contatti.html">Parla con lo studio <b aria-hidden="true">↗︎</b></a>
         <p class="personal-path__disclaimer">Non inviare dettagli sanitari tramite questo quiz: le risposte non vengono salvate né trasmesse.</p>
@@ -83,7 +83,7 @@
 
     result.innerHTML = `
       <p class="eyebrow">Il tuo punto di partenza</p>
-      <h3>Un percorso<br/><i>in due pratiche.</i></h3>
+      <h3>Un percorso in due pratiche.</h3>
       <p>${suggestion.description}</p>
       <div class="personal-path__practice-pair">${suggestion.practices.map((name) => `<span>${name}</span>`).join('')}</div>
       <p class="personal-path__format"><strong>Formato da esplorare:</strong> ${format}.</p>

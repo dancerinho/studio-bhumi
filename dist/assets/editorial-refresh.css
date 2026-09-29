@@ -1321,3 +1321,19 @@ body[data-page="contact"] .contact-mail svg { fill: none; stroke: currentColor; 
   .map-card__actions { width: 100%; justify-content: stretch; }
   .map-card__actions > * { flex: 1; justify-content: center; white-space: nowrap; padding-inline: 12px; letter-spacing: .1em; }
 }
+
+/* Icona di navigazione al posto del pallino. */
+.map-card__route::before { content: none; }
+.map-card__route svg { width: 15px; height: 15px; fill: currentColor; transform: rotate(0deg); transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.map-card__route:hover svg { transform: translate(1px, -1px); }
+.map-card__route[aria-pressed="true"] svg { fill: #6fd39b; }
+
+/* Chi siamo: titoli di sezione su una riga e di misure diverse, un solo corsivo di chiusura. */
+.about-simple .ab-studio h2 { font-size: clamp(34px, 4vw, 52px); max-width: 12ch; }
+.about-simple .ab-practices h2 { font-size: clamp(30px, 3.2vw, 42px); }
+.about-simple .ab-people h2 { font-size: clamp(38px, 4.6vw, 60px); }
+.about-simple .ab-quote { font-size: clamp(34px, 4.4vw, 58px); line-height: 1.15; }
+.about-simple .ab-quote i { color: #f6f4ed; }
+
+/* Foto con proporzioni fisse: l'altezza viene dal rapporto, non dall'attributo height. */
+.ab-founders img, .ab-team img { height: auto; }
