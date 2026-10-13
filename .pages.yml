@@ -1,0 +1,502 @@
+{
+  "media": [
+    {
+      "name": "novita",
+      "label": "Foto di eventi e novità",
+      "input": "content/uploads",
+      "output": "/uploads",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "webp"
+      ],
+      "rename": "safe"
+    }
+  ],
+  "content": [
+    {
+      "name": "prezzi",
+      "label": "Prezzi e formule",
+      "type": "file",
+      "path": "content/prezzi.json",
+      "format": "json",
+      "operations": {
+        "delete": false,
+        "rename": false
+      },
+      "fields": [
+        {
+          "name": "gruppi",
+          "label": "Gruppi di formule",
+          "type": "object",
+          "required": true,
+          "list": {
+            "min": 2,
+            "max": 2,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{etichetta}"
+            }
+          },
+          "fields": [
+            {
+              "name": "tipo",
+              "label": "Tipo di scheda (non modificare)",
+              "type": "select",
+              "required": true,
+              "readonly": true,
+              "options": {
+                "values": [
+                  {
+                    "name": "gruppo",
+                    "label": "Piccoli gruppi"
+                  },
+                  {
+                    "name": "individuale",
+                    "label": "Individuali"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "etichetta",
+              "label": "Etichetta della formula",
+              "type": "string",
+              "required": true,
+              "options": {
+                "maxlength": 50
+              }
+            },
+            {
+              "name": "titolo",
+              "label": "Titolo della scheda",
+              "type": "text",
+              "required": true,
+              "options": {
+                "maxlength": 100
+              },
+              "description": "Un ritorno a capo crea una nuova riga. Non usare HTML."
+            },
+            {
+              "name": "titoloTabella",
+              "label": "Titolo nella tabella Orari",
+              "type": "string",
+              "required": true,
+              "options": {
+                "maxlength": 80
+              }
+            },
+            {
+              "name": "note",
+              "label": "Descrizione della formula",
+              "type": "text",
+              "required": true,
+              "options": {
+                "maxlength": 200
+              },
+              "description": "Durata di 55 minuti e massimo 5 persone sono gestiti fuori dal pannello."
+            },
+            {
+              "name": "noteTabella",
+              "label": "Descrizione breve nella tabella Orari",
+              "type": "string",
+              "required": true,
+              "options": {
+                "maxlength": 100
+              }
+            },
+            {
+              "name": "voci",
+              "label": "Pacchetti e prezzi",
+              "type": "object",
+              "required": true,
+              "list": {
+                "min": 1,
+                "max": 3,
+                "collapsible": {
+                  "collapsed": true,
+                  "summary": "{voce}"
+                }
+              },
+              "fields": [
+                {
+                  "name": "voce",
+                  "label": "Voce (es. 4 lezioni)",
+                  "type": "string",
+                  "required": true,
+                  "options": {
+                    "maxlength": 30
+                  },
+                  "description": "Usa la stessa voce nei due gruppi. Massimo tre voci diverse in totale."
+                },
+                {
+                  "name": "prezzo",
+                  "label": "Prezzo in euro",
+                  "type": "number",
+                  "required": true,
+                  "options": {
+                    "min": 0,
+                    "max": 99999
+                  },
+                  "description": "Solo numero, massimo due decimali. Per 1.270 euro inserisci 1270."
+                },
+                {
+                  "name": "note",
+                  "label": "Nota del pacchetto (facoltativa)",
+                  "type": "text",
+                  "required": false,
+                  "options": {
+                    "maxlength": 100
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "quotaAnnuale",
+          "label": "Quota associativa annuale in euro",
+          "type": "number",
+          "required": true,
+          "options": {
+            "min": 0,
+            "max": 99999
+          }
+        }
+      ]
+    },
+    {
+      "name": "orari",
+      "label": "Fasce di apertura dello studio",
+      "type": "file",
+      "path": "content/orari.json",
+      "format": "json",
+      "operations": {
+        "delete": false,
+        "rename": false
+      },
+      "fields": [
+        {
+          "name": "fasce",
+          "label": "Fasce di apertura",
+          "type": "object",
+          "required": true,
+          "list": {
+            "min": 1,
+            "max": 14,
+            "collapsible": {
+              "collapsed": true,
+              "summary": "{apertura} — {chiusura}"
+            }
+          },
+          "fields": [
+            {
+              "name": "giorni",
+              "label": "Giorni della settimana",
+              "type": "select",
+              "required": true,
+              "options": {
+                "multiple": true,
+                "min": 1,
+                "max": 7,
+                "values": [
+                  {
+                    "name": "Monday",
+                    "label": "Lunedì"
+                  },
+                  {
+                    "name": "Tuesday",
+                    "label": "Martedì"
+                  },
+                  {
+                    "name": "Wednesday",
+                    "label": "Mercoledì"
+                  },
+                  {
+                    "name": "Thursday",
+                    "label": "Giovedì"
+                  },
+                  {
+                    "name": "Friday",
+                    "label": "Venerdì"
+                  },
+                  {
+                    "name": "Saturday",
+                    "label": "Sabato"
+                  },
+                  {
+                    "name": "Sunday",
+                    "label": "Domenica"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "apertura",
+              "label": "Apertura (HH:mm)",
+              "type": "string",
+              "required": true,
+              "options": {
+                "maxlength": 5
+              },
+              "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+              "description": "Esempio 07:30. È l’apertura dello studio, non l’orario di una lezione."
+            },
+            {
+              "name": "chiusura",
+              "label": "Chiusura (HH:mm)",
+              "type": "string",
+              "required": true,
+              "options": {
+                "maxlength": 5
+              },
+              "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+              "description": "Successiva all’apertura dello stesso giorno; nessuna fascia sovrapposta."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "eventi",
+      "label": "Eventi e novità",
+      "type": "collection",
+      "path": "content/eventi",
+      "format": "json",
+      "filename": "{year}-{month}-{day}-{primary}.json",
+      "exclude": [
+        ".gitkeep"
+      ],
+      "subfolders": false,
+      "fields": [
+        {
+          "name": "titolo",
+          "label": "Titolo",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 100
+          }
+        },
+        {
+          "name": "data",
+          "label": "Data della novità o dell’evento",
+          "type": "date",
+          "required": true,
+          "options": {
+            "format": "yyyy-MM-dd"
+          }
+        },
+        {
+          "name": "testo",
+          "label": "Testo breve",
+          "type": "text",
+          "required": true,
+          "options": {
+            "maxlength": 600
+          }
+        },
+        {
+          "name": "foto",
+          "label": "Foto (facoltativa)",
+          "type": "image",
+          "description": "JPG/WebP statico, massimo 600 KB (600000 byte) e 1600 × 1000 px. Comprimi prima di caricare; il build blocca file fuori limite.",
+          "options": {
+            "media": "novita",
+            "extensions": [
+              "jpg",
+              "jpeg",
+              "webp"
+            ]
+          }
+        },
+        {
+          "name": "fotoAlt",
+          "label": "Descrizione della foto",
+          "type": "string",
+          "required": false,
+          "options": {
+            "maxlength": 160
+          },
+          "description": "Obbligatoria quando inserisci una foto; descrivi ciò che si vede."
+        },
+        {
+          "name": "visibile",
+          "label": "Mostra sul sito",
+          "type": "boolean",
+          "required": true,
+          "default": false
+        }
+      ],
+      "view": {
+        "primary": "titolo",
+        "fields": [
+          "titolo",
+          "data",
+          "visibile"
+        ],
+        "sort": [
+          "data"
+        ],
+        "default": {
+          "sort": "data",
+          "order": "desc"
+        }
+      }
+    },
+    {
+      "name": "avviso",
+      "label": "Avviso in home",
+      "type": "file",
+      "path": "content/avviso-home.json",
+      "format": "json",
+      "operations": {
+        "delete": false,
+        "rename": false
+      },
+      "fields": [
+        {
+          "name": "attivo",
+          "label": "Mostra l’avviso",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "testo",
+          "label": "Testo dell’avviso",
+          "type": "text",
+          "required": false,
+          "options": {
+            "maxlength": 140
+          },
+          "description": "Obbligatorio se attivo. Sostituisce il piccolo testo sopra il primo titolo della home; nessun banner."
+        }
+      ]
+    },
+    {
+      "name": "recapiti",
+      "label": "Recapiti e link globali",
+      "type": "file",
+      "path": "content/recapiti.json",
+      "format": "json",
+      "operations": {
+        "delete": false,
+        "rename": false
+      },
+      "fields": [
+        {
+          "name": "telefono",
+          "label": "Telefono internazionale",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 20
+          },
+          "pattern": "^\\+[1-9][0-9]{6,14}$",
+          "description": "Esempio +393487517656. Aggiorna anche il numero visualizzato."
+        },
+        {
+          "name": "telefonoVisualizzato",
+          "label": "Telefono visualizzato",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 30
+          },
+          "pattern": "^[0-9][0-9 ()-]*$",
+          "description": "Esempio 348 751 7656, senza prefisso +39."
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 254
+          }
+        },
+        {
+          "name": "indirizzo",
+          "label": "Via e numero civico",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 100
+          }
+        },
+        {
+          "name": "cap",
+          "label": "CAP",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 5
+          },
+          "pattern": "^[0-9]{5}$"
+        },
+        {
+          "name": "citta",
+          "label": "Città",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 60
+          }
+        },
+        {
+          "name": "quartiere",
+          "label": "Quartiere",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 60
+          }
+        },
+        {
+          "name": "paese",
+          "label": "Paese (codice ISO)",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 2
+          },
+          "pattern": "^[A-Z]{2}$",
+          "description": "IT per Italia."
+        },
+        {
+          "name": "logfit",
+          "label": "Link prenotazioni Logfit",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 500
+          },
+          "pattern": "^https?://",
+          "description": "URL completo http/https, senza credenziali."
+        },
+        {
+          "name": "instagram",
+          "label": "Instagram",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 500
+          },
+          "pattern": "^https?://",
+          "description": "URL completo http/https, senza credenziali."
+        },
+        {
+          "name": "facebook",
+          "label": "Facebook",
+          "type": "string",
+          "required": true,
+          "options": {
+            "maxlength": 500
+          },
+          "pattern": "^https?://",
+          "description": "URL completo http/https, senza credenziali."
+        }
+      ]
+    }
+  ]
+}
