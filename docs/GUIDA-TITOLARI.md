@@ -4,7 +4,7 @@
 
 ## Entrare
 
-Accetta l’invito ricevuto dal gestore e apri [Pages CMS](https://app.pagescms.org/). Scegli l’accesso per collaboratori/email, usa **la stessa email dell’invito** e inserisci il codice monouso ricevuto nella casella di posta (nel login ufficiale attuale è di sei cifre). Non serve un account GitHub né una password GitHub. Apri il sito Studio Bhumi e il branch indicato dal gestore; non cambiarlo. Se l’email non arriva controlla lo spam e chiedi un nuovo codice.
+Accetta l’invito ricevuto dal gestore e apri [Pages CMS](https://app.pagescms.org/). Scegli **Continue with email**, usa **la stessa email dell’invito** e inserisci il codice monouso ricevuto nella casella di posta (nel login ufficiale attuale è di sei cifre). Non serve un account GitHub né una password GitHub. Apri il sito Studio Bhumi e il branch indicato dal gestore; non cambiarlo. Se l’email non arriva controlla lo spam e chiedi un nuovo codice.
 
 ## Cambiare un prezzo
 

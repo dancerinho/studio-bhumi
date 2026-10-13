@@ -1,0 +1,327 @@
+{
+  "baselineRevision": "57ae921ad4a2b3755ce50f28dbc87d4754743a9d",
+  "pages": [
+    {
+      "file": "index.html",
+      "rawEquivalent": false,
+      "addedLines": 40,
+      "removedLines": 4
+    },
+    {
+      "file": "chi-siamo.html",
+      "rawEquivalent": false,
+      "addedLines": 38,
+      "removedLines": 3
+    },
+    {
+      "file": "fondatrici.html",
+      "rawEquivalent": false,
+      "addedLines": 38,
+      "removedLines": 3
+    },
+    {
+      "file": "insegnanti.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "studio.html",
+      "rawEquivalent": false,
+      "addedLines": 38,
+      "removedLines": 3
+    },
+    {
+      "file": "discipline.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "corsi.html",
+      "rawEquivalent": false,
+      "addedLines": 39,
+      "removedLines": 4
+    },
+    {
+      "file": "yoga.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "pilates.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "gyrotonic.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "orari.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "prezzi.html",
+      "rawEquivalent": false,
+      "addedLines": 39,
+      "removedLines": 4
+    },
+    {
+      "file": "eventi.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "contatti.html",
+      "rawEquivalent": false,
+      "addedLines": 62,
+      "removedLines": 7
+    },
+    {
+      "file": "dove-siamo.html",
+      "rawEquivalent": false,
+      "addedLines": 106,
+      "removedLines": 5
+    },
+    {
+      "file": "privacy.html",
+      "rawEquivalent": false,
+      "addedLines": 94,
+      "removedLines": 3
+    },
+    {
+      "file": "cookie.html",
+      "rawEquivalent": true,
+      "addedLines": 0,
+      "removedLines": 0
+    }
+  ],
+  "styles": [
+    {
+      "file": "chi-siamo.css",
+      "equivalent": true
+    },
+    {
+      "file": "editorial-refresh.css",
+      "equivalent": true
+    },
+    {
+      "file": "editoriale-cinema.css",
+      "equivalent": true
+    },
+    {
+      "file": "editoriale.css",
+      "equivalent": true
+    },
+    {
+      "file": "feedback-redesign.css",
+      "equivalent": true
+    },
+    {
+      "file": "home-experience.css",
+      "equivalent": true
+    },
+    {
+      "file": "sections.css",
+      "equivalent": true
+    },
+    {
+      "file": "site.css",
+      "equivalent": true
+    }
+  ],
+  "media": [
+    {
+      "file": "Gyrotonic.jpg",
+      "identical": true,
+      "sha256": "aad8646845a13696284b433af149c18d73493cccfc00d0411110a832203fefc9"
+    },
+    {
+      "file": "Hatha.jpg",
+      "identical": true,
+      "sha256": "70e17f62e4e48c54fe51ab805cad2aafa7567de5a1eeb996e39458b44291b0dd"
+    },
+    {
+      "file": "LogoBhumiDef.jpg",
+      "identical": true,
+      "sha256": "1d2399641a0720586165468a98d1b6244d0a0e8c1ac595295b70fee1a0cbceb5"
+    },
+    {
+      "file": "Ultra-realistic-premium-yoga-homepage-he.mp4",
+      "identical": true,
+      "sha256": "dbf2f6b17a4f7e4ee816fcf1ca4feca1582ca76aee8089de919148ebe90d33e9"
+    },
+    {
+      "file": "archive-pilates.png",
+      "identical": true,
+      "sha256": "1eeca5cda28b2bd43ce69f31978132d1d1de651d90af6b0f6aceb72fc12da971"
+    },
+    {
+      "file": "chi-siamo-studio.jpg",
+      "identical": true,
+      "sha256": "4d3e1e09d102f9b55062a4bccc590409e4f3a2427c5a73589652fd83f8f7ea7a"
+    },
+    {
+      "file": "course-bmc-massage.jpg",
+      "identical": true,
+      "sha256": "6b7f9c47858af33f26ad048587172afe2ddacdfafaf8e98b502757ced55e1c70"
+    },
+    {
+      "file": "course-bmc-massage.png",
+      "identical": true,
+      "sha256": "ec147b478eaf755577160a2de170a3a01fe940e68fb53ff63a0e7a39d9f3a4d5"
+    },
+    {
+      "file": "course-bmc-unsplash.jpg",
+      "identical": true,
+      "sha256": "f0f482d76380bb1148cbca7697111a4d1928a827450bb634c4046dd66ecca943"
+    },
+    {
+      "file": "course-dainami-clean-v2.png",
+      "identical": true,
+      "sha256": "4fb91bf6557891aa09cf4d56949edda40659fa6320ad72758e8e975a7d6d853b"
+    },
+    {
+      "file": "course-dainami-clean.jpg",
+      "identical": true,
+      "sha256": "a2e65ca458374da8fa902a73441722c1cd22146569118942dcbb77d38565fbc6"
+    },
+    {
+      "file": "course-dainami-clean.png",
+      "identical": true,
+      "sha256": "419ee433696f4cb08f059c95a1be0fa19ca9c16b2d1db3545836895af97d07f8"
+    },
+    {
+      "file": "course-dainami-unsplash.jpg",
+      "identical": true,
+      "sha256": "297d4b6692fed51ca5170693ed38e6335e73b7fb1a1e317aaef8678d405a6e2c"
+    },
+    {
+      "file": "course-gyrotonic-clean.jpg",
+      "identical": true,
+      "sha256": "5f8cc002c2741484cf1b4ec9cc6e2dd36a3f03efae30a9007a793196eac87d5a"
+    },
+    {
+      "file": "course-gyrotonic-clean.png",
+      "identical": true,
+      "sha256": "41a610d8e04983905e41b0ef707331fbf42ec5929b3071f8299b0ae2f545364a"
+    },
+    {
+      "file": "course-hatha-man.jpg",
+      "identical": true,
+      "sha256": "0d8ced665c3b0851539099e8e4b66ab237cbaa5269dd82d69663629d2a8d2eda"
+    },
+    {
+      "file": "course-pilates-clean.png",
+      "identical": true,
+      "sha256": "8633a856138ffd597704a1666e4b84927fb502c38a1c847ccd8da940b1c45566"
+    },
+    {
+      "file": "course-pilates-man.jpg",
+      "identical": true,
+      "sha256": "f96815637385316b5e76d81262ff6caeeb18a771d27e071ee8fd483b73fb4b29"
+    },
+    {
+      "file": "course-pilates-unsplash.jpg",
+      "identical": true,
+      "sha256": "dea379ff9963c446f2ebee27e487e8a2025eb3eb8ec76b0b5b4e95777372e6ce"
+    },
+    {
+      "file": "donata.jpg",
+      "identical": true,
+      "sha256": "d45c9a93e79f9ffb05a7da257f9bb9ea70bcaa2545f2d08a2915d04e5ca498e5"
+    },
+    {
+      "file": "emanuela.jpg",
+      "identical": true,
+      "sha256": "f9fcab05663a8a7104685e4c3ed15ce2954b0fcdd06cf56e35b12f92431a603e"
+    },
+    {
+      "file": "favicon.svg",
+      "identical": true,
+      "sha256": "38732d34037765a0012f166ce5eecdad6ce4303cf58766880a5f65558ee0dce0"
+    },
+    {
+      "file": "home-experience-poster-20260927.jpg",
+      "identical": true,
+      "sha256": "f3123fefb2421da5b8e407469c2d3f7446347f67fed6faa56797e04e8f00750b"
+    },
+    {
+      "file": "home-yoga-journey-20260927-poster.jpg",
+      "identical": true,
+      "sha256": "3d7abcaa2c8c458bb2c23476b3a0f035ad7b644e25a890387a1bc0914622b17e"
+    },
+    {
+      "file": "home_box_BMC.jpg",
+      "identical": true,
+      "sha256": "fc424acaabdc96b1af16517a9797b1e2d9ee45233e8a3a29362b4d1c223acab1"
+    },
+    {
+      "file": "home_box_pilates.jpg",
+      "identical": true,
+      "sha256": "f4374a7130c95342c452e33a56c9bcb05180540a8c042d5be8ecf09c8a121723"
+    },
+    {
+      "file": "homepage.jpg",
+      "identical": true,
+      "sha256": "3daef5fcc85b5edfd62483ad8e044df1e9cb7b270d4c42a9998ac890c19ed0bc"
+    },
+    {
+      "file": "homepage2.jpg",
+      "identical": true,
+      "sha256": "43495994520b4a2fca31ddd966421342155e4f269c183087f67bebaf80950f2f"
+    },
+    {
+      "file": "homepage3.jpg",
+      "identical": true,
+      "sha256": "2f1911e8cf72acb87aacab70a2ca4488371bc92087dca263886b5d20b2ce13a5"
+    },
+    {
+      "file": "pratiche-blocchi.jpg",
+      "identical": true,
+      "sha256": "cbead6e25c90169b16229fd5306071b9978f85072837702e9c91bfd63d976eee"
+    },
+    {
+      "file": "studio-triptych.jpg",
+      "identical": true,
+      "sha256": "daefc74e4046d57e1947c6a4a0bb826aae9eaa8d3026e9db66fdcdf9f07ce97b"
+    },
+    {
+      "file": "studio-triptych.png",
+      "identical": true,
+      "sha256": "93b21e46e87fd6c5d972614538c2e7f3c79b00585a28083bc5611a8f108adbb6"
+    },
+    {
+      "file": "team-gaia-rossi.jpg",
+      "identical": true,
+      "sha256": "4906974843ac45ad12c89d2a0151e02552c41c03620903a170e91fce6b665255"
+    },
+    {
+      "file": "team-laura-serena.jpg",
+      "identical": true,
+      "sha256": "b77d652d66e863783433b4fd3c18d02d0ec3a0bcba0907262e7eb60e91d64be2"
+    },
+    {
+      "file": "team-silvia-congiu.jpg",
+      "identical": true,
+      "sha256": "82d4cab0ace5b58f5085b6008d0be6c1f68c7839486c810061c8dfd1a36dd93f"
+    },
+    {
+      "file": "team-valentina-pinnelli.jpg",
+      "identical": true,
+      "sha256": "98d60a88fb7c8c05b6a1406811c09af300d6d19d06c1b225bcf5370f7c775c84"
+    }
+  ],
+  "unchangedScripts": [
+    "home-experience.js",
+    "percorso-personalizzato.js"
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "baselineRevision": "57ae921ad4a2b3755ce50f28dbc87d4754743a9d",
+  "dom": [
+    {
+      "page": "index.html",
+      "equivalent": true
+    },
+    {
+      "page": "chi-siamo.html",
+      "equivalent": true
+    },
+    {
+      "page": "fondatrici.html",
+      "equivalent": true
+    },
+    {
+      "page": "insegnanti.html",
+      "equivalent": true
+    },
+    {
+      "page": "studio.html",
+      "equivalent": true
+    },
+    {
+      "page": "discipline.html",
+      "equivalent": true
+    },
+    {
+      "page": "corsi.html",
+      "equivalent": true
+    },
+    {
+      "page": "yoga.html",
+      "equivalent": true
+    },
+    {
+      "page": "pilates.html",
+      "equivalent": true
+    },
+    {
+      "page": "gyrotonic.html",
+      "equivalent": true
+    },
+    {
+      "page": "orari.html",
+      "equivalent": true
+    },
+    {
+      "page": "prezzi.html",
+      "equivalent": true
+    },
+    {
+      "page": "eventi.html",
+      "equivalent": true
+    },
+    {
+      "page": "contatti.html",
+      "equivalent": true
+    },
+    {
+      "page": "dove-siamo.html",
+      "equivalent": true
+    },
+    {
+      "page": "privacy.html",
+      "equivalent": true
+    }
+  ],
+  "network": [
+    {
+      "page": "index.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "studio.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "discipline.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "corsi.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "yoga.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "pilates.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "orari.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "prezzi.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "eventi.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "contatti.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "privacy.html",
+      "width": 375,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "studio.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "discipline.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "corsi.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "yoga.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "pilates.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "orari.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "prezzi.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "eventi.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "contatti.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "privacy.html",
+      "width": 768,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "studio.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "discipline.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "corsi.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "yoga.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "pilates.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "orari.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "prezzi.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "eventi.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "contatti.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    },
+    {
+      "page": "privacy.html",
+      "width": 1440,
+      "externalRequests": 0,
+      "errors": []
+    }
+  ],
+  "layout": [
+    {
+      "page": "index.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "studio.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "discipline.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "corsi.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "yoga.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "pilates.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "orari.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "prezzi.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "eventi.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "contatti.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "privacy.html",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "studio.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "discipline.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "corsi.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "yoga.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "pilates.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "orari.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "prezzi.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "eventi.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "contatti.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "privacy.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "chi-siamo.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "fondatrici.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "insegnanti.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "studio.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "discipline.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "corsi.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "yoga.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "pilates.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "gyrotonic.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "orari.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "prezzi.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "eventi.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "contatti.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "dove-siamo.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "privacy.html",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "interactions": [
+    "editorial mobile menu: open/close",
+    "shared menu: open/Escape",
+    "contact map: explicit load only",
+    "contatti.html: geolocation only on click; map route shown",
+    "dove-siamo.html: geolocation only on click; map route shown"
+  ]
+}

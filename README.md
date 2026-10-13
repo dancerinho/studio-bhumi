@@ -65,7 +65,7 @@ Fonti ufficiali: [build e output](https://developers.cloudflare.com/pages/config
 1. Il gestore tecnico entra in [app.pagescms.org](https://app.pagescms.org/) con GitHub e autorizza la GitHub App sul solo repository del sito.
 2. Seleziona repository e **branch scelto per la pubblicazione**, dopo che questa migrazione è stata approvata e inviata. Il pannello legge `.pages.yml` da quel branch.
 3. Verifica che compaiano soltanto le cinque sezioni previste e “Foto di eventi e novità”. Logo, foto degli insegnanti, template e codice non sono tra i media modificabili.
-4. Invita le titolari come **collaboratrici tramite email**, nelle impostazioni del repository in Pages CMS. Non serve loro un account GitHub. Nell’implementazione ufficiale attuale il login email usa un **codice monouso di sei cifre**, inviato via email; il gestore resta l’utente GitHub.
+4. Invita le titolari come **collaboratrici tramite email**, nelle impostazioni del repository in Pages CMS. Non serve loro un account GitHub. La schermata pubblica presenta “Continue with email”; nell’implementazione ufficiale attuale il login email usa un **codice monouso di sei cifre**, inviato via email; il gestore resta l’utente GitHub.
 5. Le collaboratrici possono modificare contenuti e media, ma non la configurazione `.pages.yml` o gli inviti. Non assegnare loro accesso GitHub in scrittura al codice: chi ha quei permessi può comunque modificare la repository fuori dal CMS. Gli inviti sono nel database del CMS, non nel file YAML.
 6. Fare una prova con un invito reale, un prezzo reversibile e una novità nascosta; verificarne salvataggio e build. Questi passaggi richiedono l’account e non sono stati eseguiti in questa lavorazione locale.
 
@@ -103,6 +103,8 @@ Le due mappe hanno inizialmente `src="about:blank"`. Solo “Carica la mappa” 
 5. Aggiungere un test dei dati validi e del caso di errore, eseguire build/check/test e confrontare l’HTML delle pagine estranee alla modifica. Aggiornare la guida, poi richiedere la pubblicazione.
 
 ## Verifiche e decisioni residue
+
+Per rigenerare il diff HTML: `node scripts/compare-html.mjs 57ae921ad4a2b3755ce50f28dbc87d4754743a9d` (richiede Git, nessuna dipendenza). Il controllo nel browser `tests/browser-check.mjs` richiede una copia già disponibile di Playwright e Chromium/Chrome: impostare `PLAYWRIGHT_MODULE`, `BROWSER_EXECUTABLE`, `BASELINE_DIR` e `MIGRATION_DIR` alle installazioni/cartelle di confronto. Queste dipendenze di verifica non fanno parte del build o del sito.
 
 Il [report della verifica](docs/VERIFICA-CMS.md) riporta equivalenza HTML/DOM, rete, layout e test di errore. La [guida per le titolari](docs/GUIDA-TITOLARI.md) spiega le sole operazioni del pannello.
 
