@@ -84,7 +84,7 @@ function setupRouteButton() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       const origin = `${coords.latitude},${coords.longitude}`;
       const params = new URLSearchParams({ saddr: origin, daddr: destination, output: 'embed', hl: 'it' });
-      map.src = `https://www.google.com/maps?${params}`;
+      window.loadBhumiMap(map, `https://www.google.com/maps?${params}`);
       map.title = 'Percorso dalla tua posizione a Studio Bhumi';
       if (externalLink) externalLink.href = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}`;
       setStatus('');

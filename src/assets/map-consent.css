@@ -1,0 +1,9 @@
+/* The consent panel stays inside the existing map viewport, preserving its geometry. */
+.map-consent { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 24px; text-align: center; color: #202722; background: #e2ddd1; font: 400 14px/1.5 'Lato', sans-serif; }
+.map-consent[hidden] { display: none; }
+.map-consent strong { font-weight: 700; }
+.map-consent p { max-width: 38ch; margin: 0; font-size: 12px; }
+.map-consent button { cursor: pointer; border: 0; border-radius: 0; padding: 14px 22px; color: #fff; background: #1c241f; font: 700 13px/1.2 'Lato', sans-serif; }
+.map-consent a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.map-consent button:focus-visible, .map-consent a:focus-visible { outline: 2px solid #a30b29; outline-offset: 4px; }
+.map-card__viewport iframe[data-map-loaded="true"] { pointer-events: auto; }

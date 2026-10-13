@@ -15,7 +15,6 @@
   if (!frame || !button) return;
 
   const destination = frame.dataset.destination;
-  const originalSrc = frame.src;
   const originalHref = mapLink?.href;
   const travelModes = { w: 'walking', r: 'transit', d: 'driving' };
   // Aggiorna la mappa solo dopo uno spostamento reale, senza ricaricarla di continuo.
@@ -47,7 +46,7 @@
     if (!origin) return;
     const from = `${origin.lat.toFixed(5)},${origin.lng.toFixed(5)}`;
     const params = new URLSearchParams({ saddr: from, daddr: destination, dirflg: mode, output: 'embed', hl: 'it' });
-    frame.src = `https://www.google.com/maps?${params}`;
+    window.loadBhumiMap(frame, `https://www.google.com/maps?${params}`);
     const directions = `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(from)}&destination=${encodeURIComponent(destination)}&travelmode=${travelModes[mode]}`;
     if (external) external.href = directions;
     if (mapLink) mapLink.href = directions;
@@ -109,9 +108,9 @@
     label.textContent = 'Percorso da qui';
     button.setAttribute('aria-pressed', 'false');
     button.removeAttribute('aria-busy');
-    if (badge) badge.textContent = 'Isola';
+    if (badge) badge.textContent = frame.dataset.district;
     if (address) address.textContent = `maps · ${frame.dataset.address.toLowerCase()}`;
-    frame.src = originalSrc;
+    if (frame.dataset.mapLoaded === 'true') window.loadBhumiMap(frame, frame.dataset.src);
     if (mapLink && originalHref) mapLink.href = originalHref;
     if (external) external.href = frame.dataset.directions;
     setStatus('');
