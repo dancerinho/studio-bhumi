@@ -1,10 +1,20 @@
-import { readFile, writeFile, readdir, mkdir, cp, rename, rm, lstat, realpath } from 'node:fs/promises';
+import { readFile, writeFile, readdir, mkdir, cp, rename, rm, lstat } from 'node:fs/promises';
 import { resolve, join, dirname, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderSidebar, renderFooter } from '../src/partials/shared.mjs';
 import { pages } from './pages.mjs';
 
 export const root = resolve(fileURLToPath(new URL('../', import.meta.url)));
+// OneDrive and Windows scanners can briefly retain directory handles after copy.
+async function move(from, to) {
+  for (let attempt = 0; ; attempt++) {
+    try { return await rename(from, to); }
+    catch (error) {
+      if (!['EPERM', 'EACCES', 'EBUSY'].includes(error.code) || attempt === 7) throw error;
+      await new Promise(resolve => setTimeout(resolve, 100 * (attempt + 1)));
+    }
+  }
+}
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fail = (field, message) => { throw new Error(`${field}: ${message}`); };
 function object(value, field) { if (!value || typeof value !== 'object' || Array.isArray(value)) fail(field, 'oggetto mancante o malformato'); }
@@ -201,8 +211,8 @@ export async function build({contentDir=join(root,'content'),sourceDir=join(root
     await cp(join(contentDir,'uploads'),join(stage,'uploads'),{recursive:true,filter:file=>!file.endsWith('.gitkeep')});
     for(const [file,value]of html)await writeFile(join(stage,file),value);
     try {await cp(join(sourceDir,'static'),stage,{recursive:true});}catch(error){if(error.code!=='ENOENT')throw error;}
-    try {await rename(outDir,backup);previous=true;}catch(error){if(error.code!=='ENOENT')throw error;}
-    try {await rename(stage,outDir);}catch(error){if(previous)await rename(backup,outDir);throw error;}
+    try {await move(outDir,backup);previous=true;}catch(error){if(error.code!=='ENOENT')throw error;}
+    try {await move(stage,outDir);}catch(error){if(previous)await move(backup,outDir);throw error;}
     if(previous)await rm(backup,{recursive:true,force:true});
   } finally {await rm(stage,{recursive:true,force:true});}
   return {pages:html.size,siteURL};
