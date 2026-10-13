@@ -166,7 +166,7 @@ async function render(data, sourceDir, siteURL) {
     const current=html.match(/<body[^>]*data-page="([^"]+)"/)?.[1] || 'home';
     html=tokens(html,{...values,sidebar:tokens(renderSidebar(current),values),footer:tokens(renderFooter(),values),price_cards:cards.join('\n      '),annual_fee:numeric.format(data.prices.quotaAnnuale),price_table:priceTable,opening_rows:opening,home_notice:data.notice.attivo?escapeHTML(data.notice.testo):'YOGA E MOVIMENTO · MILANO ISOLA',events});
     if(html.includes('assets/editoriale.js')) {
-      html=html.replace(/(<div class="site-menu"[^>]*>)([\s\S]*?)(<\/div><\/nav>)/,(_,start,body,end)=>{
+      html=html.replace(/(<div class="site-menu"[^>]*>)([\s\S]*?)(<\/div>\s*<\/nav>)/,(_,start,body,end)=>{
         body=body.replace(/<a\b[^>]*href="([^"]+)"[^>]*>/g,(tag,href)=>href===page.file&&!tag.includes('aria-current')?tag.slice(0,-1)+' aria-current="page">':tag);
         return start+tokens(data.partials.menuHead,values)+body+tokens(data.partials.menuSocial,values)+end;
       });
