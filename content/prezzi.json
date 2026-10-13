@@ -1,0 +1,50 @@
+{
+  "gruppi": [
+    {
+      "tipo": "gruppo",
+      "etichetta": "In piccoli gruppi",
+      "titolo": "Pilates attrezzi\ne Gyrotonic®",
+      "titoloTabella": "Pilates e Gyrotonic®",
+      "note": "In presenza e online",
+      "noteTabella": "gruppo, in presenza e online",
+      "voci": [
+        {
+          "voce": "4 lezioni",
+          "prezzo": 140,
+          "note": ""
+        },
+        {
+          "voce": "8 lezioni",
+          "prezzo": 270,
+          "note": ""
+        },
+        {
+          "voce": "44 lezioni",
+          "prezzo": 1270,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "tipo": "individuale",
+      "etichetta": "Percorso personale",
+      "titolo": "Lezioni individuali",
+      "titoloTabella": "Lezioni individuali",
+      "note": "Un lavoro costruito intorno alle tue esigenze · in presenza e online",
+      "noteTabella": "in presenza e online",
+      "voci": [
+        {
+          "voce": "4 lezioni",
+          "prezzo": 320,
+          "note": ""
+        },
+        {
+          "voce": "8 lezioni",
+          "prezzo": 600,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "quotaAnnuale": 30
+}

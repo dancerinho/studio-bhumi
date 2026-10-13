@@ -1,0 +1,22 @@
+{
+  "fasce": [
+    {
+      "giorni": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "apertura": "07:30",
+      "chiusura": "21:00"
+    },
+    {
+      "giorni": [
+        "Saturday"
+      ],
+      "apertura": "09:30",
+      "chiusura": "12:30"
+    }
+  ]
+}
