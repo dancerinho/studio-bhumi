@@ -4,13 +4,15 @@ import { resolve, extname, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('./dist/', import.meta.url));
-const types = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.woff2':'font/woff2', '.json':'application/json', '.mp4':'video/mp4' };
+const types = { '.html':'text/html; charset=utf-8', '.css':'text/css', '.js':'text/javascript', '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.png':'image/png', '.webp':'image/webp', '.woff2':'font/woff2', '.json':'application/json', '.mp4':'video/mp4', '.txt':'text/plain; charset=utf-8', '.xml':'application/xml; charset=utf-8' };
 const port = Number(process.env.PORT || 3000);
 createServer(async (req, res) => {
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-    const file = resolve(root, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
+    let file = resolve(root, '.' + (pathname.endsWith('/') ? pathname + 'index.html' : pathname));
     if (!file.startsWith(resolve(root) + sep)) { res.writeHead(403).end('Forbidden'); return; }
+    // Match the extensionless HTML paths served by Cloudflare Pages locally.
+    if (!extname(file)) file += '.html';
     const info = await stat(file);
     const etag = `"${info.size.toString(16)}-${Math.floor(info.mtimeMs).toString(16)}"`;
     // Revalidate instead of re-downloading: images stay decoded across page changes.
