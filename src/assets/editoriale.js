@@ -44,10 +44,6 @@ const setMenuOpen = (open) => {
 };
 // Menu da telefono: intestazione con chiusura e nome, voci centrate, area riservata e social.
 if (siteMenu) {
-  const currentFile = location.pathname.split('/').pop() || 'index.html';
-  siteMenu.querySelectorAll('a[href]').forEach((link) => {
-    if (link.getAttribute('href') === currentFile) link.setAttribute('aria-current', 'page');
-  });
   siteMenu.querySelector('.site-menu__close').addEventListener('click', () => { setMenuOpen(false); menu?.focus(); });
 }
 

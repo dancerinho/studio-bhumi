@@ -65,7 +65,9 @@ function validate(data) {
   text(data.notice.testo, 'avviso-home.testo', 140, data.notice.attivo);
   object(data.prices, 'prezzi');
   const groups = data.prices.gruppi;
-  if (!Array.isArray(groups) || groups.length !== 2 || new Set(groups.map(g=>g.tipo)).size !== 2) fail('prezzi.gruppi', 'mantieni i due gruppi: gruppo e individuale');
+  if (!Array.isArray(groups) || groups.length !== 2) fail('prezzi.gruppi', 'mantieni i due gruppi: gruppo e individuale');
+  groups.forEach((group,i)=>object(group, `prezzi.gruppi[${i+1}]`));
+  if (new Set(groups.map(g=>g.tipo)).size !== 2) fail('prezzi.gruppi', 'mantieni i due gruppi: gruppo e individuale');
   for (const [i,g] of groups.entries()) {
     const field = `prezzi.gruppi[${i+1}]`; object(g, field);
     if (!['gruppo','individuale'].includes(g.tipo)) fail(`${field}.tipo`, 'gruppo o individuale');
@@ -125,7 +127,11 @@ async function uploads(contentDir, events) {
     const [width,height] = imageDimensions(bytes,extension,field);
     if (!width || !height || width>1600 || height>1000) fail(field, 'dimensioni massime 1600 × 1000 pixel');
   }
-  for (const event of events) if(event.foto && !files.some(f=>'/uploads/'+f.name===event.foto)) fail(`${event.file}.foto`, 'immagine non trovata');
+  for (const event of events) if(event.foto) {
+    if (!files.some(f=>'/uploads/'+f.name===event.foto)) fail(`${event.file}.foto`, 'immagine non trovata');
+    const bytes=await readFile(join(directory,event.foto.slice('/uploads/'.length)));
+    event.imageSize=imageDimensions(bytes,'.'+event.foto.split('.').at(-1).toLowerCase(),event.file);
+  }
 }
 function tokens(template, values) {
   return template.replace(/\{\{([a-z_]+)\}\}/g, (_,name) => {
@@ -159,7 +165,7 @@ async function render(data, sourceDir, siteURL) {
     return `<div class="schedule-row"><span>${label}</span><strong>${timeLabel(r.apertura)} — ${timeLabel(r.chiusura)}</strong></div>`;
   }).join('');
   const visible=data.events.filter(e=>e.visibile).sort((a,b)=>b.data.localeCompare(a.data)||a.file.localeCompare(b.file));
-  const events=visible.length?`<section class="content-grid">${visible.map(e=>`<article class="content-card reveal"><div class="content-card__number card-number"><time datetime="${e.data}">${new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(e.data))}</time></div><h3>${escapeHTML(e.titolo)}</h3><p>${escapeHTML(e.testo)}</p>${e.foto?`<img src="${escapeHTML(e.foto)}" alt="${escapeHTML(e.fotoAlt)}" width="1600" height="1000" loading="lazy" style="max-width:100%;height:auto"/>`:''}</article>`).join('')}</section>`:tokens(await partial('events-empty.html'),values);
+  const events=visible.length?`<section class="content-grid">${visible.map(e=>`<article class="content-card reveal"><div class="content-card__number card-number"><time datetime="${e.data}">${new Intl.DateTimeFormat('it-IT',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(e.data))}</time></div><h3>${escapeHTML(e.titolo)}</h3><p>${escapeHTML(e.testo)}</p>${e.foto?`<img src="${escapeHTML(e.foto)}" alt="${escapeHTML(e.fotoAlt)}" width="${e.imageSize[0]}" height="${e.imageSize[1]}" loading="lazy" style="max-width:100%;height:auto"/>`:''}</article>`).join('')}</section>`:tokens(await partial('events-empty.html'),values);
   const output=new Map();
   for(const page of pages) {
     let html=await readFile(join(sourceDir,'pages',page.file),'utf8');
