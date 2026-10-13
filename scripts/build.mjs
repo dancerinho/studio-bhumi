@@ -62,7 +62,8 @@ function validate(data) {
   }
   object(data.notice, 'avviso-home');
   if (typeof data.notice.attivo !== 'boolean') fail('avviso-home.attivo', 'valore booleano obbligatorio');
-  text(data.notice.testo, 'avviso-home.testo', 140, data.notice.attivo);
+  // Pages CMS omits an empty optional field when the notice is switched off.
+  if (data.notice.attivo || data.notice.testo !== undefined) text(data.notice.testo, 'avviso-home.testo', 140, data.notice.attivo);
   object(data.prices, 'prezzi');
   const groups = data.prices.gruppi;
   if (!Array.isArray(groups) || groups.length !== 2) fail('prezzi.gruppi', 'mantieni i due gruppi: gruppo e individuale');

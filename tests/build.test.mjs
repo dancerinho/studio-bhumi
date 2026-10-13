@@ -33,6 +33,29 @@ test('unsupported URL protocols and embedded credentials are rejected',async()=>
     }
   });
 });
+test('CMS can clear an inactive notice; active notices still require valid text',async()=>{
+  await fixture(async({options,update,outDir})=>{
+    await update('avviso-home.json',v=>{v.attivo=false;v.testo='';});
+    await build(options);
+    const previous=await readFile(join(outDir,'index.html'),'utf8');
+    await update('avviso-home.json',v=>{delete v.testo;});
+    await build(options);
+    assert.equal(await readFile(join(outDir,'index.html'),'utf8'),previous);
+    await update('avviso-home.json',v=>{v.attivo=true;});
+    await assert.rejects(build(options),/avviso-home.testo.*obbligatorio/);
+    assert.equal(await readFile(join(outDir,'index.html'),'utf8'),previous);
+    for(const invalid of [null,123,{}]){
+      await update('avviso-home.json',v=>{v.attivo=false;v.testo=invalid;});
+      await assert.rejects(build(options),/avviso-home.testo/);
+      assert.equal(await readFile(join(outDir,'index.html'),'utf8'),previous);
+    }
+    await update('avviso-home.json',v=>{v.attivo=true;v.testo='PROVA AGGIORNAMENTO';});
+    await build(options);
+    const active=await readFile(join(outDir,'index.html'),'utf8');
+    assert.ok(active.includes('PROVA AGGIORNAMENTO'));
+    assert.ok(!active.includes('YOGA E MOVIMENTO · MILANO ISOLA'));
+  });
+});
 test('bad hours, overlapping slots, invalid dates and non-numeric prices fail clearly',async()=>{
   await fixture(async({options,update,contentDir})=>{
     await update('prezzi.json',v=>v.gruppi[0].voci[0].prezzo='140');await rejected(options,/prezzo.*numerico/);
