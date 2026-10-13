@@ -210,6 +210,9 @@ export async function build({contentDir=join(root,'content'),sourceDir=join(root
     await mkdir(stage); await cp(join(sourceDir,'assets'),join(stage,'assets'),{recursive:true});
     await cp(join(contentDir,'uploads'),join(stage,'uploads'),{recursive:true,filter:file=>!file.endsWith('.gitkeep')});
     for(const [file,value]of html)await writeFile(join(stage,file),value);
+    await writeFile(join(stage,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${siteURL}/sitemap.xml\n`);
+    const sitemap=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.filter(page=>page.sitemap).map(page=>`  <url><loc>${escapeHTML(siteURL+page.url)}</loc></url>`).join('\n')}\n</urlset>\n`;
+    await writeFile(join(stage,'sitemap.xml'),sitemap);
     try {await cp(join(sourceDir,'static'),stage,{recursive:true});}catch(error){if(error.code!=='ENOENT')throw error;}
     try {await move(outDir,backup);previous=true;}catch(error){if(error.code!=='ENOENT')throw error;}
     try {await move(stage,outDir);}catch(error){if(previous)await move(backup,outDir);throw error;}
